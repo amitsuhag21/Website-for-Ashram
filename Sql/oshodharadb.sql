@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2020 at 10:00 AM
+-- Generation Time: Feb 18, 2020 at 08:13 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.27
 
@@ -21,6 +21,88 @@ SET time_zone = "+00:00";
 --
 -- Database: `oshodharadb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_od_album`
+--
+
+CREATE TABLE `tb_od_album` (
+  `albumid` int(11) NOT NULL,
+  `albumname` varchar(250) DEFAULT NULL,
+  `albumtype` varchar(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_od_albumaudiomap`
+--
+
+CREATE TABLE `tb_od_albumaudiomap` (
+  `albumid` int(11) NOT NULL,
+  `audioid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_od_albumbookmap`
+--
+
+CREATE TABLE `tb_od_albumbookmap` (
+  `albumid` int(11) NOT NULL,
+  `bookid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_od_albumimagemap`
+--
+
+CREATE TABLE `tb_od_albumimagemap` (
+  `albumid` int(11) NOT NULL,
+  `imageid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_od_albumvideomap`
+--
+
+CREATE TABLE `tb_od_albumvideomap` (
+  `albumid` int(11) NOT NULL,
+  `videoid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_od_audios`
+--
+
+CREATE TABLE `tb_od_audios` (
+  `audioid` int(11) NOT NULL,
+  `title` varchar(250) DEFAULT NULL,
+  `description` mediumtext DEFAULT NULL,
+  `Filelocation` varchar(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_od_books`
+--
+
+CREATE TABLE `tb_od_books` (
+  `bookid` int(11) NOT NULL,
+  `title` varchar(250) DEFAULT NULL,
+  `description` mediumtext DEFAULT NULL,
+  `filelocation` varchar(150) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -73,12 +155,35 @@ CREATE TABLE `tb_od_gurus` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_od_images`
+--
+
+CREATE TABLE `tb_od_images` (
+  `imageid` int(11) NOT NULL,
+  `title` varchar(150) DEFAULT NULL,
+  `thumbnaillocation` varchar(250) DEFAULT NULL,
+  `imagelocation` varchar(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_od_progcategorymap`
+--
+
+CREATE TABLE `tb_od_progcategorymap` (
+  `programid` int(11) NOT NULL,
+  `categoryid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_od_program`
 --
 
 CREATE TABLE `tb_od_program` (
   `programid` int(11) NOT NULL,
-  `categoryid` int(11) NOT NULL,
   `programname` varchar(250) DEFAULT NULL,
   `shortdescription` varchar(500) DEFAULT NULL,
   `longdescription` longtext DEFAULT NULL
@@ -153,9 +258,40 @@ CREATE TABLE `tb_od_teammember` (
   `countryid` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_od_videos`
+--
+
+CREATE TABLE `tb_od_videos` (
+  `videoid` int(11) NOT NULL,
+  `title` varchar(250) DEFAULT NULL,
+  `description` mediumtext DEFAULT NULL,
+  `YTlink` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tb_od_album`
+--
+ALTER TABLE `tb_od_album`
+  ADD PRIMARY KEY (`albumid`);
+
+--
+-- Indexes for table `tb_od_audios`
+--
+ALTER TABLE `tb_od_audios`
+  ADD PRIMARY KEY (`audioid`);
+
+--
+-- Indexes for table `tb_od_books`
+--
+ALTER TABLE `tb_od_books`
+  ADD PRIMARY KEY (`bookid`);
 
 --
 -- Indexes for table `tb_od_country`
@@ -174,6 +310,12 @@ ALTER TABLE `tb_od_dhyankendra`
 --
 ALTER TABLE `tb_od_gurus`
   ADD PRIMARY KEY (`guruid`);
+
+--
+-- Indexes for table `tb_od_images`
+--
+ALTER TABLE `tb_od_images`
+  ADD PRIMARY KEY (`imageid`);
 
 --
 -- Indexes for table `tb_od_program`
@@ -206,8 +348,32 @@ ALTER TABLE `tb_od_teammember`
   ADD PRIMARY KEY (`teammemberid`);
 
 --
+-- Indexes for table `tb_od_videos`
+--
+ALTER TABLE `tb_od_videos`
+  ADD PRIMARY KEY (`videoid`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `tb_od_album`
+--
+ALTER TABLE `tb_od_album`
+  MODIFY `albumid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_od_audios`
+--
+ALTER TABLE `tb_od_audios`
+  MODIFY `audioid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_od_books`
+--
+ALTER TABLE `tb_od_books`
+  MODIFY `bookid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tb_od_country`
@@ -226,6 +392,12 @@ ALTER TABLE `tb_od_dhyankendra`
 --
 ALTER TABLE `tb_od_gurus`
   MODIFY `guruid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_od_images`
+--
+ALTER TABLE `tb_od_images`
+  MODIFY `imageid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tb_od_program`
@@ -250,6 +422,12 @@ ALTER TABLE `tb_od_programschedule`
 --
 ALTER TABLE `tb_od_teammember`
   MODIFY `teammemberid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_od_videos`
+--
+ALTER TABLE `tb_od_videos`
+  MODIFY `videoid` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
