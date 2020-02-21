@@ -1,6 +1,6 @@
 <!--Footer-part-->
 <div class="row-fluid">
-  <div id="footer" class="span12"> 2020 &copy; <a href="https://www.livehindustan.com">LiveHindustan.com</a> </div>
+  <div id="footer" class="span12"> 2020 &copy; <a href=""></a> </div>
 </div>
 
 <!--end-Footer-part-->
