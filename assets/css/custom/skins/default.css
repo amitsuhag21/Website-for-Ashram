@@ -1,17 +1,17 @@
 a {
-	color: #0088cc;
+	color: #ff8a00;
 }
 
 a:hover {
-	color: #0099e6;
+	color: #ff8a00;
 }
 
 a:focus {
-	color: #0099e6;
+	color: #ff8a00;
 }
 
 a:active {
-	color: #0077b3;
+	color: #ff8a00;
 }
 
 html .heading-primary,
@@ -2847,7 +2847,7 @@ html[dir="rtl"] #header .tip-light:before {
 
 @media (min-width: 992px) {
 	#header .header-nav-main nav > ul > li > a {
-		color: #0088cc;
+		color: #ff8a00;
 	}
 
 	#header .header-nav-main nav > ul > li > a.dropdown-toggle:after {
