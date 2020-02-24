@@ -181,7 +181,7 @@ tr:nth-child(odd) {
                                                 class="caret"></span></button>
                                         <ul class="dropdown-menu">
                                             <li><a href='<?php echo 'program_Category_edit.php?id='.$node_id?>'>Edit</a></li>
-                                            <li><a class="res_del" href="">Delete</a></li>
+                                            
                                         </ul>
                                     </div>
                                 </td>
