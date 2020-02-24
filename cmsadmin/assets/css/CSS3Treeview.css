@@ -1,0 +1,134 @@
+.acidjs-css3-treeview,
+.acidjs-css3-treeview *
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-left:5px;
+}
+
+.acidjs-css3-treeview label[for]::before,
+.acidjs-css3-treeview label span::before
+{
+  /*  content: "\25b6" !important;*/
+    display: inline-block !important;
+    margin: 2px 0 0 !important;
+    width: 15px !important;
+    height: 15px !important;
+    vertical-align: top !important;
+    text-align: center !important;
+    color: #e74c3c !important;
+    font-size: 20px !important;
+    line-height: 13px !important;
+    width:200px;
+}
+.acidjs-css3-treeview li ul
+{
+    margin: 0 0 0 22px !important;
+}
+
+.acidjs-css3-treeview *
+{
+   /* vertical-align: middle !important;*/
+}
+
+.acidjs-css3-treeview
+{
+    font: normal 25px/30px "Segoe UI", Arial, Sans-serif !important;
+}
+
+.acidjs-css3-treeview li
+{
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    user-select: none !important;
+}
+/*
+.acidjs-css3-treeview input[type="radio"]
+{
+    display: none !important;
+}
+*/
+.acidjs-css3-treeview label
+{
+    cursor: pointer !important;
+    display:inline !important;
+}
+
+.acidjs-css3-treeview label[for]::before
+{
+    -webkit-transform: translatex(-24px) !important;
+    -moz-transform: translatex(-24px) !important;
+    -ms-transform: translatex(-24px) !important;
+    -o-transform: translatex(-24px) !important;
+    transform: translatex(-30px) !important;
+}
+
+.acidjs-css3-treeview label span::before
+{
+    -webkit-transform: translatex(16px) !important;
+    -moz-transform: translatex(16px) !important;
+    -ms-transform: translatex(16px) !important;
+    -o-transform: translatex(16px) !important;
+    transform: translatex(16px) !important;
+}
+/*
+.acidjs-css3-treeview input[type="radio"][id]:checked ~ label[for]::before
+{
+    content: "\25bc" !important;
+}
+
+.acidjs-css3-treeview input[type="radio"][id]:not(:checked) ~ ul
+{
+    display: none !important;
+}
+*/
+#news-node-form .field-name-field-category .chosen-container-single{
+width:900px !important;
+}
+#photo-story-node-form .field-name-field-category .chosen-container-single, #photo-story-node-form  .form-item-field-category-und{
+width:900px !important;
+}
+#photo-story-node-form  #magical-modal-link{margin-top:-57px !important;}
+.acidjs-css3-treeview label:not([for])
+{
+    margin: 0 0px 0 0 !important;
+}
+#abhiabhi-node-form .field-name-field-category .chosen-container-single, #abhiabhi-node-form  .form-item-field-category-und{
+width:900px !important;
+}
+#abhiabhi-node-form  #magical-modal-link{margin-top:-57px !important;}
+
+#gallery-node-form .field-name-field-category .chosen-container-single, #gallery-node-form  .form-item-field-category-und{
+width:900px !important;
+}
+#gallery-node-form  #magical-modal-link{margin-top:-57px !important;}
+
+ #elastic_search_listing_form #magical-modal-link{
+float: none !important;
+    left: 341px;
+    margin-top: 0 !important;
+    position: relative;
+    top: -110px; 
+ }
+#magical-modal-link a{color:#fff !important;}
+
+.acidjs-css3-treeview label:not([for])
+{
+    margin: 0 0px 0 0 !important;
+}
+
+.acidjs-css3-treeview label span::before
+{
+    content: "" !important;
+    border: solid 1px #1375b3 !important;
+    color: #1375b3 !important;
+    opacity: .50 !important;
+}
+
+.acidjs-css3-treeview label input:checked + span::before
+{
+    content: "\2714" !important;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .25) inset !important;
+    opacity: 1 !important;
+}

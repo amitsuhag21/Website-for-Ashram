@@ -20,10 +20,11 @@ include_once 'config/database.php';
         <link rel="stylesheet" href="assets/select2.css?v=1.3" />
         <link rel="stylesheet" href="assets/matrix-style.css?v=1.3" />
         <link rel="stylesheet" href="assets/matrix-media.css?v=1.3" />
+        
         <!--<link rel="stylesheet" href="" />-->
         <link href="assets/font-awesome.css?v=1.3" rel="stylesheet" />
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/style.css" />
         <script>var BASEJSURL = "http://localhost/";</script>
     </head>
     <body>  
