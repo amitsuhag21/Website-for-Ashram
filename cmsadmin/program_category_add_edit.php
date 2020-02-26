@@ -3,33 +3,33 @@
 <?php include_once 'config/database.php'; ?>
 <?php include_once 'templates/sidebar.php';  ?>
 <?php
-$id = trim($_GET['id']);
-if (isset($_GET['id']) && !empty($_GET['id'])) {
+$action = $_GET['action'];
+$name='';
+$language='';
+if($_GET['action'] = 'edit' && isset($_GET['id'])){
     $id = trim($_GET['id']);
-    $name ='';
     $language ='';
     if (!empty($id)) {
         $sql = "Select * from   tb_od_programcategory where categoryid=$id";
         $result = mysqli_query($link, $sql);
-        while ($row = mysqli_fetch_assoc($result)) {
-             $name = $row['categoryname'];
-             $language = $row['language'];
-        }
+        $output = mysqli_fetch_assoc($result);
     } 
-}else {
-    header("Location: program_category_edit.php?msg=0&id=$id");
 }
+$language  = (isset($output['language'])&& !empty($output['language']))?$output['language']:'';
+$name  = (isset($output['categoryname'])&& !empty($output['categoryname']))?$output['categoryname']:'';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = trim($_GET['id']);
     $name = trim($_POST['name']);
     $language = trim($_POST['language']);
-    if (!empty($name)) {  
-        $sqlUpd = "UPDATE tb_od_programcategory SET categoryname= '$name' ,language= '$language' WHERE categoryid=$id";
-        mysqli_query($link, $sqlUpd);
-        header("Location: program_category_edit.php?msg=1&id=$id");
-    } else {
-        header("Location: program_category_edit.php?msg=0&id=$id");
-    }
+    if($_POST['action'] == 'add'){
+        $sql = "INSERT INTO tb_od_programcategory (categoryname, language, status)
+        VALUES ('" . $name . "','" . $language . "', 1)";
+    }else{
+        $id = trim($_GET['id']);
+        $sql= "UPDATE tb_od_programcategory SET categoryname= '$name' ,language= '$language' WHERE categoryid=$id";
+
+    } 
+    mysqli_query($link, $sql);
+    header("Location: program_category_add_edit.php?msg=1&id=$id");
 }
 
 
@@ -71,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <form action="#" method="post" class="form-horizontal form-group-lg" accept-charset="utf-8"
                         enctype='multipart/form-data' name="form" id="form">
+                        <input type="hidden" name="action" id="action" value="<?php echo $action ?>" />
 
                         <div class="control-group">
                             <label class="control-label"><strong>English Name * :</strong></label>
@@ -84,10 +85,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label class="control-label"><strong>Language *:</strong></label>
                             <div class="controls">
                                 <select id="language" name="language">
-                                    <option value="eng" <?php echo ($language == "eng") ? "selected" : "" ?>>
-                                        English</option>
-                                    <option value="hin" <?php echo ($language == "hin") ? "selected" : "" ?>>
-                                        Hindi</option>
+                                    <?php 
+                                    foreach($lang_config as $k=>$v){
+                                        ?>
+                                    <option value="<?php echo $v?>" <?php echo ($v == $language) ? "selected" : "" ?>>
+                                        <?php echo $k;?> </option>
+                                    <?php    }
+                                    ?>
+
                                 </select>
                             </div>
                         </div>

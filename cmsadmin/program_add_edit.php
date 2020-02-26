@@ -136,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
 
                         <div class="control-group">
-                            <label class="control-label"><strong>Long Description* :</strong></label>
+                            <label class="control-label"><strong>News Body* :</strong></label>
                             <div class="controls">
                                 <textarea name="details" rows="8"
                                     cols="60"><?php echo htmlspecialchars( $longdescription ); ?></textarea>

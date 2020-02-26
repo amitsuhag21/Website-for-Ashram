@@ -105,7 +105,7 @@ tr:nth-child(odd) {
     <div class="container-fluid">
         <hr>
         <div class="row-fluid text-right"><button class="btn btn-primary"
-                onclick="document.location.href = 'program_category_add.php'"><a href="program_category_add.php"
+                onclick="document.location.href = 'program_category_add_edit.php'"><a href="<?php echo 'program_category_add_edit.php?action=add&v='.rand(1000000000,100000000000)?>"
                     style="color:#fff">Add Category</a></button></div>
 
         <div class="row-fluid">
@@ -175,15 +175,12 @@ tr:nth-child(odd) {
                                         }
                                         ?>
 
-                                <td class="center">
-                                    <div class="btn-group"><button data-toggle="dropdown"
-                                            class="btn btn-primary dropdown-toggle">Action <span
-                                                class="caret"></span></button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href='<?php echo 'program_Category_edit.php?id='.$node_id?>'>Edit</a></li>
-                                          <!--  <li><a class="res_del" href="">Delete</a></li>-->
-                                        </ul>
-                                    </div>
+<td class="center">
+                                    <div class="btn-group"><button
+                                            class="btn "><a href='<?php echo 'program_category_add_edit.php?action=edit&id='.$node_id?>'> Edit <a> <span
+                                                ></span></button>
+                                            <li><a href='<?php echo 'program_category_add_edit.php?action=edit&id='.$node_id?>'>Edit</a></li>
+                                       </div>
                                 </td>
                             </tr>
                             </tbody>
