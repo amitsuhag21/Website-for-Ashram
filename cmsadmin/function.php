@@ -13,3 +13,14 @@ if ($getdata['tbl'] == 'tb_od_programcategory' && !empty($getdata['catid'])) {
         return json_encode(array("id" => $getdata['catid'], "status" =>(string) $status));
     }
 }
+if ($getdata['tbl'] == 'tb_od_program' && !empty($getdata['id'])) {
+    $sql = 'Select * from   tb_od_program where programid='.$getdata['id'];
+    $id =(int)$getdata['id'];
+    $result = mysqli_query($link, $sql);
+    while ($row = mysqli_fetch_assoc($result)) {
+        $status= (($row['status']==1))?0:1;
+       $sqlUpd = "UPDATE tb_od_program SET status= $status WHERE programid=$id";
+        mysqli_query($link, $sqlUpd);
+        return json_encode(array("id" => $getdata['catid'], "status" =>(string) $status));
+    }
+}

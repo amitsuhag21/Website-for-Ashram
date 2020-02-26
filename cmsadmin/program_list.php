@@ -16,7 +16,7 @@ else {
 };   
 
 $start_from = ($pn-1) * $limit;   
-$sql = "Select * from   tb_od_programcategory where 1 order by categoryid desc LIMIT $start_from, $limit ";
+$sql = "Select * from   tb_od_program where 1 order by programid desc LIMIT $start_from, $limit ";
 $result = mysqli_query($link, $sql);
 
 ?>
@@ -99,14 +99,14 @@ tr:nth-child(odd) {
 <div id="content">
     <div id="content-header">
         <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a
-                href="#" class="current">Category Listing</a> </div>
-        <h1>Program Category Listing</h1>
+                href="#" class="current"> Listing</a> </div>
+        <h1>Program Listing</h1>
     </div>
     <div class="container-fluid">
         <hr>
         <div class="row-fluid text-right"><button class="btn btn-primary"
-                onclick="document.location.href = 'program_category_add.php'"><a href="program_category_add.php"
-                    style="color:#fff">Add Category</a></button></div>
+                onclick="document.location.href = 'program_add_edit.php'"><a href="<?php echo 'program_add_edit.php?action=add&v='.rand(1000000000,100000000000)?>"
+                    style="color:#fff">Add Program</a></button></div>
 
         <div class="row-fluid">
             <div class="span12">
@@ -129,7 +129,7 @@ tr:nth-child(odd) {
                 </div>-->
                 <div class="widget-box">
                     <div class="widget-title"> <span class="icon" id="filtericon"><i class="fa fa-th"></i></span>
-                        <h5>Category Listing</h5>
+                        <h5>Listing</h5>
                     </div>
                     <div class="widget-content nopadding">
                         <table class="table table-bordered data-table">
@@ -137,7 +137,7 @@ tr:nth-child(odd) {
 
                                 <tr>
                                     <th>S.no</th>
-                                    <th>Category Name</th>
+                                    <th>Name</th>
                                     <th>Language</th>
                                     <th>status</th>
                                     <th>Action</th>
@@ -151,13 +151,13 @@ tr:nth-child(odd) {
 
                             <tr class="gradeX">
                                 <td><?php echo $i ?></td>
-                                <td><strong><?php echo $row['categoryname']; ?></strong></td>
+                                <td><strong><?php echo $row['programname']; ?></strong></td>
                                 <td><strong><?php echo $row['language']; ?></strong></td>
                                 <?php 
-                                 $node_id = $row['categoryid'];
+                                 $node_id = $row['programid'];
                                         if ($row['status'] == 1) {
                                       echo       $output = '<td id="published' . $node_id . '"> <div class="onoffswitch">
-        <input type="checkbox" autocomplete="off" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch' . $node_id . '" checked onclick="updateBudgetitemStatus(\'' . '' . 'function.php?&tbl=tb_od_programcategory&catid=' . $node_id . '\')">
+        <input type="checkbox" autocomplete="off" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch' . $node_id . '" checked onclick="updateBudgetitemStatus(\'' . '' . 'function.php?&tbl=tb_od_program&id=' . $node_id . '\')">
         <label class="onoffswitch-label" for="myonoffswitch' . $node_id . '">
             <span class="onoffswitch-inner"></span>
             <span class="onoffswitch-switch"></span>
@@ -165,7 +165,7 @@ tr:nth-child(odd) {
     </div></td>';
                                         } else {
                                       echo       $output = '<td id="published' . $node_id . '"> <div class="onoffswitch">
-        <input type="checkbox" autocomplete="off" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch' . $node_id . '" onclick="updateBudgetitemStatus(\'' . '' . 'function.php?&tbl=tb_od_programcategory&catid=' . $node_id . '\')">
+        <input type="checkbox" autocomplete="off" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch' . $node_id . '" onclick="updateBudgetitemStatus(\'' . '' . 'function.php?&tbl=tb_od_program&id=' . $node_id . '\')">
         <label class="onoffswitch-label" for="myonoffswitch' . $node_id . '">
             <span class="onoffswitch-inner"></span>
             <span class="onoffswitch-switch"></span>
@@ -176,14 +176,11 @@ tr:nth-child(odd) {
                                         ?>
 
                                 <td class="center">
-                                    <div class="btn-group"><button data-toggle="dropdown"
-                                            class="btn btn-primary dropdown-toggle">Action <span
-                                                class="caret"></span></button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href='<?php echo 'program_Category_edit.php?id='.$node_id?>'>Edit</a></li>
-                                          <!--  <li><a class="res_del" href="">Delete</a></li>-->
-                                        </ul>
-                                    </div>
+                                    <div class="btn-group"><button
+                                            class="btn "><a href='<?php echo 'program_add_edit.php?action=edit&id='.$node_id?>'> Edit <a> <span
+                                                ></span></button>
+                                            <li><a href='<?php echo 'program_add_edit.php?action=edit&id='.$node_id?>'>Edit</a></li>
+                                       </div>
                                 </td>
                             </tr>
                             </tbody>
@@ -193,7 +190,7 @@ tr:nth-child(odd) {
 
                         <?php   
                         // Get the total number of records from our table "students".
-                        $sql1 = "SELECT COUNT(*) FROM tb_od_programcategory";   
+                        $sql1 = "SELECT COUNT(*) FROM tb_od_program";   
                         $rs_result =mysqli_query($link, $sql1);
                         $row1 = mysqli_fetch_row($rs_result);  
                         $total_pages =  $row1[0];    
@@ -207,40 +204,40 @@ $num_results_on_page = 10;
                         <?php if (ceil($total_pages / $num_results_on_page) > 0): ?>
                         <ul class="pagination">
                             <?php if ($page > 1): ?>
-                            <li class="prev"><a href="program_category.php?page=<?php echo $page-1 ?>">Prev</a></li>
+                            <li class="prev"><a href="program_list.php?page=<?php echo $page-1 ?>">Prev</a></li>
                             <?php endif; ?>
 
                             <?php if ($page > 3): ?>
-                            <li class="start"><a href="program_category.php?page=1">1</a></li>
+                            <li class="start"><a href="program_list.php?page=1">1</a></li>
                             <li class="dots">...</li>
                             <?php endif; ?>
 
                             <?php if ($page-2 > 0): ?><li class="page"><a
-                                    href="program_category.php?page=<?php echo $page-2 ?>"><?php echo $page-2 ?></a></li>
+                                    href="program_list.php?page=<?php echo $page-2 ?>"><?php echo $page-2 ?></a></li>
                             <?php endif; ?>
                             <?php if ($page-1 > 0): ?><li class="page"><a
-                                    href="program_category.php?page=<?php echo $page-1 ?>"><?php echo $page-1 ?></a></li>
+                                    href="program_list.php?page=<?php echo $page-1 ?>"><?php echo $page-1 ?></a></li>
                             <?php endif; ?>
 
                             <li class="currentpage"><a
-                                    href="program_category.php?page=<?php echo $page ?>"><?php echo $page ?></a></li>
+                                    href="program_list.php?page=<?php echo $page ?>"><?php echo $page ?></a></li>
 
                             <?php if ($page+1 < ceil($total_pages / $num_results_on_page)+1): ?><li class="page"><a
-                                    href="program_category.php?page=<?php echo $page+1 ?>"><?php echo $page+1 ?></a></li>
+                                    href="program_list.php?page=<?php echo $page+1 ?>"><?php echo $page+1 ?></a></li>
                             <?php endif; ?>
                             <?php if ($page+2 < ceil($total_pages / $num_results_on_page)+1): ?><li class="page"><a
-                                    href="program_category.php?page=<?php echo $page+2 ?>"><?php echo $page+2 ?></a></li>
+                                    href="program_list.php?page=<?php echo $page+2 ?>"><?php echo $page+2 ?></a></li>
                             <?php endif; ?>
 
                             <?php if ($page < ceil($total_pages / $num_results_on_page)-2): ?>
                             <li class="dots">...</li>
                             <li class="end"><a
-                                    href="program_category.php?page=<?php echo ceil($total_pages / $num_results_on_page) ?>"><?php echo ceil($total_pages / $num_results_on_page) ?></a>
+                                    href="program_list.php?page=<?php echo ceil($total_pages / $num_results_on_page) ?>"><?php echo ceil($total_pages / $num_results_on_page) ?></a>
                             </li>
                             <?php endif; ?>
 
                             <?php if ($page < ceil($total_pages / $num_results_on_page)): ?>
-                            <li class="next"><a href="program_category.php?page=<?php echo $page+1 ?>">Next</a></li>
+                            <li class="next"><a href="program_list.php?page=<?php echo $page+1 ?>">Next</a></li>
                             <?php endif; ?>
                         </ul>
                         <?php endif; ?>
