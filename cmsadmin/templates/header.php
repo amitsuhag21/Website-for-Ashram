@@ -11,20 +11,20 @@ include_once 'config/database.php';
         <title>OSHO CMS</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="assets/bootstrap.min.css?v=1.3" />
-        <link rel="stylesheet" href="assets/bootstrap-responsive.min.css?v=1.3" />
-        <link rel="stylesheet" href="assets/colorpicker.css?v=1.3" />
-        <link rel="stylesheet" href="assets/datepicker.css?v=1.3" />
-        <link rel="stylesheet" href="assets/jquery.datetimepicker.min.css?v=1.3" />
-        <link rel="stylesheet" href="assets/uniform.css?v=1.3" />
-        <link rel="stylesheet" href="assets/select2.css?v=1.3" />
-        <link rel="stylesheet" href="assets/matrix-style.css?v=1.3" />
-        <link rel="stylesheet" href="assets/matrix-media.css?v=1.3" />
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css?v=1.3" />
+        <link rel="stylesheet" href="assets/css/bootstrap-responsive.min.css?v=1.3" />
+        <link rel="stylesheet" href="assets/css/colorpicker.css?v=1.3" />
+        <link rel="stylesheet" href="assets/css/datepicker.css?v=1.3" />
+        <link rel="stylesheet" href="assets/css/jquery.datetimepicker.min.css?v=1.3" />
+        <link rel="stylesheet" href="assets/css/uniform.css?v=1.3" />
+        <link rel="stylesheet" href="assets/css/select2.css?v=1.3" />
+        <link rel="stylesheet" href="assets/css/matrix-style.css?v=1.3" />
+        <link rel="stylesheet" href="assets/css/matrix-media.css?v=1.3" />
         
         <!--<link rel="stylesheet" href="" />-->
         <link href="assets/font-awesome.css?v=1.3" rel="stylesheet" />
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="assets/style.css" />
+        <link rel="stylesheet" href=". /assets/style.css" />
         <script>var BASEJSURL = "http://localhost/";</script>
     </head>
     <body>  
@@ -45,5 +45,12 @@ include_once 'config/database.php';
                 </li>
             </ul>
         </div>
-       
+        <script type="text/javascript">
+var isFormChanged = false;
+$(document).ready(function() {
+    $('input').keydown(function() {
+        isFormChanged = true;
+    });
+});
+</script>
         <!--close-top-serch-->

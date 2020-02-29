@@ -136,25 +136,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
 
                         <div class="control-group">
-                            <label class="control-label"><strong>News Body* :</strong></label>
+                            <label class="control-label"><strong>Long Description* :</strong></label>
                             <div class="controls">
-                                <textarea name="details" rows="8"
-                                    cols="60"><?php echo htmlspecialchars( $longdescription ); ?></textarea>
-                                <script type="text/javascript">
-                                //<![CDATA[
-                                window.CKEDITOR_BASEPATH = './assets/ckeditor/';
-                                //]]>
-                                </script>
-                                <script type="text/javascript" src="./assets/ckeditor/ckeditor.js?t=B5GJ5GG"></script>
-                                <script type="text/javascript">
-                                //<![CDATA[
-                                CKEDITOR.replace('details', {
-                                    "language": "hn",
-                                    "width": "95%",
-                                    "height": "300px"
-                                });
-                                //]]>
-                                </script>-
+
+                                <script src="ckeditor/ckeditor.js" type="text/javascript"></script>
+                                </head>
+
+                                <body>
+
+                                    <!-- Editor -->
+                                    <textarea name="details" rows="8"
+                                        cols="60"><?php echo htmlspecialchars( $longdescription ); ?></textarea>
+
+                                    <!-- Script -->
+                                    <script type="text/javascript">
+                                    CKEDITOR.replace('details', {
+                                        height: 300,
+                                        filebrowserUploadUrl: "ajaxfile.php?type=file",
+                                        filebrowserImageUploadUrl: "ajaxfile.php?type=image",
+
+                                    });
+                                    </script>
                             </div>
                             <div class="form-actions">
                                 <button onclick="return validate()" type="submit" class="btn btn-primary" name="save"
