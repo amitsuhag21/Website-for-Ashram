@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     } 
     mysqli_query($link, $sql);
-    header("Location: program_category_add_edit.php?msg=1&id=$id");
+    header("Location: program_category_add_edit.php?action=add&msg=1");
 }
 
 

@@ -86,7 +86,7 @@ $status  = $_POST['status'];
                 </div>
                 <?php
                 if (isset($_GET['msg']) && $_GET['msg'] == '1') {
-                    echo '<div id="form_errors">Successfuly Updated/Added</div>';
+                    echo '<div id="form_errors">Successfuly Updated</div>';
                 }
                 if (isset($_GET['msg']) && $_GET['msg'] == '0') {
                     echo '<div id="form_errors">Unsuccess .Try again</div>';

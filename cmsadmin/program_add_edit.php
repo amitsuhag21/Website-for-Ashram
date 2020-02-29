@@ -35,9 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
      
        mysqli_query($link, $sql);
-        header("Location: program_list.php?msg=1");
+        header("Location: program_add_edit.php?action=add&msg=1");
     } else {
-        header("Location: program_list.php?msg=0");
+        header("Location: program_add_edit.php?action=add&msg=0");
     }
 }
 
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <?php
                 if (isset($_GET['msg']) && $_GET['msg'] == '1') {
-                    echo '<div id="form_errors">Successfuly added</div>';
+                    echo '<div id="form_errors">Successfuly Updated</div>';
                 }
                 if (isset($_GET['msg']) && $_GET['msg'] == '0') {
                     echo '<div id="form_errors">Unsuccess .Try again</div>';
