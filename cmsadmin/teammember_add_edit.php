@@ -16,6 +16,7 @@ $teammembername  = (isset($output['teammembername'])&& !empty($output['teammembe
 $iscoordinator = (isset($output['iscoordinator'])&& !empty($output['iscoordinator']))?$output['iscoordinator']:0;
 $iscentralcordinator  = (isset($output['iscentralcordinator'])&& !empty($output['iscentralcordinator']))?$output['iscentralcordinator']:0;
 $stateid  = (isset($output['stateid'])&& !empty($output['stateid']))?$output['stateid']:'';
+$language  = (isset($output['language'])&& !empty($output['language']))?$output['language']:'';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //echo "<PRE>";print_r($_POST);die;
@@ -28,13 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $language = trim($_POST['language']);
     if (!empty($teammembername)) {
         if($_POST['action'] == 'add'){
-          echo     $sql = "INSERT INTO tb_od_teammember(teammembername , iscoordinator,iscentralcordinator,stateid,countryid,language,status)
+               $sql = "INSERT INTO tb_od_teammember(teammembername , iscoordinator,iscentralcordinator,stateid,countryid,language,status)
             VALUES ('" . $teammembername . "','" . $iscoordinator . "', '" . $iscentralcordinator . "', '" . $stateid . "','" . $countryid . "','" . $language . "',1)";
         }else{
             $id = $_GET['id'];
-          echo   $sql= "UPDATE tb_od_teammember SET teammembername='$teammembername',iscoordinator='$iscoordinator', stateid= '$stateid' ,countryid= '$countryid',language='$language' WHERE teammemberid=$id";
+             $sql= "UPDATE tb_od_teammember SET teammembername='$teammembername',iscoordinator='$iscoordinator', stateid= '$stateid' ,countryid= '$countryid',language='$language' WHERE teammemberid=$id";
         }
-     
        mysqli_query($link, $sql);
         header("Location: teammember_add_edit.php?action=add&msg=1");
     } else {
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div id="content-header">
         <div id="breadcrumb"> <a href="teammember_add_edit.php" title="Go to Home" class="tip-bottom"><i
                     class="icon-home"></i>
-                Listing</a><a href="#">Add Team member</a></div>
+                Listing</a><a href="#">Add Team Memeber</a></div>
     </div>
     <!--End-breadcrumbs-->
 
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="row-fluid">
             <div class="widget-box">
                 <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-                    <h4>Add Team member</h4>
+                    <h4>Add Team Member</h4>
                 </div>
                 <?php
                 if (isset($_GET['msg']) && $_GET['msg'] == '1') {
@@ -106,7 +106,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <label class="span2 m-wrap">
                                     <div class="checker" id="uniform-undefined"><span><input value="1"
                                                 <?php echo (!empty($iscentralcordinator) && $iscentralcordinator==1) ? "checked" : ""?>
-                                                name="iscentralcordinator" type="checkbox"></span></div>is Team Member
+                                                name="iscentralcordinator" type="checkbox"></span></div>is Central
+                                    coordinator
                                 </label>
                             </div>
                         </div>
