@@ -3,7 +3,6 @@
 <?php include_once 'config/database.php'; ?>
 <?php include_once 'templates/sidebar.php';  ?>
 <?php
-
 $action = $_GET['action'];
 if($_GET['action'] = 'edit' && isset($_GET['id'])){
   $id = $_GET['id'];

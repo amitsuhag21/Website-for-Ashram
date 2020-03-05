@@ -1,5 +1,4 @@
 <?php
-
 // Parameters
 $type = $_GET['type'];
 $CKEditor = $_GET['CKEditor'];
@@ -13,10 +12,13 @@ if($type == 'image'){
 
     // Get image file extension
     $file_extension = pathinfo($_FILES["upload"]["name"], PATHINFO_EXTENSION);
-
+    $imgname = $_FILES["upload"]["name"];
+    $imgname = str_replace('.jpg','_'.time().'.jpg',$imgname);
+    $imgname = str_replace('.png','_'.time().'.png',$imgname);
+    $imgname = str_replace('.jpeg','_'.time().'.jpeg',$imgname);
     if(in_array(strtolower($file_extension),$allowed_extension)){
        
-       if(move_uploaded_file($_FILES['upload']['tmp_name'], "uploads/".$_FILES['upload']['name'])){
+       if(move_uploaded_file($_FILES['upload']['tmp_name'], "uploads/".$imgname)){
           // File path
           if(isset($_SERVER['HTTPS'])){
              $protocol = ($_SERVER['HTTPS'] && $_SERVER['HTTPS'] != "off") ? "https" : "http";
@@ -25,7 +27,7 @@ if($type == 'image'){
              $protocol = 'http';
           }
           //$url = $protocol."://".$_SERVER['SERVER_NAME'] ."/ckeditor_fileupload/uploads/".$_FILES['upload']['name'];
-        $url = "uploads/".$_FILES['upload']['name'];
+        $url = "uploads/".$imgname;
 
           echo '<script>window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$url.'", "'.$message.'")</script>';
        }

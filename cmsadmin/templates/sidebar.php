@@ -12,6 +12,7 @@ $uri_segments = explode('/', $uri_path);
          <li class="<?php echo (isset($uri_segments[2]) && ($uri_segments[2] == 'dhyankendra_list.php'|| $uri_segments[2] == 'dhyankendra_add_edit.php')) ? 'active' : '' ?>"><a href=<?php echo ROOT . "dhyankendra_list.php"; ?>><i class=""></i> <span>Dhyan kendra</span></a> </li> 
          <li class="<?php echo (isset($uri_segments[2]) && ($uri_segments[2] == 'teammember_list.php'|| $uri_segments[2] == 'teammember_add_edit.php')) ? 'active' : '' ?>"><a href=<?php echo ROOT . "teammember_list.php"; ?>><i class=""></i> <span>Team member</span></a> </li> 
          <li class="<?php echo (isset($uri_segments[2]) && ($uri_segments[2] == 'guru_list.php'|| $uri_segments[2] == 'guru_add_edit.php')) ? 'active' : '' ?>"><a href=<?php echo ROOT . "guru_list.php"; ?>><i class=""></i> <span>Guru's</span></a> </li> 
+         <li class="<?php echo (isset($uri_segments[2]) && ($uri_segments[2] == 'schedule_list.php'|| $uri_segments[2] == 'schedule_add_edit.php')) ? 'active' : '' ?>"><a href=<?php echo ROOT . "schedule_list.php"; ?>><i class=""></i> <span>Schedule</span></a> </li> 
 
     </ul>
 </div><!--main-container-part-->

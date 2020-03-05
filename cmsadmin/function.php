@@ -59,3 +59,15 @@ if ($getdata['tbl'] == 'tb_od_gurus' && !empty($getdata['id'])) {
         return json_encode(array("id" => $getdata['catid'], "status" =>(string) $status));
     }
 }
+
+if ($getdata['tbl'] == 'tb_od_programschedule' && !empty($getdata['id'])) {
+    $sql = 'Select * from   tb_od_programschedule where scheduleid='.$getdata['id'];
+    $id =(int)$getdata['id'];
+    $result = mysqli_query($link, $sql);
+    while ($row = mysqli_fetch_assoc($result)) {
+        $status= (($row['status']==1))?0:1;
+       $sqlUpd = "UPDATE tb_od_programschedule SET status= $status WHERE scheduleid=$id";
+        mysqli_query($link, $sqlUpd);
+        return json_encode(array("id" => $getdata['catid'], "status" =>(string) $status));
+    }
+}
