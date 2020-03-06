@@ -105,7 +105,7 @@ tr:nth-child(odd) {
     <div class="container-fluid">
         <hr>
         <div class="row-fluid text-right"><button class="btn btn-primary"
-                onclick="document.location.href = 'schedule_add_edit.php'"><a href="<?php echo 'schedule_add_edit.php?action=add&v='.rand(1000000000,100000000000)?>"
+                onclick="document.location.href = 'schedule_add_edit.php'"><a href="<?php echo 'schedule_add_edit.php?action=add&v='.rand(100000,100000000000)?>"
                     style="color:#fff">Add Schedule</a></button></div>
 
         <div class="row-fluid">
@@ -139,8 +139,9 @@ tr:nth-child(odd) {
                                     <th>S.no</th>
                                     <th>Program Name</th>
                                     <th>Dhyankendra Name</th>
+                                    <th>Start date </th>
+                                    <th>End Date</th>
                                     <th>Language</th>
-                                    <th>Duration</th>
                                     <th>status</th>
                                     <th>Action</th>
                                 </tr>
@@ -168,8 +169,9 @@ tr:nth-child(odd) {
                                 <td><?php echo $i ?></td>
                                 <td><strong><?php echo $prName; ?></strong></td>
                                 <td><strong><?php echo $dkName; ?></strong></td>
+                                <td><strong><?php echo $row['start_date']; ?></strong></td>
+                                <td><strong><?php echo $row['end_date']; ?></strong></td>
                                 <td><strong><?php echo $row['language']; ?></strong></td>
-                                <td><strong><?php echo $row['duration']; ?></strong></td>
                                 <?php 
                                  $node_id = $row['scheduleid'];
                                         if ($row['status'] == 1) {

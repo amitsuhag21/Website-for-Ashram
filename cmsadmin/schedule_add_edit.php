@@ -13,6 +13,8 @@ if($_GET['action'] = 'edit' && isset($_GET['id'])){
 $programid = (isset($output['programid'])&& !empty($output['programid']))?$output['programid']:'';
 $dhyankendraid = (isset($output['dhyankendraid'])&& !empty($output['dhyankendraid']))?$output['dhyankendraid']:'';
 $level  = (isset($output['level'])&& !empty($output['level']))?$output['level']:'';
+$start_date  = (isset($output['start_date'])&& !empty($output['start_date']))?$output['start_date']:'';
+$end_date  = (isset($output['end_date'])&& !empty($output['end_date']))?$output['end_date']:'';
 $duration  = (isset($output['duration'])&& !empty($output['duration']))?$output['duration']:'';
 $eligibility  = (isset($output['eligibility'])&& !empty($output['eligibility']))?$output['eligibility']:'';
 $guidelines  = (isset($output['guidelines'])&& !empty($output['guidelines']))?$output['guidelines']:'';
@@ -20,25 +22,30 @@ $comments  = (isset($output['comments'])&& !empty($output['comments']))?$output[
 $language  = (isset($output['language'])&& !empty($output['language']))?$output['language']:'';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   // echo "<PRE>";print_r($_POST);die; 
     $programid = (isset($_POST['programid'])&& !empty($_POST['programid']))?$_POST['programid']:'';
     $dhyankendraid = (isset($_POST['dhyankendraid'])&& !empty($_POST['dhyankendraid']))?$_POST['dhyankendraid']:'';
     $level  = (isset($_POST['level'])&& !empty($_POST['level']))?$_POST['level']:'';
+    $start_date  = (isset($_POST['start_date'])&& !empty($_POST['start_date']))?$_POST['start_date']:'';
+    $end_date  = (isset($_POST['end_date'])&& !empty($_POST['end_date']))?$_POST['end_date']:'';
     $duration  = (isset($_POST['duration'])&& !empty($_POST['duration']))?$_POST['duration']:'';
     $eligibility  = (isset($_POST['eligibility'])&& !empty($_POST['eligibility']))?$_POST['eligibility']:'';
     $guidelines  = (isset($_POST['guidelines'])&& !empty($_POST['guidelines']))?$_POST['guidelines']:'';
     $comments  = (isset($_POST['comments'])&& !empty($_POST['comments']))?$_POST['comments']:'';
     $language  = (isset($_POST['language'])&& !empty($_POST['language']))?$_POST['language']:'';
-    $duration= date( "Y-m-d", strtotime($duration) );
+    $start_date= date( "Y-m-d", strtotime($start_date) );
+    $end_date= date( "Y-m-d", strtotime($end_date) );
 
     if (!empty($programid)) {
       //echo "<PRE>";  print_r($_POST);die;
         if($_POST['action'] == 'add'){
-              $sql = "INSERT INTO tb_od_programschedule(programid , dhyankendraid,level,duration,eligibility,guidelines,comments,language,status)
-            VALUES ('" . $programid . "','" . $dhyankendraid . "', '" . $level . "', '" . $duration . "','" . $eligibility . "','" . $guidelines . "','" . $comments . "','" . $language . "',1)";
+              $sql = "INSERT INTO tb_od_programschedule(programid , dhyankendraid,level,start_date,end_date,duration,eligibility,guidelines,comments,language,status)
+            VALUES ('" . $programid . "','" . $dhyankendraid . "', '" . $level . "', '" . $start_date . "', '" . $end_date . "', '" . $duration . "','" . $eligibility . "','" . $guidelines . "','" . $comments . "','" . $language . "',1)";
         }else{
             $id = $_GET['id'];
-             $sql= "UPDATE tb_od_programschedule SET programid='$programid',dhyankendraid='$dhyankendraid',level='$level', duration= '$duration' ,eligibility= '$eligibility',guidelines='$guidelines',comments='$comments',language='$language' WHERE scheduleid=$id";
+             $sql= "UPDATE tb_od_programschedule SET programid='$programid',dhyankendraid='$dhyankendraid',start_date='$start_date',end_date='$end_date',level='$level', duration= '$duration' ,eligibility= '$eligibility',guidelines='$guidelines',comments='$comments',language='$language' WHERE scheduleid=$id";
         }
+        
          mysqli_query($link, $sql);
         header("Location: schedule_add_edit.php?action=add&msg=1");
     } else {
@@ -137,15 +144,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label"><strong>Duration * :</strong></label>
+                            <label class="control-label"><strong>Start Date * :</strong></label>
                             <div class="form-group span2 m-wrap input-append date datepicker" data-date="12-02-2012">
 
-                                <input placeholder="Select Date" data-date-format="<?php echo date("Y-m-d"); ?>"
-                                    style="height:30px" class="span11  m-wrap" type="text" name="duration" id="duration"
-                                    value="<?php echo $duration?>">
+                                <input placeholder="Select start Date" data-date-format="<?php echo date("Y-m-d"); ?>"
+                                    style="height:30px" class="span11  m-wrap" type="text" name="start_date"
+                                    id="start_date" value="<?php echo $start_date?>">
                                 <span class="add-on" style="height:20px"><i class="fa fa-th"></i></span>
                             </div>
 
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label"><strong>End Date * :</strong></label>
+                            <div class="form-group span2 m-wrap input-append date datepicker" data-date="12-02-2012">
+
+                                <input placeholder="Select end Date" data-date-format="<?php echo date("Y-m-d"); ?>"
+                                    style="height:30px" class="span11  m-wrap" type="text" name="end_date" id="end_date"
+                                    value="<?php echo $end_date?>">
+                                <span class="add-on" style="height:20px"><i class="fa fa-th"></i></span>
+                            </div>
+
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label"><strong>Duration * :</strong></label>
+                            <div class="controls">
+                                <input class="span11" style="height:35px" placeholder="Enter Duration" type="number"
+                                    min='0' name="duration" id="duration" required value="<?php echo $duration?>">
+                            </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label"><strong>Eligibility* :</strong></label>
@@ -254,6 +279,13 @@ function validate() {
     var dhyankendraid = $("#dhyankendraid").val();
     var duration = $("#duration").val();
     var level = $("#level").val();
+    var startDate = new Date($('#start_date').val());
+    var endDate = new Date($('#end_date').val());
+
+    if (startDate > endDate) {
+        alert('Start date should be less than end date ');
+        return false;
+    }
 
     if (programid.trim() == '') {
         alert('Kindly enter Program Name');
@@ -267,7 +299,7 @@ function validate() {
         alert('Kindly enter duration ');
         return false;
     }
-  
+
     if (level.trim() == '') {
         alert('Kindly enter level');
         return false;
