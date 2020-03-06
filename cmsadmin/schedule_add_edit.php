@@ -169,7 +169,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label class="control-label"><strong>Duration * :</strong></label>
                             <div class="controls">
                                 <input class="span11" style="height:35px" placeholder="Enter Duration" type="number"
-                                    min='0' name="duration" id="duration" required value="<?php echo $duration?>">
+                                    min='0' max="5" name="duration" id="duration" required
+                                    value="<?php echo $duration?>">
                             </div>
                         </div>
                         <div class="control-group">
@@ -279,8 +280,23 @@ function validate() {
     var dhyankendraid = $("#dhyankendraid").val();
     var duration = $("#duration").val();
     var level = $("#level").val();
+    var start_date = $('#start_date').val();
+    var end_date = $('#end_date').val();
     var startDate = new Date($('#start_date').val());
     var endDate = new Date($('#end_date').val());
+
+    if (level.trim() == '') {
+        alert('Kindly enter level');
+        return false;
+    }
+    if (start_date.trim() == '') {
+        alert('Kindly enter start date');
+        return false;
+    }
+    if (end_date.trim() == '') {
+        alert('Kindly enter end date');
+        return false;
+    }
 
     if (startDate > endDate) {
         alert('Start date should be less than end date ');
@@ -300,10 +316,7 @@ function validate() {
         return false;
     }
 
-    if (level.trim() == '') {
-        alert('Kindly enter level');
-        return false;
-    }
+   
     if (CKEDITOR.instances['eligibility'].getData() == "") {
         alert('Kindly enter eligibility');
         return false;
