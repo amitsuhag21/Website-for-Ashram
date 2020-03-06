@@ -166,9 +166,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         </div>
                         <div class="control-group">
-                            <label class="control-label"><strong>Duration * :</strong></label>
+                            <label class="control-label"><strong>Duration * (max 10) :</strong></label>
                             <div class="controls">
-                                <input class="span11" style="height:35px" placeholder="Enter Duration" type="number"
+                                <input class="span11" style="height:35px" placeholder="Enter Duration( max 10)" type="number"
                                     min='0' max="5" name="duration" id="duration" required
                                     value="<?php echo $duration?>">
                             </div>
