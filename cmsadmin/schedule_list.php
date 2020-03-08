@@ -15,8 +15,25 @@ else {
   $pn=1;  
 };   
 
-$start_from = ($pn-1) * $limit;   
-$sql = "Select * from   tb_od_programschedule where 1 order by scheduleid desc LIMIT $start_from, $limit ";
+$start_from = ($pn-1) * $limit; 
+if(!empty($_GET)){ 
+    if(isset($_GET['programid']) && !empty($_GET['programid'] && $_GET['programid'] !== '0' )){
+        $where = 'programid='.$_GET['programid'];
+    }else{
+        $where = "programid like '%%'"; 
+    }
+    if(isset($_GET['month']) && !empty($_GET['month']) && $_GET['month'] !== '0' ){
+        $where .= ' and MONTH(start_date) = '.$_GET['month'];
+    }
+    if(isset($_GET['year']) && !empty($_GET['year']) && $_GET['year'] !== '0'){
+        $where .= ' and YEAR(start_date) = '.$_GET['year'];
+    }else{
+        $where .= " and YEAR(start_date) like '%%'";
+    }
+}else{
+    $where ='1';
+}
+ $sql = "Select * from   tb_od_programschedule where $where order by scheduleid desc LIMIT $start_from, $limit ";
 $result = mysqli_query($link, $sql);
 
 ?>
@@ -105,28 +122,95 @@ tr:nth-child(odd) {
     <div class="container-fluid">
         <hr>
         <div class="row-fluid text-right"><button class="btn btn-primary"
-                onclick="document.location.href = 'schedule_add_edit.php'"><a href="<?php echo 'schedule_add_edit.php?action=add&v='.rand(100000,100000000000)?>"
+                onclick="document.location.href = 'schedule_add_edit.php'"><a
+                    href="<?php echo 'schedule_add_edit.php?action=add&v='.rand(100000,100000000000)?>"
                     style="color:#fff">Add Schedule</a></button></div>
 
         <div class="row-fluid">
             <div class="span12">
-            <!--    <div class="control-group">
+                <div class="control-group">
 
                     <fieldset class="scheduler-border span12"
                         style="border: 2px solid #f0f0f0;padding:0 18px 0 0;margin: 5px 0">
+                        <?php 
+                        $sqlcat = "Select * from   tb_od_program where status=1 order by programid desc";
+                        $resultcat = mysqli_query($link, $sqlcat);
+                        ?>
+
                         <div class="span2 m-wrap">
-                            <label><strong>Name :</strong></label>
-                            <input class="span11 m-wrap" type="text" placeholder="Program Category Name"
-                                name="filter_name" id="filter_name" value="" style="height:35px;width:100%">
+                            <label><strong>Program Name</strong></label>
+                            <div class="controls">
+                                <select id="programid" name="programid">
+                                    <option value="0" <?php echo ($_GET['programid'] == '0') ? "selected" : "" ?>>
+                                        None </option>
+                                    <?php 
+                                    if (mysqli_num_rows($resultcat) > 0) {
+                         while ($value = mysqli_fetch_assoc($resultcat)) {
+                            $programid = (isset($value['programid'])&& !empty($value['programid']))?$value['programid']:'';
+                             ?>
+                                    <option value="<?php echo $value['programid'];?>"
+                                        <?php echo (isset($_GET['programid']) && $programid == $_GET['programid']) ? "selected" : "" ?>>
+                                        <?php echo $value['programname'];?></option>
+                                    <?php }
+                        }?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="span2 m-wrap">
+                            <label><strong>Month</strong></label>
+                            <div class="controls">
+                                <select id="month" name="month">
+                                    <option value="0" <?php echo ($_GET['month'] == '0') ? "selected" : "" ?>>
+                                        None </option>
+                                    <option value="1" <?php echo ($_GET['month'] == '1') ? "selected" : "" ?>>
+                                        Jan </option>
+                                    <option value="2" <?php echo ($_GET['month'] == '2') ? "selected" : "" ?>>
+                                        Feb </option>
+                                    <option value="3" <?php echo ($_GET['month'] == '3') ? "selected" : "" ?>>
+                                        Mar </option>
+                                    <option value="4" <?php echo ($_GET['month'] == '4') ? "selected" : "" ?>>
+                                        Apr </option>
+                                    <option value="5" <?php echo ($_GET['month'] == '5') ? "selected" : "" ?>>
+                                        May </option>
+                                    <option value="6" <?php echo ($_GET['month'] == '6') ? "selected" : "" ?>>
+                                        Jun </option>
+                                    <option value="7" <?php echo ($_GET['month'] == '7') ? "selected" : "" ?>>
+                                        Jul </option>
+                                    <option value="8" <?php echo ($_GET['month'] == '8') ? "selected" : "" ?>>
+                                        Aug </option>
+                                    <option value="9" <?php echo ($_GET['month'] == '9') ? "selected" : "" ?>>
+                                        Sep </option>
+                                    <option value="10" <?php echo ($_GET['month'] == '10') ? "selected" : "" ?>>
+                                        Oct </option>
+                                    <option value="11" <?php echo ($_GET['month'] == '11') ? "selected" : "" ?>>
+                                        Nov </option>
+                                    <option value="12" <?php echo ($_GET['month'] == '12') ? "selected" : "" ?>>
+                                        Dec </option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="span2 m-wrap">
+                            <label><strong>Year</strong></label>
+                            <div class="controls">
+                                <select id="year" name="year">
+
+                                    <option value="2020" <?php echo ($_GET['year'] == '2020') ? "selected" : "" ?>>
+                                        2020 </option>
+                                    <option value="2021" <?php echo ($_GET['year'] == '2021') ? "selected" : "" ?>>
+                                        2021 </option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="span1 m-wrap" style="margin: 3px;">
                             <label>&nbsp;</label>
-                            <button class="btn btn-primary" id="filter_speaker" data-url="./">Search</button>
+                            <button class="btn btn-primary" onclick="return submitform()" id="filter_search"
+                                data-url="./">Search</button>
                         </div>
 
                     </fieldset>
-                </div>-->
+                </div>
                 <div class="widget-box">
                     <div class="widget-title"> <span class="icon" id="filtericon"><i class="fa fa-th"></i></span>
                         <h5>Listing</h5>
@@ -195,11 +279,13 @@ tr:nth-child(odd) {
                                         ?>
 
                                 <td class="center">
-                                    <div class="btn-group"><button
-                                            class="btn "><a href='<?php echo 'schedule_add_edit.php?action=edit&id='.$node_id?>'> Edit <a> <span
-                                                ></span></button>
-                                            <li><a href='<?php echo 'schedule_add_edit.php?action=edit&id='.$node_id?>'>Edit</a></li>
-                                       </div>
+                                    <div class="btn-group"><button class="btn "><a
+                                                href='<?php echo 'schedule_add_edit.php?action=edit&id='.$node_id?>'>
+                                                Edit <a> <span></span></button>
+                                        <li><a
+                                                href='<?php echo 'schedule_add_edit.php?action=edit&id='.$node_id?>'>Edit</a>
+                                        </li>
+                                    </div>
                                 </td>
                             </tr>
                             </tbody>
@@ -209,8 +295,8 @@ tr:nth-child(odd) {
 
                         <?php   
                         // Get the total number of records from our table "students".
-                        $sql1 = "SELECT COUNT(*) FROM tb_od_programschedule";   
-                        $rs_result =mysqli_query($link, $sql1);
+                        $sql1 = "Select COUNT(*) from   tb_od_programschedule where $where order by scheduleid desc LIMIT $start_from, $limit ";
+                         $rs_result =mysqli_query($link, $sql1);
                         $row1 = mysqli_fetch_row($rs_result);  
                         $total_pages =  $row1[0];    
 
@@ -261,7 +347,7 @@ $num_results_on_page = 10;
                         </ul>
                         <?php endif; ?>
 
-                      
+
 
                     </div>
                 </div>
@@ -281,12 +367,22 @@ $num_results_on_page = 10;
 }
 </style>
 <script type="text/javascript">
-      $("#filter_speaker").click(function () {
-        var filter_name = $("#filter_name").val();
-        var url = $(this).data('url') + "program_category?name=" + filter_name;
-        window.location.href = url;
+$("#filter_speaker").click(function() {
+    var filter_name = $("#filter_name").val();
+    var url = $(this).data('url') + "program_category?name=" + filter_name;
+    window.location.href = url;
 
-    });
+});
+
+function submitform() {
+    var programid = $("#programid").val();
+    var month = $("#month").val();
+    var year = $("#year").val();
+    var url = "schedule_list.php?programid=" + programid + "&month=" + month + "&year=" + year;
+    window.location.href = url;
+
+}
+
 function updateBudgetitemStatus(url) {
     $.get(url, successBudgetdata);
 }
