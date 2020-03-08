@@ -1,0 +1,25 @@
+<div id="faqcontente">	
+	<section class="toggle active">
+	    <label>{{question}}?</label>
+	    <p>{{answer}}</p>
+	</section>
+</div>
+
+
+<div id="faqcontent">	
+	<div class="card card-default">
+		<div class="card-header">
+			<h4 class="card-title m-0">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1_{{key}}" aria-expanded="true">
+					{{question}} ?
+				</a>
+			</h4>
+		</div>
+		<div id="collapse1_{{key}}" class="collapse" style="">
+			<div class="card-body">
+				<p>{{answer}}</p>
+			</div>
+		</div>
+	</div>
+
+</div>

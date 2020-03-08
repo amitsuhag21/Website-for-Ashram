@@ -1,0 +1,196 @@
+<div id="demoFragmnet" class="disBlock col-md-12 paddingNone">
+	<div id="featureItem_{{FeatureId}}" class="col-md-12 borderbtm">
+		<div id="featureNameHolder_{{FeatureId}}" class="col-md-3 paddingNone">
+			<span id="featureName_{{FeatureId}}" class="disBlock fnBold padding12">{{FeatureName}}</span>
+			<span id="featureCostId_{{FeatureId}}" class="dispNone" hidden="true">{{addOnPrice}}</span>
+		</div>
+		<div id="planOptionHolder_{{FeatureId}}" class="col-md-9 paddingNone text-center svgfaIconClr">
+			<div id="planMessagDetail_{{FeatureId}}" class="col-md-3 planSmallWidth paddingNone text-center">
+				{{#isXtudyMessage}}
+					<span id="xtudyMessageFeature_{{FeatureName}}" class="disBlock padding12">
+						<i class="fa fa-check" aria-hidden="true"></i>
+					</span>
+				{{/isXtudyMessage}}
+				{{^isXtudyMessage}}
+          			<label for="xtudyMessageFeature_{{FeatureId}}" class="lsBtnFntSize termsFieldSpan signUpAcceptTermsConditionsCls"></label>	
+					<input id="xtudyMessageFeature_{{FeatureId}}" type="checkbox" name="xtudyMessage" class="featureChangeHandler signupCheckbox bmBorder signUpCheck lsOutlineNone">
+				{{/isXtudyMessage}}
+			</div>
+			<div id="planConnectDetail_{{FeatureId}}" class="col-md-3 planSmallWidth paddingNone text-center">
+				{{#isXtudyConnect}}
+					<span id="xtudyConnectFeature_{{FeatureName}}" class="disBlock padding12">
+						<i class="fa fa-check" aria-hidden="true"></i>
+					</span>
+				{{/isXtudyConnect}}
+				{{^isXtudyConnect}}
+          			<label for="xtudyConnectFeature_{{FeatureId}}" class="lsBtnFntSize termsFieldSpan signUpAcceptTermsConditionsCls"></label>	
+					<input type="checkbox" id="xtudyConnectFeature_{{FeatureId}}" name="xtudyConnect" class="featureChangeHandler signupCheckbox bmBorder signUpCheck lsOutlineNone">
+				{{/isXtudyConnect}}
+			</div>
+			<div id="planERPDetail_{{FeatureId}}" class="col-md-3 planSmallWidth paddingNone text-center">
+				{{#isXtudyERP}}
+					<span id="xtudyERPFeature_{{FeatureName}}" class="disBlock padding12">
+						<i class="fa fa-check" aria-hidden="true"></i>
+					</span>
+				{{/isXtudyERP}}
+				{{^isXtudyERP}}
+          			<label for="xtudyERPFeature_{{FeatureId}}" class="lsBtnFntSize termsFieldSpan signUpAcceptTermsConditionsCls"></label>	
+					<input type="checkbox" id="xtudyERPFeature_{{FeatureId}}" name="xtudyEnterprise" class="featureChangeHandler signupCheckbox bmBorder signUpCheck lsOutlineNone">
+				{{/isXtudyERP}}
+			</div>
+			<div id="planCustomDetail_{{FeatureId}}" class="col-md-3 planSmallWidth paddingNone text-center">
+				{{#isCustomizePlan}}
+					<span id="xtudyCustomFeature_{{FeatureName}}" class="disBlock padding12">
+						<i class="fa fa-check" aria-hidden="true"></i>
+					</span>
+				{{/isCustomizePlan}}
+				{{^isCustomizePlan}}
+          			<label for="xtudyCustomizeFeature_{{FeatureId}}" class="lsBtnFntSize termsFieldSpan signUpAcceptTermsConditionsCls"></label>	
+					<input type="checkbox" id="xtudyCustomizeFeature_{{FeatureId}}" name="xtudyCustomizePlan" class="featureChangeHandler signupCheckbox bmBorder signUpCheck lsOutlineNone">
+				{{/isCustomizePlan}}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="planFragment"> 
+	<div id="packageDetailsMain_{{PackageId}}" class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+		<div id="packageDetails_{{PackageId}}" class="row packageMainStructureCls">	
+			<div id="packageNameHeader_{{PackageId}}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+				<div id="packageNameHeader_{{PackageId}}" class="row text-center">		
+					<div id="packageName_{{PackageId}}" class="packageNameMainCls">
+						<div class="text-center">
+							<span id="packageNameTitle_{{PackageId}}" class="packageNameTitleCls text-center">{{PackageName}}</span>
+						</div>
+					</div>
+				</div>
+				<div id="packagePriceHeader_{{PackageId}}" class="row">
+					<div id="packageName_{{PackageId}}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 packagePriceMainCls text-left">
+						<div id="priceLabel_{{PackageId}}" class="">
+							<span class="priceNoteCls">As low as</span>					
+						</div>
+						<div id="currentPriceDetails_{{PackageId}}" class="">
+							<span class="currentPriceFontCls">
+								<i class="fas fa-rupee-sign"></i>
+								<span id="{{PackageId}}CurrentCost">{{CurrentPrice}}</span>
+							</span>						
+						</div>
+						<div id="discountInfoText_{{PackageId}}">
+							<span class="disBlock txtPadding">
+								<span class="disInlineBlok">
+									<span class="text-muted fnBold">On sale -</span>
+								</span>
+								<span class="disInlineBlok discountBlockCls">
+									<span class="">Save</span> 
+									<span class="">{{YearlyDiscount}}</span> 
+									<span class="">%</span> 
+								</span>
+							</span>						
+						</div>
+						<div id="basePrice" class="">
+							<span class="disBlock text-muted">
+								<i class="fas fa-rupee-sign"></i>
+								<span id="{{PackageId}}BasePrice" class="">{{BasePrice}}</span>
+								<span>/mo when you renew</span>
+							</span>
+						</div>
+					</div>					
+				</div>
+				<div id="packageInputHeader_{{PackageId}}" class="row text-center">
+					<div id="packageName_{{PackageId}}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 studentCountMainCls text-left">
+						<div class="studentCountCls">
+							<span class="pull-left text-muted studentCountLevelCls">Number of Student</span>
+							<input id="{{PackageId}}StudentCount" type="number" name="studentCount" value="1" min="1" max="5000" class="changeHandler studentCountInputCls pull-right">
+						</div>
+						<div class="paymentPeriodSelection">
+							<span class="radioBtnGroupCls">
+							    <label class="radio-inline">
+									<input id="{{PackageId}}DurationMontly" type="radio" name="{{PackageId}}" checked value="Monthly" data-toggle="tooltip" data-placement="top" title="Get 10% Off">Monthly
+								</label>
+							</span>
+							<span class="radioBtnGroupCls">	
+								<label class="radio-inline">
+									<input id="{{PackageId}}DurationQuaterly" type="radio" name="{{PackageId}}" value="Quaterly" data-toggle="tooltip" data-placement="top" title="Get 15% Off">Quaterly
+								</label>
+							</span>
+							<span class="radioBtnGroupCls">								
+								<label class="radio-inline">
+									<input id="{{PackageId}}DurationYearly" type="radio" name="{{PackageId}}" value="Yearly" data-toggle="tooltip" data-placement="top" title="Get {{YearlyDiscount}}% Off">Yearly
+								</label>
+							</span>
+						</div>							
+						<div id="totalCostHandler" class="text-center">
+							<span id="{{PackageId}}TotalBtn" class="cartBtn text-center disBlock">Total :
+								<span id="{{PackageId}}TotalItemCost" class="disInlineBlock txtWhite fnBold txtWhite">{{CurrentPrice}}</span>
+							</span>
+						</div>
+					</div>	
+					<div class="text-left">
+						<span class="disBlock text-muted">{{PackageDetails}}</span>
+					</div>				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<div id="planFragment">
+	<div class="col-xs-12 col-lg-4 col-sm-4 col-md-4">
+		<div class="pricingTabHolder">
+			<h4 id="planName" class="clrBlue changeClrToWhite">XTUDY ERF</h4>
+			<span class="">
+				<span class="fntSize25 changeClrToWhite"><i class="fas fa-rupee-sign"></i></span>
+				<span id="rupeePerStudent" class="fntSize35 changeClrToWhite">25</span>
+				<span class="changeClrToWhite fntSize20">/ Student</span>
+			</span>
+			<ul class="listStyleNone text-muted featureUl">
+				<li class="changeClrToWhite fntSize17 featureLi">Admission</li>
+				<li class="changeClrToWhite fntSize17 featureLi">Class Management</li>
+				<li class="changeClrToWhite fntSize17 featureLi">Noticeboard</li>
+				<li class="changeClrToWhite fntSize17 featureLi">Attendance</li>
+				<li class="changeClrToWhite fntSize17 featureLi">Report Card</li>
+				<li class="changeClrToWhite fntSize17 featureLi">Daily Homework</li>
+			</ul>
+			<ul class="listStyleNone paddingNone">
+				<li class="changeClrToWhite fntSize17 featureLi clrBlue">Bus Fleet Management</li>
+				<li class="changeClrToWhite fntSize17 featureLi clrBlue">Multiple User Login</li>
+				<li class="changeClrToWhite fntSize17 featureLi clrBlue">PDF Downloads</li>
+			</ul>
+		</div>
+	</div>	
+</div>
+
+<div id="addOnFeature">
+	<li id="addOnFeature_{{FeatureId}}" class="disInlineBlock addOnLi">
+		<span class="disInlineBlock addOnImgsHolder pull-left">
+			<img src="../images/{{FeatureId}}.png" class="addOnImgs pull-left">
+		</span>
+		<span class="disInlineBlock addOnNameWidth">
+			<span class="disBlock clrBlue">{{FeatureName}}</span>
+			<span id="addOnFeatureCost_{{FeatureId}}" class="disBlock">{{addOnPrice}}</span>	
+		</span>
+		<span class="disInlineBlock">
+			<span id="addOnFeaturePlus_{{FeatureId}}" class="disInlineBlock pull-left plusCounterIcon cursorPointer clickListenerCls">
+				<i class="fas fa-plus"></i>
+			</span>
+			<span class="disInlineBlock pull-left counterWidthCls text-center">
+				<input  id="addOnFeatureCount_{{FeatureId}}" min="0" max="1000"  type="number" class="addOnChangeHandler counterWidthInput" value="0" min="0" max="1000"/>
+			</span>
+			<span id="addOnFeatureMinus_{{FeatureId}}" class="disInlineBlock pull-left minusCounterIcon cursorPointer clickListenerCls">
+				<i class="fas fa-minus"></i>
+			</span>
+		</span>
+	</li>
+</div>
+
+<div id="featureListItem">	
+	<li class="changeClrToWhite fntSize17 featureLi">
+		<span id="featureName_{{FeatureId}}" class="">{{FeatureName}}</span>
+	</li>
+</div>
