@@ -61,7 +61,7 @@
 </head>
 
 <body class="front">
-       <aside class="sidebar-left">
+    <aside class="sidebar-left">
         <nav class="navbar navbar-inverse">
 
             <div class="navbar-header">
@@ -225,10 +225,10 @@
                         <div class="white-from-trs wow fadeInUp">
                             <form action="" method="get">
 
-                                <select name="" class="top-search-form">
-                                    <option>Language</option>
-                                    <option>Hindi</option>
-                                    <option>English</option>
+                                <select id="languageSelector" name="" class="top-search-form">
+                                    <option value="en">Language</option>
+                                    <option value="hi">Hindi</option>
+                                    <option value="en">English</option>
                                 </select>
                                 <input name="" type="text" placeholder="Programs and Centers" value="Keywords" onblur="if (this.value=='') this.value=this.defaultValue" onfocus="if (this.defaultValue==this.value) this.value=''" class="top-search-form1">
                                 <input name="" type="button" class="top-search-form-submit" value=".">
@@ -244,14 +244,9 @@
                 <div class="col-lg-12">
 
                     <div class="header-bg" style="background-image:url(images/banner.jpg)">
-                        <!-- Gradient overlay -->
-                        <div class=" header-content">
+                        <div id="programTitleHolder" class=" header-content">
                             <div class="main-title">
-                                <!-- Main-title -->
                                 <h1 class="bold mb-30 a-f ">Program</h1>
-                                <!-- breadcrumbs -->
-
-                                <!-- breadcrumbs end -->
                             </div>
                         </div>
                     </div>
@@ -260,13 +255,12 @@
             </div>
 
             <div class="row">
-                <div class="inner-slide-com-cot">
-                    <div class="col-lg-7">
+                <div  class="inner-slide-com-cot">
+                    <div id="programDetailHolder" class="col-lg-7">
                         <p>
                             Based on spiritual science unraveled by Osho and Sadguru, 28 levels of Enlightened Living Programs have been designed and are being conducted regularly. Each programis of six days� duration.It is essential to do lower level programs and essential Wisdom (Pragya) Programs before entry into higher level programs. Attending Wisdom programs is not mandatory for foreigners, senior citizens(above 65 years) and ladies.</p>
                         <p>
-                            DHYAN SAMADHI  (MEDITATIVE LIVING)
-It consists of two parts - AnandPragya or Blissful Living and Vipassana Samadhi or Divine Living.Each program is of three days’ duration. Foreign students are allowed to enter directly into Divine Living program
+                            DHYAN SAMADHI (MEDITATIVE LIVING) It consists of two parts - AnandPragya or Blissful Living and Vipassana Samadhi or Divine Living.Each program is of three days’ duration. Foreign students are allowed to enter directly into Divine Living program
                             <br>
                             <br>
 
@@ -346,7 +340,7 @@ It consists of two parts - AnandPragya or Blissful Living and Vipassana Samadhi 
                                         <td>
                                             <div class="form-group">
 
-                                               Murthal
+                                                Murthal
                                             </div>
                                         </td>
                                         <td>
@@ -362,8 +356,7 @@ It consists of two parts - AnandPragya or Blissful Living and Vipassana Samadhi 
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><span class="form-group">
-          Monday, 8 March 2020
+                                        <td><span class="form-group">         Monday, 8 March 2020
           </span></td>
                                         <td><span class="form-group">
           Murthal
@@ -428,6 +421,8 @@ It consists of two parts - AnandPragya or Blissful Living and Vipassana Samadhi 
     <script src="vendor/masonry/masonry.pkgd.min.js"></script>
     <script src="vendor/uikit/uikit.js"></script>
     <script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
+    <script src="assets/script/libs/mustache.min.js"></script>
+    <script src="assets/script/js/program.js"></script>
 
     <!-- Theme Base, Components and Settings -->
     <script src="js/theme.js"></script>
@@ -439,6 +434,7 @@ It consists of two parts - AnandPragya or Blissful Living and Vipassana Samadhi 
         $('.sidebar-menu').SidebarNav()
     </script>
     <script type="text/javascript">
-        < /body>
+        </script>
+< /body>
 
-        < /html>
+< /html>

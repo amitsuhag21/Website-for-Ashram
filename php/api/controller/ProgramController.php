@@ -5,7 +5,7 @@ include_once "../service/ProgramService.php";
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
@@ -32,9 +32,9 @@ class ProgramController {
     public function processRequest()
     {
         switch ($this->requestMethod) {
-            case 'GET':
-                if (!empty($_GET["id"])) {
-                    $response = $this->getPackage($_GET["id"]);
+            case 'POST':
+                if (!empty($_POST["programid"])) {
+                    $response = $this->getPackage(htmlspecialchars($_POST["programid"]));
                 } else {
                     $response = $this->getAllPackages();
                 };
