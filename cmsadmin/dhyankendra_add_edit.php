@@ -68,9 +68,9 @@ $status  = $_POST['status'];
 <div id="content">
     <!--breadcrumbs-->
     <div id="content-header">
-        <div id="breadcrumb"> <a href="dhyankendra_add_edit.php" title="Go to Home" class="tip-bottom"><i
+        <div id="breadcrumb"> <a href="dhyankendra_list.php" title="Go to Home" class="tip-bottom"><i
                     class="icon-home"></i>
-                Listing</a><a href="#">Add Dhyan Kendra</a></div>
+                Listing</a><a class="current" href="#">Add Dhyan kendra</a></div>
     </div>
     <!--End-breadcrumbs-->
 

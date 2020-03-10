@@ -9,6 +9,9 @@ if($_GET['action'] = 'edit' && isset($_GET['id'])){
     $sql = "Select * from   tb_od_programschedule where scheduleid=$id";
     $result = mysqli_query($link, $sql);
     $output = mysqli_fetch_assoc($result);
+    if(mysqli_error($link)){
+        echo("Error description: " . mysqli_error($link));die;
+    }
 }
 $programid = (isset($output['programid'])&& !empty($output['programid']))?$output['programid']:'';
 $dhyankendraid = (isset($output['dhyankendraid'])&& !empty($output['dhyankendraid']))?$output['dhyankendraid']:'';
@@ -20,6 +23,15 @@ $eligibility  = (isset($output['eligibility'])&& !empty($output['eligibility']))
 $guidelines  = (isset($output['guidelines'])&& !empty($output['guidelines']))?$output['guidelines']:'';
 $comments  = (isset($output['comments'])&& !empty($output['comments']))?$output['comments']:'';
 $language  = (isset($output['language'])&& !empty($output['language']))?$output['language']:'';
+//
+ $sqlSc = "Select * from ProgScheduleacharya where scheduleid= '$id' ";
+$resultcat = mysqli_query($link, $sqlSc);
+if(mysqli_error($link)){
+    echo("Error description1: " . mysqli_error($link));die;
+}
+while ($valueid = mysqli_fetch_assoc($resultcat)) {
+    $getAcharya[] = $valueid['acharyaid'];
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    // echo "<PRE>";print_r($_POST);die; 
@@ -37,17 +49,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $end_date= date( "Y-m-d", strtotime($end_date) );
 
     if (!empty($programid)) {
-      //echo "<PRE>";  print_r($_POST);die;
         if($_POST['action'] == 'add'){
               $sql = "INSERT INTO tb_od_programschedule(programid , dhyankendraid,level,start_date,end_date,duration,eligibility,guidelines,comments,language,status)
             VALUES ('" . $programid . "','" . $dhyankendraid . "', '" . $level . "', '" . $start_date . "', '" . $end_date . "', '" . $duration . "','" . $eligibility . "','" . $guidelines . "','" . $comments . "','" . $language . "',1)";
-        }else{
-            $id = $_GET['id'];
-             $sql= "UPDATE tb_od_programschedule SET programid='$programid',dhyankendraid='$dhyankendraid',start_date='$start_date',end_date='$end_date',level='$level', duration= '$duration' ,eligibility= '$eligibility',guidelines='$guidelines',comments='$comments',language='$language' WHERE scheduleid=$id";
+    }else{
+        $id = $_GET['id'];
+        $sql= "UPDATE tb_od_programschedule SET programid='$programid',dhyankendraid='$dhyankendraid',start_date='$start_date',end_date='$end_date',level='$level', duration= '$duration' ,eligibility= '$eligibility',guidelines='$guidelines',comments='$comments',language='$language' WHERE scheduleid=$id";
+     }         
+     mysqli_query($link, $sql);
+     if(mysqli_error($link)){
+        echo("Error description 2: " . mysqli_error($link));die;
+    }
+    if(isset($_POST['acharyaid']) && !empty($_POST['acharyaid'])){
+        $id = $_GET['id'];
+        // Delete older mapping schedule id and acharya id
+         $sqldel = "DELETE FROM ProgScheduleacharya WHERE scheduleid = $id ";
+         mysqli_query($link, $sqldel);
+         if(mysqli_error($link)){
+            echo("Error description 3: " . mysqli_error($link));die;
         }
-        
-         mysqli_query($link, $sql);
-        header("Location: schedule_add_edit.php?action=add&msg=1");
+         if($_POST['action'] == 'add'){
+             //get last id
+            $sqlid = "SELECT scheduleid FROM tb_od_programschedule ORDER BY scheduleid DESC LIMIT 1 ";
+            $resultid =   mysqli_query($link, $sqlid);
+            if(mysqli_error($link)){
+                echo("Error description 4: " . mysqli_error($link));die;
+            }
+            while ($value = mysqli_fetch_assoc($resultid)) {
+                $id = $value['scheduleid'];
+            }
+         }
+         foreach($_POST['acharyaid'] as $p){
+            // insert new mapping
+           $insertMapping  ="INSERT INTO ProgScheduleacharya(scheduleid, acharyaid) VALUES ($id,$p)";
+           mysqli_query($link, $insertMapping);
+           if(mysqli_error($link)){
+            echo("Error description 5: " . mysqli_error($link));die;
+        }
+        }
+      
+    } 
+
+     header("Location: schedule_add_edit.php?action=add&msg=1");
     } else {
         header("Location: schedule_add_edit.php?action=add&msg=0");
     }
@@ -65,8 +108,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div id="content">
     <!--breadcrumbs-->
     <div id="content-header">
-        <div id="breadcrumb"> <a href="program_list.php" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>
-                Listing</a><a href="#">Add Schedule </a></div>
+        <div id="breadcrumb"> <a href="schedule_list.php" title="Go to Home" class="tip-bottom"><i
+                    class="icon-home"></i>
+                Listing</a><a class="current" href="#">Add Schedule </a></div>
     </div>
     <!--End-breadcrumbs-->
 
@@ -96,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
                         <?php 
-                        $sqlcat = "Select * from   tb_od_program where status=1 order by programid desc";
+                        $sqlcat = "Select * from   tb_od_program where status=1 order by programid DESC";
                         $resultcat = mysqli_query($link, $sqlcat);
                         ?>
 
@@ -136,6 +180,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </select>
                             </div>
                         </div>
+                        <?php 
+                        $sqlcat = "Select * from   tb_od_teammember where status=1 and isacharya=1 order by isacharya desc";
+                        $resultcat = mysqli_query($link, $sqlcat);
+                        ?>
+
+                        <div class="control-group">
+                            <label class="control-label"><strong>Acharya's *:</strong></label>
+                            <div class="controls">
+                                <select id="acharyaid" name="acharyaid[]" multiple>
+                                    <?php 
+                                    if (mysqli_num_rows($resultcat) > 0) {
+                         while ($value = mysqli_fetch_assoc($resultcat)) {?>
+                                    <option value="<?php echo $value['teammemberid'];?>"
+                                        <?php echo (!empty($getAcharya) && in_array($value['teammemberid'],$getAcharya)) ? "selected" : "" ?>>
+                                        <?php echo $value['teammembername'];?></option>
+                                    <?php }
+                        }?>
+                                </select>
+                            </div>
+                        </div>
                         <div class="control-group">
                             <label class="control-label"><strong>Level * :</strong></label>
                             <div class="controls">
@@ -166,10 +230,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         </div>
                         <div class="control-group">
-                            <label class="control-label"><strong>Duration * (max 10) :</strong></label>
+                            <label class="control-label"><strong>Duration * :</strong></label>
                             <div class="controls">
-                                <input class="span11" style="height:35px" placeholder="Enter Duration( max 10)" type="number"
-                                    min='0' max="5" name="duration" id="duration" required
+                                <input class="span11" style="height:35px" placeholder="Enter Duration( max 10)"
+                                    type="number" min='0' name="duration" id="duration" required
                                     value="<?php echo $duration?>">
                             </div>
                         </div>
@@ -284,11 +348,16 @@ function validate() {
     var end_date = $('#end_date').val();
     var startDate = new Date($('#start_date').val());
     var endDate = new Date($('#end_date').val());
-
+    var acharyaid = $("#acharyaid").val();
+    if (!acharyaid || acharyaid == null || acharyaid == 'null') {
+        alert('Kindly select Acharyas ');
+        return false;
+    }
     if (level.trim() == '') {
         alert('Kindly enter level');
         return false;
     }
+
     if (start_date.trim() == '') {
         alert('Kindly enter start date');
         return false;
@@ -316,7 +385,7 @@ function validate() {
         return false;
     }
 
-   
+
     if (CKEDITOR.instances['eligibility'].getData() == "") {
         alert('Kindly enter eligibility');
         return false;

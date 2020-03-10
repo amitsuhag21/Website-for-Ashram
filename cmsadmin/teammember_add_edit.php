@@ -15,6 +15,7 @@ if($_GET['action'] = 'edit' && isset($_GET['id'])){
 $teammembername  = (isset($output['teammembername'])&& !empty($output['teammembername']))?$output['teammembername']:'';
 $iscoordinator = (isset($output['iscoordinator'])&& !empty($output['iscoordinator']))?$output['iscoordinator']:0;
 $iscentralcordinator  = (isset($output['iscentralcordinator'])&& !empty($output['iscentralcordinator']))?$output['iscentralcordinator']:0;
+$isacharya  = (isset($output['isacharya'])&& !empty($output['isacharya']))?$output['isacharya']:0;
 $stateid  = (isset($output['stateid'])&& !empty($output['stateid']))?$output['stateid']:'';
 $language  = (isset($output['language'])&& !empty($output['language']))?$output['language']:'';
 
@@ -24,16 +25,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $teammembername = trim($_POST['teammembername']);
     $iscoordinator = (isset($_POST['iscoordinator'])&& !empty($_POST['iscoordinator']))?$_POST['iscoordinator']:0;
     $iscentralcordinator  = (isset($_POST['iscentralcordinator'])&& !empty($_POST['iscentralcordinator']))?$_POST['iscentralcordinator']:0;
+    $isacharya  = (isset($_POST['isacharya'])&& !empty($_POST['isacharya']))?$_POST['isacharya']:0;
     $stateid   = $postState[0];
     $countryid  = $postState[1];
     $language = trim($_POST['language']);
     if (!empty($teammembername)) {
         if($_POST['action'] == 'add'){
-               $sql = "INSERT INTO tb_od_teammember(teammembername , iscoordinator,iscentralcordinator,stateid,countryid,language,status)
-            VALUES ('" . $teammembername . "','" . $iscoordinator . "', '" . $iscentralcordinator . "', '" . $stateid . "','" . $countryid . "','" . $language . "',1)";
+               $sql = "INSERT INTO tb_od_teammember(teammembername , iscoordinator,iscentralcordinator,isacharya,stateid,countryid,language,status)
+            VALUES ('" . $teammembername . "','" . $iscoordinator . "', '" . $iscentralcordinator . "', '" . $isacharya . "', '" . $stateid . "','" . $countryid . "','" . $language . "',1)";
         }else{
             $id = $_GET['id'];
-             $sql= "UPDATE tb_od_teammember SET teammembername='$teammembername',iscoordinator='$iscoordinator', stateid= '$stateid' ,countryid= '$countryid',language='$language' WHERE teammemberid=$id";
+             $sql= "UPDATE tb_od_teammember SET teammembername='$teammembername',iscoordinator='$iscoordinator',isacharya='$isacharya', stateid= '$stateid' ,countryid= '$countryid',language='$language' WHERE teammemberid=$id";
         }
        mysqli_query($link, $sql);
         header("Location: teammember_add_edit.php?action=add&msg=1");
@@ -54,9 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div id="content">
     <!--breadcrumbs-->
     <div id="content-header">
-        <div id="breadcrumb"> <a href="teammember_add_edit.php" title="Go to Home" class="tip-bottom"><i
+        <div id="breadcrumb"> <a href="teammember_list.php" title="Go to Home" class="tip-bottom"><i
                     class="icon-home"></i>
-                Listing</a><a href="#">Add Team Memeber</a></div>
+                Listing</a><a class="current" href="#">Add Team Memeber</a></div>
     </div>
     <!--End-breadcrumbs-->
 
@@ -108,6 +110,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 <?php echo (!empty($iscentralcordinator) && $iscentralcordinator==1) ? "checked" : ""?>
                                                 name="iscentralcordinator" type="checkbox"></span></div>is Central
                                     coordinator
+                                </label>
+                                <label class="span2 m-wrap">
+                                    <div class="checker" id="uniform-undefined"><span><input value="1"
+                                                <?php echo (!empty($isacharya) && $isacharya==1) ? "checked" : ""?>
+                                                name="isacharya" type="checkbox"></span></div>is Acharya
+                                    
                                 </label>
                             </div>
                         </div>
