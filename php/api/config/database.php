@@ -3,9 +3,9 @@ class Database{
   
     // specify your own database credentials
     private $servername = "localhost";
-    private $dbname = "OSHODHARADB";
-    private $username = "root";
-    private $password = "";
+    private $dbname = "oshodhara";
+    private $username = "gallerytest";
+    private $password = "CF^xv,*90,$;";
     public $conn;
 
     public function getConnection(){  
