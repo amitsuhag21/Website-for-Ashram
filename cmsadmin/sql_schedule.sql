@@ -14,8 +14,21 @@ CREATE TABLE `tb_od_programschedule` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-
+// ProgScheduleacharya
 CREATE TABLE `ProgScheduleacharya` (
   `scheduleid` int(11) NOT NULL,
   `acharyaid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+//Team member
+CREATE TABLE `tb_od_teammember` (
+  `teammemberid` int(11) NOT NULL,
+  `teammembername` varchar(150) DEFAULT NULL,
+  `iscoordinator` tinyint(1) DEFAULT NULL,
+  `iscentralcordinator` int(10) NOT NULL,
+  `isacharya` int(10) NOT NULL,
+  `stateid` varchar(11) DEFAULT NULL,
+  `countryid` int(11) DEFAULT NULL,
+  `language` varchar(10) NOT NULL,
+  `status` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
