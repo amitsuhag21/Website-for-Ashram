@@ -41,7 +41,7 @@ class ProgramController {
                 break;
             case 'POST':
                 if (!empty($_POST["programid"])) {
-                    $response = $this->getPackage(htmlspecialchars($_POST["programid"]));
+                    $response = $this->getPackage($_POST["programid"]);
                 } else {
                     $response = $this->getAllPackages();
                 };
