@@ -32,6 +32,13 @@ class ProgramController {
     public function processRequest()
     {
         switch ($this->requestMethod) {
+            case 'GET':
+                if (!empty($_GET["programid"])) {
+                    $response = $this->getPackage($_GET["programid"]);
+                } else {
+                    $response = $this->getAllPackages();
+                };
+                break;
             case 'POST':
                 if (!empty($_POST["programid"])) {
                     $response = $this->getPackage(htmlspecialchars($_POST["programid"]));
