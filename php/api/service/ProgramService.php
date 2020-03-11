@@ -26,7 +26,7 @@ class ProgramService {
         $query="SELECT * FROM tb_od_program";
         if($id != 0)
         {
-            $query.=" WHERE pg_id=".$id." LIMIT 1";
+            $query.=" WHERE programid=".$id." LIMIT 1";
         }
         $response=array();
         $result=mysqli_query($this->connection, $query);
