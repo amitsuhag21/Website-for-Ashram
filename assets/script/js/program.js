@@ -44,21 +44,20 @@ function callFragmentText(){
 function loadProgramData(urldata){
   urldata = urldata.split("=")
   var xhttp = new XMLHttpRequest();
-  let json = JSON.stringify({
-    programid: urldata[1]
-  })
+  let fd  = new FormData();
+  fd.append('programid', urldata[1])
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           var response = xhttp.responseText;
           programData = JSON.parse(response);
+          //programData = response;
           renderProgramData(programData);
       }else{
 
       }
   };
   xhttp.open("POST", "/php/api/controller/ProgramController.php", true);
-  xhttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-  xhttp.send(json);
+  xhttp.send(fd);
 }
 
 function renderPlans(renderData){
@@ -75,12 +74,14 @@ function renderProgramData(renderData){
   var titlefragment = $(templates).filter('#programTitleContent').html();
   var descfragment = $(templates).filter('#programDetailContent').html();
   var languageCode = window.localStorage.languageCode ?window.localStorage.languageCode : "en" ;
+  var rendered = false;
   for(var key in renderData){
-    if(renderData[key]['language']=languageCode){
+    if(renderData[key]['language']=languageCode && rendered == false){
       $('#programTitleHolder').empty();    
       $('#programTitleHolder').append(Mustache.render(titlefragment, renderData[key]));
       $('#programDetailHolder').empty();    
       $('#programDetailHolder').append(Mustache.render(descfragment, renderData[key]));     
+      rendered = true;
     }
   }
 }
