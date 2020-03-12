@@ -20,6 +20,7 @@ $stateid  = (isset($output['stateid'])&& !empty($output['stateid']))?$output['st
 $language  = (isset($output['language'])&& !empty($output['language']))?$output['language']:'';
 $emailid  = (isset($output['emailid'])&& !empty($output['emailid']))?$output['emailid']:'';
 $phoneno  = (isset($output['phoneno'])&& !empty($output['phoneno']))?$output['phoneno']:'';
+$zone  = (isset($output['zone'])&& !empty($output['zone']))?$output['zone']:'';
 
 
 
@@ -35,13 +36,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $language = trim($_POST['language']);
     $emailid = trim($_POST['emailid']);
     $phoneno = trim($_POST['phoneno']);
+    $zone = trim($_POST['zone']);
     if (!empty($teammembername)) {
         if($_POST['action'] == 'add'){
-               $sql = "INSERT INTO tb_od_teammember(teammembername ,emailid,phoneno, iscoordinator,iscentralcordinator,isacharya,stateid,countryid,language,status)
-            VALUES ('" . $teammembername . "','" . $emailid . "','" . $phoneno . "','" . $iscoordinator . "', '" . $iscentralcordinator . "', '" . $isacharya . "', '" . $stateid . "','" . $countryid . "','" . $language . "',1)";
+               $sql = "INSERT INTO tb_od_teammember(teammembername,zone ,emailid,phoneno, iscoordinator,iscentralcordinator,isacharya,stateid,countryid,language,status)
+            VALUES ('" . $teammembername . "','" . $zone . "','" . $emailid . "','" . $phoneno . "','" . $iscoordinator . "', '" . $iscentralcordinator . "', '" . $isacharya . "', '" . $stateid . "','" . $countryid . "','" . $language . "',1)";
         }else{
             $id = $_GET['id'];
-             $sql= "UPDATE tb_od_teammember SET teammembername='$teammembername',emailid='$emailid',phoneno='$phoneno',iscentralcordinator='$iscentralcordinator',iscoordinator='$iscoordinator',isacharya='$isacharya', stateid= '$stateid' ,countryid= '$countryid',language='$language' WHERE teammemberid=$id";
+             $sql= "UPDATE tb_od_teammember SET teammembername='$teammembername',zone='$zone',emailid='$emailid',phoneno='$phoneno',iscentralcordinator='$iscentralcordinator',iscoordinator='$iscoordinator',isacharya='$isacharya', stateid= '$stateid' ,countryid= '$countryid',language='$language' WHERE teammemberid=$id";
         }
        mysqli_query($link, $sql);
        if(mysqli_error($link)){
@@ -103,7 +105,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     value="<?php echo $teammembername?>">
                                 <span class="span10" style="color:#c1c1c1">Maximum 200 charecters allowed</span>
                             </div>
-
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label"><strong> Zone :</strong></label>
+                            <div class="controls">
+                                <input class="span11" style="height:35px" placeholder="Enter  zone"
+                                    type="text" name="zone" id="zone" required
+                                    value="<?php echo $zone?>">
+                            </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label"><strong> Email id * :</strong></label>
