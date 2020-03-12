@@ -4,7 +4,7 @@ $type = $_GET['type'];
 $CKEditor = $_GET['CKEditor'];
 $funcNum = $_GET['CKEditorFuncNum'];
 // Image upload
-if($type == 'image'){
+if($type == 'image' || $type == 'file'){
 
     $allowed_extension = array(
       "png","jpg","jpeg"

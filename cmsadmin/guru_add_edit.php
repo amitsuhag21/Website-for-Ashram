@@ -32,6 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $sql= "UPDATE tb_od_gurus SET shortdescription='$short_description', guruname= '$guruname' ,language= '$language',longdescription='$long_description' WHERE guruid=$id";
         }
        mysqli_query($link, $sql);
+       if(mysqli_error($link)){
+        echo("Error description 1: " . mysqli_error($link));die;
+    }
         header("Location: guru_add_edit.php?action=add&msg=1");
     } else {
         header("Location: guru_add_edit.php?action=add&msg=0");

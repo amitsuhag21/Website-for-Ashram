@@ -141,7 +141,7 @@ tr:nth-child(odd) {
                             <label><strong>Program Name</strong></label>
                             <div class="controls">
                                 <select id="programid" name="programid">
-                                    <option value="0" <?php echo (isset($_GET['programid']) && $_GET['programid'] == '0') ? "selected" : "" ?>>
+                                    <option value="0" <?php echo ($_GET['programid'] == '0') ? "selected" : "" ?>>
                                         All </option>
                                     <?php 
                                     if (mysqli_num_rows($resultcat) > 0) {
@@ -160,31 +160,31 @@ tr:nth-child(odd) {
                             <label><strong>Month</strong></label>
                             <div class="controls">
                                 <select id="month" name="month">
-                                    <option value="0" <?php echo (isset($_GET['month']) && $_GET['month'] == '0') ? "selected" : "" ?>>
+                                    <option value="0" <?php echo ($_GET['month'] == '0') ? "selected" : "" ?>>
                                         All </option>
-                                    <option value="1" <?php echo (isset($_GET['month']) && $_GET['month'] == '1') ? "selected" : "" ?>>
+                                    <option value="1" <?php echo ($_GET['month'] == '1') ? "selected" : "" ?>>
                                         Jan </option>
-                                    <option value="2" <?php echo (isset($_GET['month']) && $_GET['month'] == '2') ? "selected" : "" ?>>
+                                    <option value="2" <?php echo ($_GET['month'] == '2') ? "selected" : "" ?>>
                                         Feb </option>
-                                    <option value="3" <?php echo (isset($_GET['month']) && $_GET['month'] == '3') ? "selected" : "" ?>>
+                                    <option value="3" <?php echo ($_GET['month'] == '3') ? "selected" : "" ?>>
                                         Mar </option>
-                                    <option value="4" <?php echo (isset($_GET['month']) && $_GET['month'] == '4') ? "selected" : "" ?>>
+                                    <option value="4" <?php echo ($_GET['month'] == '4') ? "selected" : "" ?>>
                                         Apr </option>
-                                    <option value="5" <?php echo (isset($_GET['month']) && $_GET['month'] == '5') ? "selected" : "" ?>>
+                                    <option value="5" <?php echo ($_GET['month'] == '5') ? "selected" : "" ?>>
                                         May </option>
-                                    <option value="6" <?php echo (isset($_GET['month']) && $_GET['month'] == '6') ? "selected" : "" ?>>
+                                    <option value="6" <?php echo ($_GET['month'] == '6') ? "selected" : "" ?>>
                                         Jun </option>
-                                    <option value="7" <?php echo (isset($_GET['month']) && $_GET['month'] == '7') ? "selected" : "" ?>>
+                                    <option value="7" <?php echo ($_GET['month'] == '7') ? "selected" : "" ?>>
                                         Jul </option>
-                                    <option value="8" <?php echo (isset($_GET['month']) && $_GET['month'] == '8') ? "selected" : "" ?>>
+                                    <option value="8" <?php echo ($_GET['month'] == '8') ? "selected" : "" ?>>
                                         Aug </option>
-                                    <option value="9" <?php echo (isset($_GET['month']) && $_GET['month'] == '9') ? "selected" : "" ?>>
+                                    <option value="9" <?php echo ($_GET['month'] == '9') ? "selected" : "" ?>>
                                         Sep </option>
-                                    <option value="10" <?php echo (isset($_GET['month']) && $_GET['month'] == '10') ? "selected" : "" ?>>
+                                    <option value="10" <?php echo ($_GET['month'] == '10') ? "selected" : "" ?>>
                                         Oct </option>
-                                    <option value="11" <?php echo (isset($_GET['month']) &&  $_GET['month'] == '11') ? "selected" : "" ?>>
+                                    <option value="11" <?php echo ($_GET['month'] == '11') ? "selected" : "" ?>>
                                         Nov </option>
-                                    <option value="12" <?php echo (isset($_GET['month']) && $_GET['month'] == '12') ? "selected" : "" ?>>
+                                    <option value="12" <?php echo ($_GET['month'] == '12') ? "selected" : "" ?>>
                                         Dec </option>
 
                                 </select>
@@ -195,9 +195,9 @@ tr:nth-child(odd) {
                             <div class="controls">
                                 <select id="year" name="year">
 
-                                    <option value="2020" <?php echo (isset($_GET['year']) && $_GET['year'] == '2020') ? "selected" : "" ?>>
+                                    <option value="2020" <?php echo ($_GET['year'] == '2020') ? "selected" : "" ?>>
                                         2020 </option>
-                                    <option value="2021" <?php echo (isset($_GET['year']) && $_GET['year'] == '2021') ? "selected" : "" ?>>
+                                    <option value="2021" <?php echo ($_GET['year'] == '2021') ? "selected" : "" ?>>
                                         2021 </option>
                                 </select>
                             </div>

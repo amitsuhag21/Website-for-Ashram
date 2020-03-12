@@ -18,6 +18,10 @@ $iscentralcordinator  = (isset($output['iscentralcordinator'])&& !empty($output[
 $isacharya  = (isset($output['isacharya'])&& !empty($output['isacharya']))?$output['isacharya']:0;
 $stateid  = (isset($output['stateid'])&& !empty($output['stateid']))?$output['stateid']:'';
 $language  = (isset($output['language'])&& !empty($output['language']))?$output['language']:'';
+$emailid  = (isset($output['emailid'])&& !empty($output['emailid']))?$output['emailid']:'';
+$phoneno  = (isset($output['phoneno'])&& !empty($output['phoneno']))?$output['phoneno']:'';
+
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //echo "<PRE>";print_r($_POST);die;
@@ -29,15 +33,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stateid   = $postState[0];
     $countryid  = $postState[1];
     $language = trim($_POST['language']);
+    $emailid = trim($_POST['emailid']);
+    $phoneno = trim($_POST['phoneno']);
     if (!empty($teammembername)) {
         if($_POST['action'] == 'add'){
-               $sql = "INSERT INTO tb_od_teammember(teammembername , iscoordinator,iscentralcordinator,isacharya,stateid,countryid,language,status)
-            VALUES ('" . $teammembername . "','" . $iscoordinator . "', '" . $iscentralcordinator . "', '" . $isacharya . "', '" . $stateid . "','" . $countryid . "','" . $language . "',1)";
+               $sql = "INSERT INTO tb_od_teammember(teammembername ,emailid,phoneno, iscoordinator,iscentralcordinator,isacharya,stateid,countryid,language,status)
+            VALUES ('" . $teammembername . "','" . $emailid . "','" . $phoneno . "','" . $iscoordinator . "', '" . $iscentralcordinator . "', '" . $isacharya . "', '" . $stateid . "','" . $countryid . "','" . $language . "',1)";
         }else{
             $id = $_GET['id'];
-             $sql= "UPDATE tb_od_teammember SET teammembername='$teammembername',iscoordinator='$iscoordinator',isacharya='$isacharya', stateid= '$stateid' ,countryid= '$countryid',language='$language' WHERE teammemberid=$id";
+             $sql= "UPDATE tb_od_teammember SET teammembername='$teammembername',emailid='$emailid',phoneno='$phoneno',iscentralcordinator='$iscentralcordinator',iscoordinator='$iscoordinator',isacharya='$isacharya', stateid= '$stateid' ,countryid= '$countryid',language='$language' WHERE teammemberid=$id";
         }
        mysqli_query($link, $sql);
+       if(mysqli_error($link)){
+        echo("Error description 2: " . mysqli_error($link));die;
+    }
         header("Location: teammember_add_edit.php?action=add&msg=1");
     } else {
         header("Location: teammember_add_edit.php?action=add&msg=0");
@@ -92,6 +101,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <input class="span11" style="height:35px" placeholder="Enter Team member name"
                                     type="text" name="teammembername" id="teammembername" required
                                     value="<?php echo $teammembername?>">
+                                <span class="span10" style="color:#c1c1c1">Maximum 200 charecters allowed</span>
+                            </div>
+
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label"><strong> Email id * :</strong></label>
+                            <div class="controls">
+                                <input class="span11" style="height:35px" placeholder="Enter Email id"
+                                    type="text" name="emailid" id="emailid" required
+                                    value="<?php echo $emailid?>">
+                                <span class="span10" style="color:#c1c1c1">Maximum 200 charecters allowed</span>
+                            </div>
+
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label"><strong> Phone no. * :</strong></label>
+                            <div class="controls">
+                                <input class="span11" style="height:35px" placeholder="Enter phone no"
+                                    type="text" name="phoneno" id="phoneno" required
+                                    value="<?php echo $phoneno?>">
                                 <span class="span10" style="color:#c1c1c1">Maximum 200 charecters allowed</span>
                             </div>
 
@@ -177,9 +206,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script>
 function validate() {
     var name = $("#teammembername").val();
-
+    var emailid = $("#emailid").val();
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     if (name.trim() == '') {
         alert('Kindly enter Team member Name');
+        return false;
+    }
+    if (!emailReg.test(emailid)) {
+        alert("Please enter valid email id");
         return false;
     }
 }

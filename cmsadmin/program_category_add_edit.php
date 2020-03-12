@@ -29,6 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     } 
     mysqli_query($link, $sql);
+    if(mysqli_error($link)){
+        echo("Error description 1: " . mysqli_error($link));die;
+    }
     header("Location: program_category_add_edit.php?action=add&msg=1");
 }
 

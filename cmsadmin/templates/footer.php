@@ -19,8 +19,7 @@
 <script src="./assets/js/matrix.js?v=1.6"></script> 
 <script src="./assets/js/matrix.form_common.js?v=1.6"></script> 
 <script src="./assets/js/jquery.peity.min.js?v=1.6"></script>
-<script type="text/javascript" src="./assets/ckeditor/ckeditor.js?v4"></script>
-<script type="text/javascript" src="./assets/ckfinder/ckfinder.js?v4"></script>
+<script type="text/javascript" src="./assets/ckeditor/ckeditor.js?v=5"></script>
 
 <script type="text/javascript">
 function showhide(ids)

@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $sqldel = "DELETE FROM ProgScheduleacharya WHERE scheduleid = $id ";
          mysqli_query($link, $sqldel);
          if(mysqli_error($link)){
-            echo("Error description 3: " . mysqli_error($link));die;
+            echo("Error description 3: " . mysqli_error($link));
         }
          if($_POST['action'] == 'add'){
              //get last id
@@ -241,7 +241,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label class="control-label"><strong>Eligibility* :</strong></label>
                             <div class="controls">
 
-                                <script src="ckeditor/ckeditor.js" type="text/javascript"></script>
+                                <script src="ckeditor/ckeditor.js?v=2.4" type="text/javascript"></script>
                                 </head>
 
                                 <body>
