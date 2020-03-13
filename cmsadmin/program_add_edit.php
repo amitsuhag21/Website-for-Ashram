@@ -15,6 +15,7 @@ $shortdescription = (isset($output['shortdescription'])&& !empty($output['shortd
 $longdescription  = (isset($output['longdescription'])&& !empty($output['longdescription']))?$output['longdescription']:'';
 $language  = (isset($output['language'])&& !empty($output['language']))?$output['language']:'';
 $category  = (isset($output['categoryid'])&& !empty($output['categoryid']))?explode(',',$output['categoryid']):'';
+$sort  = (isset($output['sort'])&& !empty($output['sort']))?$output['sort']:'';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //echo "<PRE>";print_r($_POST);die;
@@ -23,14 +24,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $long_description = trim($_POST['details']);
     $categoryid = implode(',',$_POST['categoryid']);
      $language = $_POST['language'];
+     $sort = $_POST['sort'];
     if (!empty($name)) {
  
         if($_POST['action'] == 'add'){
-              $sql = "INSERT INTO tb_od_program(programname , shortdescription,longdescription,categoryid,status,language)
-            VALUES ('" . $name . "','" . $short_description . "', '" . $long_description . "', '" . $categoryid . "',1,'" . $language . "')";
+              $sql = "INSERT INTO tb_od_program(programname ,sort, shortdescription,longdescription,categoryid,status,language)
+            VALUES ('" . $name . "','" . $sort . "','" . $short_description . "', '" . $long_description . "', '" . $categoryid . "',1,'" . $language . "')";
         }else{
             $id = $_GET['id'];
-            $sql= "UPDATE tb_od_program SET shortdescription='$short_description',categoryid='$categoryid', programname= '$name' ,language= '$language',longdescription='$long_description' WHERE programid=$id";
+            $sql= "UPDATE tb_od_program SET sort='$sort',shortdescription='$short_description',categoryid='$categoryid', programname= '$name' ,language= '$language',longdescription='$long_description' WHERE programid=$id";
         }
      
        mysqli_query($link, $sql);
@@ -157,6 +159,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     });
                                     </script>
                             </div>
+                            <div class="control-group">
+                            <label class="control-label"><strong>Sort * :</strong></label>
+                            <div class="controls">
+                                <input class="span11" style="height:35px" placeholder="Sort" type="number"
+                                    name="sort" id="sort" required value="<?php echo $sort?>">
+                            </div>
+                        </div>
                             <div class="form-actions">
                                 <button onclick="return validate()" type="submit" class="btn btn-primary" name="save"
                                     value="1">Publish</button>

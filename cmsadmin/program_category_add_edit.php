@@ -17,15 +17,18 @@ if($_GET['action'] = 'edit' && isset($_GET['id'])){
 }
 $language  = (isset($output['language'])&& !empty($output['language']))?$output['language']:'';
 $name  = (isset($output['categoryname'])&& !empty($output['categoryname']))?$output['categoryname']:'';
+$sort  = (isset($output['sort'])&& !empty($output['sort']))?$output['sort']:'';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = trim($_POST['name']);
     $language = trim($_POST['language']);
+    $sort = trim($_POST['sort']);
     if($_POST['action'] == 'add'){
-        $sql = "INSERT INTO tb_od_programcategory (categoryname, language, status)
-        VALUES ('" . $name . "','" . $language . "', 1)";
+        $sql = "INSERT INTO tb_od_programcategory (sort,categoryname, language, status)
+        VALUES ('" . $sort . "','" . $name . "','" . $language . "', 1)";
     }else{
         $id = trim($_GET['id']);
-        $sql= "UPDATE tb_od_programcategory SET categoryname= '$name' ,language= '$language' WHERE categoryid=$id";
+        $sql= "UPDATE tb_od_programcategory SET sort= '$sort' ,categoryname= '$name' ,language= '$language' WHERE categoryid=$id";
 
     } 
     mysqli_query($link, $sql);
@@ -97,6 +100,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     ?>
 
                                 </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label"><strong>Sort * :</strong></label>
+                            <div class="controls">
+                                <input class="span11" style="height:35px" placeholder="Sort" type="number"
+                                    name="sort" id="sort" required value="<?php echo $sort?>">
                             </div>
                         </div>
 

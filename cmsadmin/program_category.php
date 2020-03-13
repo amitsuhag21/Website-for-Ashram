@@ -16,7 +16,7 @@ else {
 };   
 
 $start_from = ($pn-1) * $limit;   
-$sql = "Select * from   tb_od_programcategory where 1 order by categoryid desc LIMIT $start_from, $limit ";
+$sql = "Select * from   tb_od_programcategory where 1 order by sort ASC LIMIT $start_from, $limit ";
 $result = mysqli_query($link, $sql);
 
 ?>
@@ -139,6 +139,7 @@ tr:nth-child(odd) {
                                     <th>S.no</th>
                                     <th>Category Name</th>
                                     <th>Language</th>
+                                    <th>Sort</th>
                                     <th>status</th>
                                     <th>Action</th>
                                 </tr>
@@ -153,6 +154,7 @@ tr:nth-child(odd) {
                                 <td><?php echo $i ?></td>
                                 <td><strong><?php echo $row['categoryname']; ?></strong></td>
                                 <td><strong><?php echo $row['language']; ?></strong></td>
+                                <td><strong><?php echo $row['sort']; ?></strong></td>
                                 <?php 
                                  $node_id = $row['categoryid'];
                                         if ($row['status'] == 1) {
