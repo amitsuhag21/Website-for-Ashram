@@ -1,7 +1,7 @@
 <?php
 
 include_once "../config/database.php"; 
-include_once "../service/MasterService.php";
+include_once "../service/ProgramCategoryService.php";
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -12,43 +12,43 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
     $db = new Database();
     $dbConnection =  $db->getConnection();
     $requestMethod = $_SERVER["REQUEST_METHOD"];
-    $controller = new MasterController($dbConnection, $requestMethod);
+    $controller = new ProgramCategoryController($dbConnection, $requestMethod);
     $controller->processRequest();
 
-class MasterController {
+class ProgramCategoryController {
 
     private $db;
     private $requestMethod;
 
-    private $masterService;
+    private $programCategoryService;
 
     public function __construct($db, $requestMethod)
     {
         $this->db = $db;
         $this->requestMethod = $requestMethod;
-        $this->masterService = new MasterService($this->db);
+        $this->programCategoryService = new ProgramCategoryService($this->db);
     }   
 
     public function processRequest()
     {
         switch ($this->requestMethod) {
         case 'GET':
-                if (!empty($_GET["masterid"])) {
-                    $response = $this->getMaster(($_GET["masterid"]));
-                }else if(!empty($data["masterid"])){
-                    $response = $this->getMaster(($data["masterid"]));
+                if (!empty($_GET["categoryid"])) {
+                    $response = $this->getCategory(($_GET["categoryid"]));
+                }else if(!empty($data["categoryid"])){
+                    $response = $this->getCategory(($data["categoryid"]));
                 }else {
-                    $response = $this->getAllMaster();
+                    $response = $this->getAllPCategory();
                 };
                 break;
             case 'POST':
                 //$data = json_decode($_POST["data"]);
-                if (!empty($_POST["masterid"])) {
-                    $response = $this->getMaster(($_POST["masterid"]));
-                }else if(!empty($data["masterid"])){
-                    $response = $this->getMaster(($data["masterid"]));
+                if (!empty($_POST["categoryid"])) {
+                    $response = $this->getCategory(($_POST["categoryid"]));
+                }else if(!empty($data["categoryid"])){
+                    $response = $this->getCategory(($data["categoryid"]));
                 } else {
-                    $response = $this->getAllMaster();
+                    $response = $this->getAllPCategory();
                 };
                 break;
             default:
@@ -61,22 +61,31 @@ class MasterController {
         }
     }
 
-    private function getAllMaster()
+    private function getAllPCategory()
     {
-        $result = $this->masterService->findAll();
+        $result = $this->programCategoryService->findAll();
         $response['status_code_header'] = 'HTTP/1.1 200 OK';
         $response['body'] = $result;
         return $response;
     }
 
-    private function getMaster($id)
+    private function getCategory($id)
     {
-        $result = $this->masterService->find($id);
+        $result = $this->programCategoryService->find($id);
         if (! $result) {
             return $this->notFoundResponse();
         }
         $response['status_code_header'] = 'HTTP/1.1 200 OK';
         $response['body'] = $result;
+        return $response;
+    }
+
+    private function unprocessableEntityResponse()
+    {
+        $response['status_code_header'] = 'HTTP/1.1 422 Unprocessable Entity';
+        $response['body'] = json_encode([
+            'error' => 'Invalid input'
+        ]);
         return $response;
     }
 

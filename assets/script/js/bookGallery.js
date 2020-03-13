@@ -1,7 +1,7 @@
 var planData = {};
 $(document).ready(function(){
 debugger;	
-	callFaqData(); 
+	//callFaqData(); 
 });
 
 

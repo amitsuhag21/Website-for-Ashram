@@ -3,6 +3,7 @@ var templates = "";
 
 $(document).ready(function() {
   debugger;
+    loadCategory()
   callFragmentText();
   if(!window.localStorage.languageCode){
     window.localStorage.languageCode = 'en';
@@ -14,7 +15,8 @@ $(document).ready(function() {
   if(url){      
       loadProgramData(url);
   }else{
-     url ="programid=1"
+    url ="programid=1"
+    loadProgramData(url);
   }
   eventListener();
 });
@@ -56,7 +58,7 @@ function loadProgramData(urldata){
 
       }
   };
-  xhttp.open("POST", "/php/api/controller/ProgramController.php", true);
+  xhttp.open("POST", "php/api/controller/ProgramController.php", true);
   xhttp.send(fd);
 }
 

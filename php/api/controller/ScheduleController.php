@@ -1,7 +1,7 @@
 <?php
 
 include_once "../config/database.php"; 
-include_once "../service/MasterService.php";
+include_once "../service/ScheduleService.php";
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -12,43 +12,45 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
     $db = new Database();
     $dbConnection =  $db->getConnection();
     $requestMethod = $_SERVER["REQUEST_METHOD"];
-    $controller = new MasterController($dbConnection, $requestMethod);
+    $controller = new ScheduleController($dbConnection, $requestMethod);
     $controller->processRequest();
 
-class MasterController {
+class ScheduleController {
 
     private $db;
     private $requestMethod;
 
-    private $masterService;
+    private $scheduleService;
 
     public function __construct($db, $requestMethod)
     {
         $this->db = $db;
         $this->requestMethod = $requestMethod;
-        $this->masterService = new MasterService($this->db);
+        $this->scheduleService = new ScheduleService($this->db);
     }   
 
     public function processRequest()
     {
         switch ($this->requestMethod) {
         case 'GET':
-                if (!empty($_GET["masterid"])) {
-                    $response = $this->getMaster(($_GET["masterid"]));
-                }else if(!empty($data["masterid"])){
-                    $response = $this->getMaster(($data["masterid"]));
+                $data = json_decode(file_get_contents('php://input'), TRUE);
+                if (!empty($_GET["search"])) {
+                    $response = $this->getScheduleSearch(($_GET["search"]));
+                }else if(!empty($data["search"])){
+                    $response = $this->getScheduleSearch(($data["search"]));
                 }else {
-                    $response = $this->getAllMaster();
+                    $response = $this->getAllSchedule();
                 };
                 break;
             case 'POST':
-                //$data = json_decode($_POST["data"]);
-                if (!empty($_POST["masterid"])) {
-                    $response = $this->getMaster(($_POST["masterid"]));
-                }else if(!empty($data["masterid"])){
-                    $response = $this->getMaster(($data["masterid"]));
+                $data = json_decode(file_get_contents('php://input'), TRUE);
+                /*if (!empty($_POST["search"])) {
+                    $response = $this->getScheduleSearch(($_POST["search"]));
+                }else */
+                if(!empty($data["search"])){
+                    $response = $this->getScheduleSearch(($data["search"]));
                 } else {
-                    $response = $this->getAllMaster();
+                    $response = $this->getAllSchedule();
                 };
                 break;
             default:
@@ -61,17 +63,17 @@ class MasterController {
         }
     }
 
-    private function getAllMaster()
+    private function getAllSchedule()
     {
-        $result = $this->masterService->findAll();
+        $result = $this->scheduleService->findAll();
         $response['status_code_header'] = 'HTTP/1.1 200 OK';
         $response['body'] = $result;
         return $response;
     }
 
-    private function getMaster($id)
+    private function getScheduleSearch($id)
     {
-        $result = $this->masterService->find($id);
+        $result = $this->scheduleService->find($id);
         if (! $result) {
             return $this->notFoundResponse();
         }

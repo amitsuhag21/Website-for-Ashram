@@ -1,6 +1,6 @@
  <?php
 
-class MasterService {
+class ProgramCategoryService {
     private $connection;
     public function __construct($db)
     {
@@ -9,14 +9,12 @@ class MasterService {
 
     function findAll()
     {
-        $query="SELECT * FROM tb_od_gurus";
+        $query="SELECT * FROM tb_od_programcategory";
         $response=array();
         $result=mysqli_query( $this->connection, $query);
-        if($result){ 
-            while($row=mysqli_fetch_array($result))
-            {
-                $response[]=$row;
-            }
+        while($row=mysqli_fetch_array($result))
+        {
+            $response[]=$row;
         }
         header('Content-Type: application/json');
         echo json_encode($response);
@@ -25,10 +23,10 @@ class MasterService {
 
     function find($id=0)
     {
-        $query="SELECT * FROM tb_od_gurus";
+        $query="SELECT * FROM tb_od_programcategory";
         if($id != 0)
         {
-            $query.=" WHERE guruid=".$id." LIMIT 1";
+            $query.=" WHERE categoryid=".$id." LIMIT 1";
         }
         $response=array();
         $result=mysqli_query($this->connection, $query);
@@ -41,5 +39,4 @@ class MasterService {
         header('Content-Type: application/json');
         echo json_encode($response);
     }
-    
 }

@@ -422,6 +422,10 @@ select.form-control:not([size]):not([multiple]) {
 	 margin:10px!important;
 	 
  }
+ .qt-mgr1 {
+    background-color: #eeeadf;
+    padding: 00px;
+}
 	
 }
 .container22{
@@ -430,7 +434,7 @@ select.form-control:not([size]):not([multiple]) {
   /* margin: 00px auto; */
   height: auto;
   /* width: 500px; */
-  /* padding: 20px; */
+  padding-bottom: 20px;
 }
 
  
@@ -599,4 +603,22 @@ by the way it is so weird when you look at your code a couple of years after you
 .alert a {
 	color: #232323;
 	font-weight: bold;
+}
+.text-xs-right{
+	margin-top:15px;
+	
+}
+
+.tb-bg-text{
+	background:#333;
+	color:#FFF!important;
+	
+	
+}
+
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+  color:#FFF!important;
+  margin-top: 20px;
 }

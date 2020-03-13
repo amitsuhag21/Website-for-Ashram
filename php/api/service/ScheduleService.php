@@ -1,6 +1,6 @@
  <?php
 
-class MasterService {
+class ScheduleService {
     private $connection;
     public function __construct($db)
     {
@@ -9,7 +9,7 @@ class MasterService {
 
     function findAll()
     {
-        $query="SELECT * FROM tb_od_gurus";
+        $query="SELECT * FROM tb_od_programschedule";
         $response=array();
         $result=mysqli_query( $this->connection, $query);
         if($result){ 
@@ -25,10 +25,10 @@ class MasterService {
 
     function find($id=0)
     {
-        $query="SELECT * FROM tb_od_gurus";
+        $query="SELECT * FROM tb_od_programschedule";
         if($id != 0)
         {
-            $query.=" WHERE guruid=".$id." LIMIT 1";
+            $query.=" WHERE programid=".$id." LIMIT 1";
         }
         $response=array();
         $result=mysqli_query($this->connection, $query);
