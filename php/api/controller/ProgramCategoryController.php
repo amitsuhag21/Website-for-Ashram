@@ -42,7 +42,6 @@ class ProgramCategoryController {
                 };
                 break;
             case 'POST':
-                //$data = json_decode($_POST["data"]);
                 if (!empty($_POST["categoryid"])) {
                     $response = $this->getCategory(($_POST["categoryid"]));
                 }else if(!empty($data["categoryid"])){
@@ -57,7 +56,7 @@ class ProgramCategoryController {
         }
         
         if ($response['body']) {
-            echo $response['body'];
+            echo json_encode($response['body']);
         }
     }
 

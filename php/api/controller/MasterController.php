@@ -57,7 +57,8 @@ class MasterController {
         }
         
         if ($response['body']) {
-            echo $response['body'];
+            echo json_encode($response['body']);
+            //echo $response['body'];
         }
     }
 

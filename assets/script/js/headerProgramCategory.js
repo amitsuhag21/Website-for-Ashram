@@ -46,7 +46,7 @@ function loadProgramCategoryData(){
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-          let catProResponsecatProResponse = xhttp.responseText;
+          let catProResponse = xhttp.responseText;
           catProResponse = JSON.parse(catProResponse);
           if(catProResponse && catProResponse.length  > 0){
               renderProgramData_HPC(catProResponse);

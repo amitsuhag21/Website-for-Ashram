@@ -18,8 +18,9 @@ class MasterService {
                 $response[]=$row;
             }
         }
-        header('Content-Type: application/json');
-        echo json_encode($response);
+/*        header('Content-Type: application/json');
+        echo json_encode($response);*/
+        return $response;
     }
 
 
@@ -38,8 +39,9 @@ class MasterService {
                 $response[]=$row;
             }
         }
-        header('Content-Type: application/json');
-        echo json_encode($response);
+/*        header('Content-Type: application/json');
+        echo json_encode($response);*/
+        return $response;
     }
     
 }
