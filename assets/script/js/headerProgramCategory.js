@@ -32,6 +32,7 @@ function loadHeaderProgramCategoryData(){
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           let proCatResponse = xhttp.responseText;
+          window.localStorage.proCatResponse =  JSON.stringify(proCatResponse);
           categoryData = JSON.parse(proCatResponse);
           loadProgramCategoryData();
       }else{
@@ -47,6 +48,7 @@ function loadProgramCategoryData(){
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           let catProResponse = xhttp.responseText;
+          window.localStorage.catProResponse =  JSON.stringify(catProResponse);
           catProResponse = JSON.parse(catProResponse);
           if(catProResponse && catProResponse.length  > 0){
               renderProgramData_HPC(catProResponse);

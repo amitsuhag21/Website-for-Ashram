@@ -23,20 +23,27 @@ class ScheduleService {
     }
 
 
-    function find($id=0)
+    function find($reqData)
     {
-        $query="SELECT * FROM tb_od_programschedule";
-        if($id != 0)
-        {
-            $query.=" WHERE programid=".$id." LIMIT 1";
-        }
+        $query="SELECT * FROM tb_od_programschedule  WHERE  ";
         $response=array();
+        if($reqData[0]['programid'] )
+        {
+            $query.="programid=".$reqData[0]['programid'];
+        }
+        if($reqData['venuId'] )
+        {
+            $query.="dhyankendraid=".$reqData[0]['venuId'];
+        }
         $result=mysqli_query($this->connection, $query);
         if($result){            
             while($row=mysqli_fetch_array($result))
             {
                 $response[]=$row;
             }
+        }else{
+            
+            $response =$reqData[0]['programid'];
         }
         header('Content-Type: application/json');
         echo json_encode($response);

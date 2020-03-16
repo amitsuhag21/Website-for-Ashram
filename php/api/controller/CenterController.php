@@ -1,7 +1,7 @@
 <?php
 
 include_once "../config/database.php"; 
-include_once "../service/ScheduleService.php";
+include_once "../service/CenterService.php";
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -12,46 +12,44 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
     $db = new Database();
     $dbConnection =  $db->getConnection();
     $requestMethod = $_SERVER["REQUEST_METHOD"];
-    $controller = new ScheduleController($dbConnection, $requestMethod);
+    $controller = new CenterController($dbConnection, $requestMethod);
     $controller->processRequest();
 
-class ScheduleController {
+class CenterController {
 
     private $db;
     private $requestMethod;
 
-    private $scheduleService;
+    private $centerService;
 
     public function __construct($db, $requestMethod)
     {
         $this->db = $db;
         $this->requestMethod = $requestMethod;
-        $this->scheduleService = new ScheduleService($this->db);
+        $this->centerService = new CenterService($this->db);
     }   
 
     public function processRequest()
     {
         switch ($this->requestMethod) {
         case 'GET':
-                $data = json_decode(file_get_contents('php://input'), TRUE);
-                if (!empty($_GET["search"])) {
-                    $response = $this->getScheduleSearch(($_GET));
-                }else if(!empty($data["search"])){
-                    $response = $this->getScheduleSearch(($data));
+                if (!empty($_GET["centerid"])) {
+                    $response = $this->getCenter(($_GET["centerid"]));
+                }else if(!empty($data["centerid"])){
+                    $response = $this->getCenter(($data["centerid"]));
                 }else {
-                    $response = $this->getAllSchedule();
+                    $response = $this->getAllCenter();
                 };
                 break;
             case 'POST':
-                $data = json_decode(file_get_contents('php://input'), TRUE);
-                if (!empty($_POST["search"])) {
-                    $response = $this->getScheduleSearch(($_POST));
-                }else if(!empty($data["search"])){
-                    $response = $this->getScheduleSearch($data);
+                //$data = json_decode($_POST["data"]);
+                if (!empty($_POST["centerid"])) {
+                    $response = $this->getCenter(($_POST["centerid"]));
+                }else if(!empty($data["centerid"])){
+                    $response = $this->getCenter(($data["centerid"]));
                 } else {
-                    $response = $this->getAllSchedule();
+                    $response = $this->getAllCenter();
                 };
-                
                 break;
             default:
                 $response = $this->notFoundResponse();
@@ -60,22 +58,25 @@ class ScheduleController {
         
         if ($response['body']) {
             echo json_encode($response['body']);
+            //echo $response['body'];
         }
     }
 
-    private function getAllSchedule()
+    private function getAllCenter()
     {
-        $result = $this->scheduleService->findAll();
+        $result = $this->centerService->findAll();
+        $response['status_code_header'] = 'HTTP/1.1 200 OK';
         $response['body'] = $result;
         return $response;
     }
 
-    private function getScheduleSearch($reqData)
+    private function getCenter($id)
     {
-        $result = $this->scheduleService->find($reqData);
+        $result = $this->centerService->find($id);
         if (! $result) {
             return $this->notFoundResponse();
         }
+        $response['status_code_header'] = 'HTTP/1.1 200 OK';
         $response['body'] = $result;
         return $response;
     }

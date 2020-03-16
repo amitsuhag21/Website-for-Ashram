@@ -25,6 +25,7 @@
     <link href="css/bootstrap.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="css/theme-animate.css">
+    <link rel="stylesheet" href="assets/css/libs/jquery-ui.css">
 
     <!-- Style Switcher-->
     <link rel="stylesheet" href="style-switcher/css/style-switcher.css">
@@ -34,16 +35,6 @@
 
     <!-- Head libs -->
     <script src="vendor/modernizr/modernizr.js"></script>
-
-    <!--[if IE]>
-      <link rel="stylesheet" href="css/ie.css">
-    <![endif]-->
-
-    <!--[if lte IE 8]>
-      <script src="vendor/respond/respond.js"></script>
-      <script src="vendor/excanvas/excanvas.js"></script>
-    <![endif]-->
-
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <style type="text/css">
         body,
@@ -79,7 +70,7 @@
                         <a href="index.html" class="active"> <span>HOME</span></a>
                     </li>
                     <li>
-                        <a href="knowus.html"> <span>INTRODUCTION</span></a>
+                        <a href="knowus.html"> <span>Know us</span></a>
                     </li>
                     <li class="treeview">
                         <a href="master.html">
@@ -89,17 +80,17 @@
                         <ul class="treeview-menu">
 
                             <li>
-                                <a href="master.html?masterid=2">Param Gurus <i class="fa fa-angle-left pull-right"></i></a>
+                                <a href="master.html?masterid=2">Guru<i class="fa fa-angle-left pull-right"></i></a>
                                 <ul class="treeview-menu">
-                                    <li><a href="master.html?masterid=2"><i class="fa fa-circle-o"></i>Paramguru Osho</a></li>
-                                    <li><a href="master.html?masterid=3"><i class="fa fa-circle-o"></i>Guru Nanak Dev ji</a></li>
+                                    <li><a href="master.html?masterid=2"><i class="fa fa-circle-o"></i>Osho</a></li>
+                                    <li><a href="master.html?masterid=3"><i class="fa fa-circle-o"></i>Guru Nanak Dev</a></li>
                                     <li><a href="master.html?masterid=4"><i class="fa fa-circle-o"></i>Qalandar Sufi Baba</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="master.html?masterid=1">Living Master <i class="fa fa-angle-left pull-right"></i></a>
                                 <ul class="treeview-menu">
-                                    <li><a href="master.html?masterid=1"><i class="fa fa-circle-o"></i>Sadguru Osho Siddharth
+                                    <li><a href="master.html?masterid=1"><i class="fa fa-circle-o"></i>Sadguru Osho Siddharth Aulia
                                         </a>
                                     </li>
                                 </ul>
@@ -131,7 +122,6 @@
                                     <li><a href="programe.html?programid=4"><i class="fa fa-circle-o"></i>Sammohan and Mahajeevan Pragya</a></li>
                                 </ul>
                             </li>
-
                             <li>
                                 <a href="programe.html">Sumiran Programs<i class="fa fa-angle-left pull-right"></i></a>
                                 <ul id="programListHolder_3" class="treeview-menu">
@@ -182,7 +172,7 @@
                         <a href="comingSoon.html">CENTERS</span> <i class="fa fa-angle-left pull-right"></i>                </a>
                         <ul class="treeview-menu">
                             <li><a href="comingSoon.html"><i class="fa fa-circle-o"></i> Main Dhams</a></li>
-                            <li><a href="comingSoon.html"><i class="fa fa-circle-o"></i> Dhyan Kendra & Sadhna</a></li>
+                            <li><a href="comingSoon.html"><i class="fa fa-circle-o"></i> Dhyan & Sadhna Kendra</a></li>
 
                         </ul>
                     </li>
@@ -216,12 +206,11 @@
         </nav>
         <div class="ss-social-ic1">
             <ul class=" list-inline text-r ">
-                <li><a href="comingSoon.html" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="comingSoon.html" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="comingSoon.html" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="https://www.facebook.com/oshodharaOSHO" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/SiddharthAulia" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.youtube.com/user/OshodharaVideos?sub_confirmation=1" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus"><i class="fa fa-youtube"></i></a></li>
 
             </ul>
-        </div>
     </aside>
 <div class="content container-fluid">
 
@@ -278,14 +267,8 @@
 
                                 <h5>Program Category<span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <select name="ss" id="ss" required class="form-control">
-                                        <option value="">Select an Option</option>
-                                        <option value="Program Category1">Program Category1</option>
-                                        <option value="Program Category2">Program Category2</option>
-                                        <option value="Program Category3">Program Category3</option>
-                                        <option value="Program Category4">Program Category4</option>
+                                    <input name="programCate_SPG" id="programCate_SPG" placeholder="Program Category" required class="form-control">
 
-                                    </select>
                                 </div>
                             </div>
 
@@ -293,14 +276,7 @@
 
                                 <h5>Program <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <select name="ss" id="ss" required class="form-control">
-                                        <option value="">Select an Option</option>
-                                        <option value="Program  1">Program 1</option>
-                                        <option value="Program  2">Program 2</option>
-                                        <option value="Program  3">Program 3</option>
-                                        <option value="Program  4">Program 4</option>
-
-                                    </select>
+                                   <input name="programNameAuto_SPG" id="programNameAuto_SPG" placeholder="Program Name" required class="form-control">
                                 </div>
                             </div>
 
@@ -312,14 +288,7 @@
 
                                 <h5>Venue <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <select name="ss" id="ss" required class="form-control">
-                                        <option value="">Select an Option</option>
-                                        <option value="Venue  1">Venue 1</option>
-                                        <option value="Venue  2">Venue 2</option>
-                                        <option value="Venue  3">Venue 3</option>
-                                        <option value="Venue  4">Venue 4</option>
-
-                                    </select>
+                                    <input name="venueNameAuto_SPG" id="venueNameAuto_SPG" placeholder="Venu Name" required class="form-control">
                                 </div>
                             </div>
 
@@ -338,7 +307,7 @@
                                 </div>
                             </div>
                         </div>
-
+<!-- 
                         <div class="form-group">
                             <div class="col-md-12">
                                 <h5>Date <span class="text-danger">*</span></h5>
@@ -375,28 +344,28 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <div class="col-md-6">
-                                <h5>Start Date <span class="text-danger">*</span></h5>
+                                <h5>From Date <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="name" name="name" class="form-control" required placeholder="02-04-2020" data-validation-required-message="This field is required"> </div>
+                                    <input id="startDate_SPG" type="name" name="name" class="form-control" required placeholder="start date" data-validation-required-message="This field is required"> </div>
 
                             </div>
 
                             <div class="col-md-6">
 
-                                <h5>End Date <span class="text-danger">*</span></h5>
+                                <h5>last Date <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="name" name="name" class="form-control" required placeholder="04-09-2020" data-validation-required-message="This field is required"> </div>
+                                    <input id="endDate_SPG" type="name" name="name" class="form-control" required placeholder="end date" data-validation-required-message="This field is required"> </div>
 
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-primary" data-text="Submit">Search My Program</button>
-                                <button type="reset" class="btn btn-inverse" data-text="Reset">Reset</button>
+                                <button id="searchSchedule_SPG" type="button" class="btn btn-primary" data-text="Submit">Search</button>
+                                <button id="resetSchedule_SPG" type="button" class="btn btn-inverse" data-text="Reset">Reset</button>
                                 <br>
                                 <br>
 
@@ -679,8 +648,11 @@
 
     <!-- Begin Style Switcher -->
 
-    <!-- Vendor -->
+    <!-- Vendor
     <script src="vendor/jquery/jquery.js"></script>
+     -->
+    <script src="assets/script/libs/jquery-1.12.4.js"></script>
+    <script src="assets/script/libs/jquery-ui.js"></script>
     <script src="vendor/bootstrap/bootstrap.js"></script>
     <script src="vendor/jquery.validation/jquery.validation.js"></script>
     <script src="vendor/owlcarousel/owl.carousel.js"></script>
@@ -705,8 +677,8 @@
     <script>
         $('.sidebar-menu').SidebarNav()
     </script>
+    <script src="js/mask.init.js"></script>
     <script src="js/jquery.inputmask.bundle.min.js"></script>
-    <script src="js/pages/mask.init.js"></script>
 </body>
 
 </html>
