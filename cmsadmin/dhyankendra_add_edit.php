@@ -47,7 +47,7 @@ $status  = $_POST['status'];
           $sql = "INSERT INTO tb_od_dhyankendra( dhyankendraname, Address1, Address2, Address3, Phone1, Phone2, stateid, countryid, zipcode, ownerid, emailid, language, status)VALUES ('" . $dhyankendraname . "','" . $address1 . "','" . $address2 . "','" . $address3 . "','" . $phone1 . "', '" . $phone2 . "', '" . $stateid . "', '" . $countryid . "', '" . $zipcode . "','" . $ownerid . "', '" . $emailid . "','" . $language . "',1)";
         }else{
           $id = $_GET['id'];
-          $sql= "UPDATE tb_od_dhyankendra SET dhyankendraname='$dhyankendraname',Address1='$address1', Address2= '$address2' ,Address3= '$address3' ,countryid='$countryid',zipcode='$zipcode',ownerid='$ownerid',emailid='$emailid',language='$language',stateid='$stateid',countryid='$countryid' WHERE dhyankendraid=$id";
+          $sql= "UPDATE tb_od_dhyankendra SET dhyankendraname='$dhyankendraname',Phone1='$phone1',Phone2='$phone2',Address1='$address1', Address2= '$address2' ,Address3= '$address3' ,countryid='$countryid',zipcode='$zipcode',ownerid='$ownerid',emailid='$emailid',language='$language',stateid='$stateid',countryid='$countryid' WHERE dhyankendraid=$id";
         }
         mysqli_query($link, $sql);
         if(mysqli_error($link)){
