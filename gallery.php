@@ -61,166 +61,7 @@
 </head>
 
 <body class="front">
-    <aside class="sidebar-left">
-        <nav class="navbar navbar-inverse">
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".collapse" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="comingSoon.html"><img src="images/logo.png" class="img-responsive img-logo"></a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="sidebar-menu">
-                    <li>
-                        <a href="index.html" class="active"> <span>HOME</span></a>
-                    </li>
-                    <li>
-                        <a href="knowus.html"> <span>Know us</span></a>
-                    </li>
-                    <li class="treeview">
-                        <a href="master.html">
-                            <span>MASTERS</span>
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-
-                            <li>
-                                <a href="master.html?masterid=2">Guru<i class="fa fa-angle-left pull-right"></i></a>
-                                <ul class="treeview-menu">
-                                    <li><a href="master.html?masterid=2"><i class="fa fa-circle-o"></i>Osho</a></li>
-                                    <li><a href="master.html?masterid=3"><i class="fa fa-circle-o"></i>Guru Nanak Dev</a></li>
-                                    <li><a href="master.html?masterid=4"><i class="fa fa-circle-o"></i>Qalandar Sufi Baba</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="master.html?masterid=1">Living Master <i class="fa fa-angle-left pull-right"></i></a>
-                                <ul class="treeview-menu">
-                                    <li><a href="master.html?masterid=1"><i class="fa fa-circle-o"></i>Sadguru Osho Siddharth Aulia
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="programe.html">
-                            <span>PROGRAMS</span>
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul id="programCategoryHolder" class="treeview-menu" style="display: none; overflow: hidden;">  
-                            <li>
-                                <a href="programe.html">Samadhi Programs<i class="fa fa-angle-left pull-right"></i></a>
-                                <ul id="programListHolder_1" class="treeview-menu">
-                                    <li><a href="programe.html?programid=1"><i class="fa fa-circle-o"></i>Dhyan Samadhi</a></li>
-
-                                    <li><a href="programe.html?programid=2"><i class="fa fa-circle-o"></i>Surati Samadhi</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="programe.html">Beginners Programs<i class="fa fa-angle-left pull-right"></i></a>
-                                <ul id="programListHolder_2" class="treeview-menu">
-                                    <li><a href="programe.html?programid=1"><i class="fa fa-circle-o"></i>Dhyan Samadhi</a></li>
-
-                                    <li><a href="programe.html?programid=3"><i class="fa fa-circle-o"></i>Mystic Rose</a></li>
-
-                                    <li><a href="programe.html?programid=4"><i class="fa fa-circle-o"></i>Sammohan and Mahajeevan Pragya</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="programe.html">Sumiran Programs<i class="fa fa-angle-left pull-right"></i></a>
-                                <ul id="programListHolder_3" class="treeview-menu">
-                                    <li><a href="programe.html?programid=10"><i class="fa fa-circle-o"></i>Sahaj Sumiran</a></li>
-
-                                    <li><a href="programe.html?programid=11"><i class="fa fa-circle-o"></i>Shabad Sumiran</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="programe.html">Health Programs<i class="fa fa-angle-left pull-right"></i></a>
-                                <ul id="programListHolder_4" class="treeview-menu">
-                                    <li><a href="programe.html?programid=7"><i class="fa fa-circle-o"></i>Swasthya Pragya</a></li>
-
-                                    <li><a href="programe.html?programid=8"><i class="fa fa-circle-o"></i>Homeo Pragya</a></li>
-
-                                    <li><a href="programe.html?programid=9"><i class="fa fa-circle-o"></i>Kayakalpam</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="programe.html">Acharya Training Programs<i class="fa fa-angle-left pull-right"></i></a>
-                                <ul id="programListHolder_5" class="treeview-menu">
-                                    <li><a href="programe.html?programid=12"><i class="fa fa-circle-o"></i>Acharya Pragya</a></li>
-
-                                    <li><a href="programe.html?programid=13"><i class="fa fa-circle-o"></i>Acharya - 1</a></li>
-
-                                    <li><a href="programe.html?programid=14"><i class="fa fa-circle-o"></i>Acharyashree</a></li>
-
-                                    <li><a href="programe.html?programid=15"><i class="fa fa-circle-o"></i>Acharya</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="programe.html">Pragya Programs<i class="fa fa-angle-left pull-right"></i></a>
-                                <ul id="programListHolder_6" class="treeview-menu">
-                                    <li><a href="programe.html?programid=4"><i class="fa fa-circle-o"></i>Sammohan and Mahajeevan Pragya</a></li>
-
-                                    <li><a href="programe.html?programid=5"><i class="fa fa-circle-o"></i>Hans Pragya</a></li>
-
-                                    <li><a href="programe.html?programid=6"><i class="fa fa-circle-o"></i>Umang Pragya</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="treeview">
-                        <a href="comingSoon.html">CENTERS</span> <i class="fa fa-angle-left pull-right"></i>                </a>
-                        <ul class="treeview-menu">
-                            <li><a href="comingSoon.html"><i class="fa fa-circle-o"></i> Main Dhams</a></li>
-                            <li><a href="comingSoon.html"><i class="fa fa-circle-o"></i> Dhyan & Sadhna Kendra</a></li>
-
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="schedule.html">SCHEDULE</span> <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="schedule.html"><i class="fa fa-circle-o"></i>Samadhi Schedule</a></li>
-                            <li><a href="schedule.html"><i class="fa fa-circle-o"></i>Pragya Schedule</a></li>
-                            <li><a href="schedule.html"><i class="fa fa-circle-o"></i>Celebration</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="gallery.html">GALLERY</span> <i class="fa fa-angle-left pull-right"></i>               </a>
-                        <ul class="treeview-menu">
-                            <li><a href="gallery.html"><i class="fa fa-circle-o"></i> Photos</a></li>
-                            <li><a href="gallery.html"><i class="fa fa-circle-o"></i> Videos</a></li>
-                            <li><a href="gallery.html"><i class="fa fa-circle-o"></i> Audios</a></li>
-                            <li><a href="gallery.html"><i class="fa fa-circle-o"></i> Books</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="faq.html"> <span>FAQ</span></a>
-                    </li>
-                    <li>
-                        <a href="social.html"> <span>Social</span></a>
-                    </li>
-
-                </ul>
-            </div>
-        </nav>
-        <div class="ss-social-ic1">
-            <ul class=" list-inline text-r ">
-                <li><a href="https://www.facebook.com/oshodharaOSHO" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="https://twitter.com/SiddharthAulia" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="https://www.youtube.com/user/OshodharaVideos?sub_confirmation=1" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus"><i class="fa fa-youtube"></i></a></li>
-
-            </ul>
-    </aside>
+    <?php include_once 'public_html/includes/sideBarContent.php'; ?>
     <div class="content container-fluid">
 
         <div id="content">
@@ -237,7 +78,7 @@
                                     <option value="hi">Hindi</option>
                                     <option value="en">English</option>
                                 </select>
-                                <input name="" type="text" placeholder="Programs and Centers" value="Keywords" onblur="if (this.value=='') this.value=this.defaultValue" onfocus="if (this.defaultValue==this.value) this.value=''" class="top-search-form1">
+                                <input name="" type="text" placeholder="Programs and Centers"   onblur="if (this.value=='') this.value=this.defaultValue" onfocus="if (this.defaultValue==this.value) this.value=''" class="top-search-form1">
                                 <input name="" type="button" class="top-search-form-submit" value=".">
                             </form>
                             <div class="clearBoth"></div>
@@ -581,23 +422,10 @@
                 </div>
 
             </div>
-            <div class="call-action1">
-                <div class="row">
-                    <div class="col-md-12">
-
-                        Copyrights © 2020 All Rights Reserved by Oshodhara.
-                        <br>
-
-                        <a href="comingSoon.html">Terms of Use </a>| <a href="comingSoon.html">Privacy Policy</a></div>
-                </div>
-            </div>
+            
         </div>
 
-        <div class="col-sm-12">
-            <footer>
-                <p class="footer"> </p>
-            </footer>
-        </div>
+        <?php include_once 'public_html/includes/footerPage.php'; ?>
     </div>
 
     <script src="vendor/jquery/jquery.js"></script>

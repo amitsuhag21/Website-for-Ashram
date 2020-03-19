@@ -3252,7 +3252,7 @@ address {
 }
 /* line 18, ../sass/theme/base/_footer.scss */
 #footer h4 {
-  color: #333333;
+  color: #d0c1c1;
 }
 /* line 21, ../sass/theme/base/_footer.scss */
 #footer a {
@@ -7957,7 +7957,7 @@ iframe {
 	margin-top: 00px;
 	margin-bottom: 0px;
 	padding: 0px;
-	background-color:#f59211;
+	background-color:#b7410e;
 }
 .form-trans-c {
 	border-top-style: none;
@@ -7993,7 +7993,7 @@ iframe {
 	margin-top: 5px;
 }
 .ss-social-ic1 {
-	position: fixed;
+ 
 	margin-top: 5px;
 	padding-left:0px;
 	/* padding-bottom:0px!important; */
@@ -8004,15 +8004,16 @@ iframe {
 	z-index: 1000;
 }
 .ss-social-ic1 a {
-	background-color: #232324;
-	display: block;
-	text-align: center;
-	color: #606061;
-	padding-top: 7px;
-	padding-right: 13px;
-	padding-bottom: 7px;
-	padding-left: 13px;
-	margin-bottom: 15px;
+    color: #fff!important;
+    background-color: #000000;
+    display: block;
+    text-align: center;
+    color: #606061;
+    padding-top: 7px;
+    padding-right: 13px;
+    padding-bottom: 7px;
+    padding-left: 13px;
+    margin-bottom: 15px;
 }
 a {
  color: #2D2D2D;
@@ -8082,7 +8083,7 @@ a {
 	
 }
 .text-r {
-	text-align: right!important;
+	text-align: center!important;
 }
 @media (max-width: 768px) {
   
@@ -8263,7 +8264,7 @@ input[type="checkbox"] {
   border: 1px solid #333333;
   border-bottom: none;
   padding: 18px 30px;
-  background-color: #f9af1a!important;
+  background-color: #b7410e!important;
 }
 /* line 42, ../sass/theme/gui/_accordion.scss */
 .pgl-panel .panel-title a:after {

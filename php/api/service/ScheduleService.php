@@ -9,7 +9,7 @@ class ScheduleService {
 
     function findAll()
     {
-        $query="SELECT * FROM tb_od_programschedule";
+        $query="SELECT * FROM tb_od_programschedule ORDER BY start_date ASC";
         $response=array();
         $result=mysqli_query( $this->connection, $query);
         if($result){ 
@@ -26,15 +26,37 @@ class ScheduleService {
     function find($reqData)
     {
         $query="SELECT * FROM tb_od_programschedule  WHERE  ";
+        $queryparam = "";
         $response=array();
-        if($reqData[0]['programid'] )
+        if(array_key_exists('programid', $reqData) )
         {
-            $query.="programid=".$reqData[0]['programid'];
+            $queryparam.=" programid=".$reqData['programid'];
+        }else if(array_key_exists('categoryid', $reqData)){
+            $queryparam.=" programid in (SELECT programid FROM tb_od_program  WHERE categoryid like '%".$reqData['categoryid']."%')";
+        }else{
+            $queryparam.=" programid like '%%'";
         }
-        if($reqData['venuId'] )
+        if(array_key_exists('venueId', $reqData))
         {
-            $query.="dhyankendraid=".$reqData[0]['venuId'];
+            $queryparam.=" and dhyankendraid =".$reqData['venueId'];
+        }else{
+            $queryparam.=" and dhyankendraid like '%%'";
         }
+        if(array_key_exists('startDate', $reqData))
+        {
+            $queryparam.=" and start_date >='".$reqData['startDate']."'";
+        }else{
+            $queryparam.=" ";
+        }
+        if(array_key_exists('endDate', $reqData))
+        {
+            $queryparam.=" and end_date <='".$reqData['endDate']."'";
+        }else{
+            $queryparam.=" ";
+        }
+        $queryparam.=" ORDER BY start_date ASC";
+
+        $query.=$queryparam;
         $result=mysqli_query($this->connection, $query);
         if($result){            
             while($row=mysqli_fetch_array($result))
@@ -43,10 +65,9 @@ class ScheduleService {
             }
         }else{
             
-            $response =$reqData[0]['programid'];
+            $response =[];
         }
-        header('Content-Type: application/json');
-        echo json_encode($response);
+        return $response;
     }
     
 }
