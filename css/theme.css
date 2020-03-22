@@ -1171,7 +1171,7 @@ mark,
 }
 
 /* line 91, ../sass/bootstrap/bootstrap/_type.scss */
-.text-right, #footer .footer-copyright {
+.text-right, #footer_od .footer-copyright {
   text-align: right;
 }
 
@@ -1337,19 +1337,19 @@ ol ol {
 }
 
 /* line 167, ../sass/bootstrap/bootstrap/_type.scss */
-.list-unstyled, .menu-column-inner > ul, #footer ul, .list-partners, .list-thumbs-pro, .list-view, .list-sort, .list-review, .social-icons-share, .list-note, .list-categories, .blk-highlight ul, .uk-cow-offcanvas, .uk-cow-sub {
+.list-unstyled, .menu-column-inner > ul, #footer_od ul, .list-partners, .list-thumbs-pro, .list-view, .list-sort, .list-review, .social-icons-share, .list-note, .list-categories, .blk-highlight ul, .uk-cow-offcanvas, .uk-cow-sub {
   padding-left: 0;
   list-style: none;
 }
 
 /* line 173, ../sass/bootstrap/bootstrap/_type.scss */
-.list-inline, #footer .social-icons, #footer .card-icons {
+.list-inline, #footer_od .social-icons, #footer_od .card-icons {
   padding-left: 0;
   list-style: none;
   margin-left: -5px;
 }
 /* line 177, ../sass/bootstrap/bootstrap/_type.scss */
-.list-inline > li, #footer .social-icons > li, #footer .card-icons > li {
+.list-inline > li, #footer_od .social-icons > li, #footer_od .card-icons > li {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
@@ -2516,7 +2516,7 @@ a {
 }
 /* line 38, ../sass/theme/base/_base.scss */
 a:hover {
-  color: #dd4e4e;
+  color: #FFF;
   outline: none;
   text-decoration: none;
 }
@@ -3231,83 +3231,83 @@ address {
   }
 }
 
-/* #Footer */
+/* #footer_od */
 /* line 2, ../sass/theme/base/_footer.scss */
-#footer {
+#footer_od {
   color: #999999;
   font-size: 15px;
 }
 /* line 5, ../sass/theme/base/_footer.scss */
-#footer .container23 {
+#footer_od .container23 {
   padding-bottom: 60px;
   padding-top: 60px;
   /* Responsive */
 }
 @media (max-width: 767px) {
   /* line 5, ../sass/theme/base/_footer.scss */
-  #footer .container23 {
+  #footer_od .container23 {
     padding-left: 30px;
     padding-right: 30px;
   }
 }
 /* line 18, ../sass/theme/base/_footer.scss */
-#footer h4 {
+#footer_od h4 {
   color: #d0c1c1;
 }
 /* line 21, ../sass/theme/base/_footer.scss */
-#footer a {
-  color: #999999;
+#footer_od a {
+  color: #c1c1c1;
 }
 /* line 23, ../sass/theme/base/_footer.scss */
-#footer a:hover {
+#footer_od a:hover {
   color: #dd4e4e;
 }
 /* line 27, ../sass/theme/base/_footer.scss */
-#footer address a, #footer .footer-copyright p a {
+#footer_od address a, #footer_od .footer-copyright p a {
   color: #333333;
 }
 /* line 29, ../sass/theme/base/_footer.scss */
-#footer address a:hover, #footer .footer-copyright p a:hover {
+#footer_od address a:hover, #footer_od .footer-copyright p a:hover {
   color: #dd4e4e;
 }
 /* line 33, ../sass/theme/base/_footer.scss */
-#footer p {
+#footer_od p {
   margin-bottom: 12px;
 }
 /* line 38, ../sass/theme/base/_footer.scss */
-#footer ul li {
+#footer_od ul li {
   margin-bottom: 5px;
 }
 /* line 42, ../sass/theme/base/_footer.scss */
-#footer .social-icons, #footer .card-icons {
+#footer_od .social-icons, #footer_od .card-icons {
   margin-left: 0;
 }
 /* line 45, ../sass/theme/base/_footer.scss */
-#footer .social-icons li, #footer .card-icons li {
+#footer_od .social-icons li, #footer_od .card-icons li {
   padding-left: 0;
   padding-right: 0;
 }
 /* line 50, ../sass/theme/base/_footer.scss */
-#footer .tweet-date {
+#footer_od .tweet-date {
   color: #999999;
   display: block;
   margin-top: 8px;
 }
 /* line 55, ../sass/theme/base/_footer.scss */
-#footer .latest-tweets a {
+#footer_od .latest-tweets a {
   color: #dd4e4e;
 }
 /* line 57, ../sass/theme/base/_footer.scss */
-#footer .latest-tweets a:hover {
+#footer_od .latest-tweets a:hover {
   color: #777777;
 }
 /* line 64, ../sass/theme/base/_footer.scss */
-#footer .card-icons a {
+#footer_od .card-icons a {
   color: rgba(0, 0, 0, 0.5);
   font-size: 1.6em;
 }
 /* line 67, ../sass/theme/base/_footer.scss */
-#footer .card-icons a:hover {
+#footer_od .card-icons a:hover {
   color: #dd4e4e;
 }
 
@@ -3362,54 +3362,54 @@ address {
 }
 
 /* line 105, ../sass/theme/base/_footer.scss */
-#footer.bg-color6 {
+#footer_od.bg-color6 {
   background-color: transparent !important;
   color: #777777;
 }
 /* line 107, ../sass/theme/base/_footer.scss */
-#footer.bg-color6 .container23 {
+#footer_od.bg-color6 .container23 {
   background-color: #222222;
   padding-left: 30px;
   padding-right: 30px;
 }
 /* line 115, ../sass/theme/base/_footer.scss */
-#footer.bg-color6 h4 {
+#footer_od.bg-color6 h4 {
   color: #ededed;
 }
 /* line 118, ../sass/theme/base/_footer.scss */
-#footer.bg-color6 a {
+#footer_od.bg-color6 a {
   color: #777777;
 }
 /* line 120, ../sass/theme/base/_footer.scss */
-#footer.bg-color6 a:hover {
+#footer_od.bg-color6 a:hover {
   color: #dd4e4e;
 }
 /* line 124, ../sass/theme/base/_footer.scss */
-#footer.bg-color6 address a, #footer.bg-color6 .footer-copyright p a {
+#footer_od.bg-color6 address a, #footer_od.bg-color6 .footer-copyright p a {
   color: #ededed;
 }
 /* line 126, ../sass/theme/base/_footer.scss */
-#footer.bg-color6 address a:hover, #footer.bg-color6 .footer-copyright p a:hover {
+#footer_od.bg-color6 address a:hover, #footer_od.bg-color6 .footer-copyright p a:hover {
   color: #dd4e4e;
 }
 /* line 130, ../sass/theme/base/_footer.scss */
-#footer.bg-color6 .latest-tweets a {
+#footer_od.bg-color6 .latest-tweets a {
   color: #dd4e4e;
 }
 /* line 132, ../sass/theme/base/_footer.scss */
-#footer.bg-color6 .latest-tweets a:hover {
+#footer_od.bg-color6 .latest-tweets a:hover {
   color: #777777;
 }
 /* line 137, ../sass/theme/base/_footer.scss */
-#footer.bg-color6 .social-icons a {
+#footer_od.bg-color6 .social-icons a {
   background-color: #333333;
 }
 /* line 141, ../sass/theme/base/_footer.scss */
-#footer.bg-color6 .card-icons a {
+#footer_od.bg-color6 .card-icons a {
   color: rgba(255, 255, 255, 0.5);
 }
 /* line 143, ../sass/theme/base/_footer.scss */
-#footer.bg-color6 .card-icons a:hover {
+#footer_od.bg-color6 .card-icons a:hover {
   color: #dd4e4e;
 }
 
@@ -3435,7 +3435,7 @@ address {
 
 /* line 18, ../sass/theme/gui/_elements.scss */
 .bg-color2 {
-  background-color: #1abc9c !important;
+  background-color: #333333  !important;
 }
 
 /* line 22, ../sass/theme/gui/_elements.scss */
@@ -5105,14 +5105,26 @@ textarea.form-control {
 
 /* line 10, ../sass/theme/gui/_featured-foot.scss */
 .equal-height {
-  height: 100%;
-  min-height: 290px;
+ 
+    height: 100%;
+    min-height: 272px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: dashed;
+	border-left-style: dashed;
+	border-top-color: #666;
+	border-right-color: #666;
+	border-bottom-color: #666;
+	border-left-color: #666;
 }
 
 /* line 15, ../sass/theme/gui/_featured-foot.scss */
 .contact-info-wrap, .newsletter {
-  padding-bottom: 30px;
-  padding-top: 55px;
+  padding-bottom: 22px;
+    padding-top: 43px;
+    padding-left: 70px;
 }
 /* line 18, ../sass/theme/gui/_featured-foot.scss */
 .contact-info-wrap h2, .contact-info-wrap address, .contact-info-wrap p, .newsletter h2, .newsletter address, .newsletter p {
@@ -8005,7 +8017,7 @@ iframe {
 }
 .ss-social-ic1 a {
     color: #fff!important;
-    background-color: #000000;
+    background-color: #333333;
     display: block;
     text-align: center;
     color: #606061;
@@ -8039,7 +8051,7 @@ a {
 	font-size: 17px;
 	line-height: 39px;
 	height: 39px;
-	color: #333;
+	color: #fff;
 	margin: 0px;
 	padding-left: 15px;
 	font-weight: 500;
@@ -8248,8 +8260,10 @@ input[type="checkbox"] {
 }
 /* line 27, ../sass/theme/gui/_accordion.scss */
 .pgl-panel .panel-body {
-  border: 1px solid #333333;
-  padding: 20px;
+  border: 0px solid #333333;
+  padding-left: 0px; 
+  padding-right:0px;
+  padding-top:20px
 }
 /* line 30, ../sass/theme/gui/_accordion.scss */
 .pgl-panel .panel-body hr {
@@ -8268,12 +8282,12 @@ input[type="checkbox"] {
 }
 /* line 42, ../sass/theme/gui/_accordion.scss */
 .pgl-panel .panel-title a:after {
-  color: #333333;
-  content: "-";
-  float: right;
-  font-size: 1.5em;
-  font-weight: 500;
-  line-height: .8;
+    color: #ffffff;
+    content: "-";
+    float: right;
+    font-size: 1.9em;
+    font-weight: 500;
+    line-height: .8;
 }
 /* line 51, ../sass/theme/gui/_accordion.scss */
 .pgl-panel .panel-title .collapsed {
@@ -8281,7 +8295,7 @@ input[type="checkbox"] {
 }
 /* line 53, ../sass/theme/gui/_accordion.scss */
 .pgl-panel .panel-title .collapsed:after {
-  color: #2b2b2b;
+  color: #ffffff;
   content: "+";
 }
 /* line 59, ../sass/theme/gui/_accordion.scss */

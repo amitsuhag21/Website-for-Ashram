@@ -3,33 +3,7 @@
 
 <head>
 
-    <!-- Basic -->
-    <meta charset="utf-8">
-    <title>Osho</title>
-    <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="Marvel - MultiShop Responsive HTML5 Template">
-    <meta name="author" content="pixelgeeklab.com">
-
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Web Fonts  -->
-
-    <!-- Vendor CSS -->
-    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css">
-    <link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.css" media="screen">
-    <link rel="stylesheet" href="vendor/owlcarousel/owl.theme.css" media="screen">
-    <link href="vendor/owl-carousel/owl.transitions.css" rel="stylesheet" media="screen">
-
-    <!-- Theme CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="css/theme-animate.css">
-    <link rel="stylesheet" href="assets/css/libs/jquery-ui.css">
-
-    <!-- Style Switcher-->
-    <link rel="stylesheet" href="style-switcher/css/style-switcher.css">
-    <link href="css/colors/default/style.css" rel="stylesheet" id="layoutstyle">
+    <?php include_once 'public_html/includes/commonHeader.php'; ?>
     <link href='css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />
     <script defer src="js/solid.js"></script>
 
@@ -53,372 +27,340 @@
 
 <body class="front">
     <?php include_once 'public_html/includes/sideBarContent.php'; ?>
-    <div class="content container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
 
-        <div id="content">
+                <div class="header-bg" style="background-image:url(images/banner.jpg)">
+                    <!-- Gradient overlay -->
+                    <div class=" header-content">
+                        <div class="main-title">
+                            <!-- Main-title -->
+                            <h1 class="bold mb-30 a-f ">Schedule</h1>
+                            <!-- breadcrumbs -->
 
-            <div class="top-contact-info1">
-                <div class="row">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-7">
-                        <div class="white-from-trs wow fadeInUp">
-                            <form action="" method="get">
-
-                                <select id="languageSelector" name="" class="top-search-form">
-                                    <option value="en">Language</option>
-                                    <option value="hi">Hindi</option>
-                                    <option value="en">English</option>
-                                </select>
-                                <input name="" type="text" placeholder="Programs and Centers"   onblur="if (this.value=='') this.value=this.defaultValue" onfocus="if (this.defaultValue==this.value) this.value=''" class="top-search-form1">
-                                <input name="" type="button" class="top-search-form-submit" value=".">
-                            </form>
-                            <div class="clearBoth"></div>
+                            <!-- breadcrumbs end -->
                         </div>
                     </div>
                 </div>
 
             </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <div class="header-bg" style="background-image:url(images/banner.jpg)">
-                        <!-- Gradient overlay -->
-                        <div class=" header-content">
-                            <div class="main-title">
-                                <!-- Main-title -->
-                                <h1 class="bold mb-30 a-f ">Schedule</h1>
-                                <!-- breadcrumbs -->
-
-                                <!-- breadcrumbs end -->
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="form-mgr">
-                    <div class="col-md-12 col-sm-12 animate fadeInRight">
-                        <form role="form" action="esendmail1.php" method="post" class="m-t-40" novalidate>
-                            <div class="form-group">
-
-                                <div class="col-md-6">
-
-                                    <h5>Program Category </h5>
-                                    <div class="controls">
-                                        <input name="programCate_SPG" id="programCate_SPG" placeholder="Program Category" required class="form-control">
-
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-
-                                    <h5>Program  </h5>
-                                    <div class="controls">
-                                       <input name="programNameAuto_SPG" id="programNameAuto_SPG" placeholder="Program Name" required class="form-control">
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="form-group">
-
-                                <div class="col-md-6">
-
-                                    <h5>Venue  </h5>
-                                    <div class="controls">
-                                        <input name="venueNameAuto_SPG" id="venueNameAuto_SPG" placeholder="Venue Name" required class="form-control">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-
-                                    <h5>State  </h5>
-                                    <div class="controls">
-                                        <select name="ss" id="ss" required class="form-control">
-                                            <option value="">Select an Option</option>
-                                            <option value="State  1">State 1</option>
-                                            <option value="State  2">State 2</option>
-                                            <option value="State  3">State 3</option>
-                                            <option value="State  4">State 4</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                       <!-- 
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <h5>Date  </h5>
-                                    <div class="controls">
-                                        <div class="container22">
-
-                                            <ul>
-                                                <li>
-                                                    <input type="radio" id="f-option" name="selector">
-                                                    <label for="f-option">Show for current month</label>
-
-                                                    <div class="check"></div>
-                                                </li>
-
-                                                <li>
-                                                    <input type="radio" id="s-option" name="selector">
-                                                    <label for="s-option">Show for upcoming 3 month</label>
-
-                                                    <div class="check">
-                                                        <div class="inside"></div>
-                                                    </div>
-                                                </li>
-
-                                                <li>
-                                                    <input type="radio" id="t-option" name="selector">
-                                                    <label for="t-option">Show for upcoming 3 month</label>
-
-                                                    <div class="check">
-                                                        <div class="inside"></div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div> -->
-                            <div class="form-group">
-                                <div class="col-md-6">
-                                    <h5>From Date  </h5>
-                                    <div class="controls">
-                                        <input id="startDate_SPG" type="name" name="name" class="form-control" required placeholder="start date" data-validation-required-message="This field is required"> </div>
-
-                                </div>
-
-                                <div class="col-md-6">
-
-                                    <h5>last Date  </h5>
-                                    <div class="controls">
-                                        <input id="endDate_SPG" type="name" name="name" class="form-control" required placeholder="end date" data-validation-required-message="This field is required"> </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <div class="text-xs-right">
-                                    <button id="searchSchedule_SPG" type="button" class="btn btn-primary" data-text="Submit">Search</button>
-                                    <button id="resetSchedule_SPG" type="button" class="btn btn-inverse" data-text="Reset">Reset</button>
-                                    <br>
-                                    <br>
-
-                                </div>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row tpp-orgl ">
-
-                <div class="col-lg-12 tpp-orgl1">
-                    <div class="table-responsive ">
-                        <form id="contact-form" action="#" method="POST" novalidate="novalidate">
-                            <table class="table table-striped ">
-
-                                <thead class="tb-bg-text">
-                                    <tr>
-                                        <th width="28%">Date</th>
-                                        <th width="22%">Venue</th>
-                                        <th width="29%">Aachrya</th>
-                                        <th width="21%">&nbsp;</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="programScheduleHolder">
-                                    <tr>
-                                        <td>
-                                            <table width="100%" border="0">
-                                                <tr>
-                                                    <td><strong>Dhyan Samadhi</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Mumbai</td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <div class="form-group">15 april to 20 april</div>
-                                        </td>
-                                        <td>
-                                            <table width="100%" border="0">
-                                                <tr>
-                                                    <td><strong>Conducted by</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Master Sadhguru</td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <table width="100%" border="0" cellpadding="2" cellspacing="2">
-                                                <tr>
-                                                    <td align="right">
-                                                        <input type="submit" value="BOOK MY SEAT " class="btn btn-primary" data-loading-text="Loading...">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td height="56" align="right" valign="bottom">
-                                                        <a href="comingSoon.html" data-toggle="modal" data-target="#myModal">
-                                                            <input type="submit" value="VIEW DETAILS" class="btn btn-primary" data-loading-text="Loading...">
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <table width="100%" border="0">
-                                                <tr>
-                                                    <td><strong>Dhyan Samadhi</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Mumbai</td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                        <td><span class="form-group"><div class="form-group">15 april to 20 april</div> </span></td>
-                                        <td>
-                                            <table width="100%" border="0">
-                                                <tr>
-                                                    <td><strong>Conducted by</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Master Sadhguru</td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <table width="100%" border="0" cellpadding="2" cellspacing="2">
-                                                <tr>
-                                                    <td align="right">
-                                                        <input type="submit" value="BOOK MY SEAT " class="btn btn-primary" data-loading-text="Loading...">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td height="56" align="right" valign="bottom">
-                                                        <a href="comingSoon.html" data-toggle="modal" data-target="#myModal">
-                                                            <input type="submit" value="VIEW DETAILS" class="btn btn-primary" data-loading-text="Loading...">
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <table width="100%" border="0">
-                                                <tr>
-                                                    <td><strong>Dhyan Samadhi</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Mumbai</td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <div class="form-group">15 april to 20 april</div>
-                                        </td>
-                                        <td>
-                                            <table width="100%" border="0">
-                                                <tr>
-                                                    <td><strong>Conducted by</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Master Sadhguru</td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <table width="100%" border="0" cellpadding="2" cellspacing="2">
-                                                <tr>
-                                                    <td align="right">
-                                                        <input type="submit" value="BOOK MY SEAT " class="btn btn-primary" data-loading-text="Loading...">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td height="56" align="right" valign="bottom">
-                                                        <a href="comingSoon.html" data-toggle="modal" data-target="#myModal">
-                                                            <input type="submit" value="VIEW DETAILS" class="btn btn-primary" data-loading-text="Loading...">
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <table width="100%" border="0">
-                                                <tr>
-                                                    <td><strong>Dhyan Samadhi</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Mumbai</td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                        <td><span class="form-group"><div class="form-group">15 april to 20 april</div> </span></td>
-                                        <td>
-                                            <table width="100%" border="0">
-                                                <tr>
-                                                    <td><strong>Conducted by</strong></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Master Sadhguru</td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <table width="100%" border="0" cellpadding="2" cellspacing="2">
-                                                <tr>
-                                                    <td align="right">
-                                                        <input type="submit" value="BOOK MY SEAT " class="btn btn-primary" data-loading-text="Loading...">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td height="56" align="right" valign="bottom">
-                                                        <a href="comingSoon.html" data-toggle="modal" data-target="#myModal">
-                                                            <input type="submit" value="VIEW DETAILS" class="btn btn-primary" data-loading-text="Loading...">
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="pagination-wrap">
-                <div class="row">
-                    <div class="col-xs-7">
-                        <ul class="pagination">
-                            <li class="active"><a href="comingSoon.html">1 <span class="sr-only">(current)</span></a></li>
-                            <li><a href="comingSoon.html">2</a></li>
-                            <li><a href="comingSoon.html">3</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-5 text-right">
-                        <p>Showing 1–9 of 20 results</p>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
-        <?php include_once 'public_html/includes/footerPage.php'; ?>
+        <div class="row">
+            <div class="form-mgr">
+                <div class="col-md-12 col-sm-12 animate fadeInRight">
+                    <form role="form" action="esendmail1.php" method="post" class="m-t-40" novalidate>
+                        <div class="form-group">
 
-    </div>
+                            <div class="col-md-6">
+
+                                <h5>Program Category </h5>
+                                <div class="controls">
+                                    <input name="programCate_SPG" id="programCate_SPG" placeholder="Program Category" required class="form-control">
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <h5>Program  </h5>
+                                <div class="controls">
+                                   <input name="programNameAuto_SPG" id="programNameAuto_SPG" placeholder="Program Name" required class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="col-md-6">
+
+                                <h5>Venue  </h5>
+                                <div class="controls">
+                                    <input name="venueNameAuto_SPG" id="venueNameAuto_SPG" placeholder="Venue Name" required class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <h5>State  </h5>
+                                <div class="controls">
+                                    <select name="ss" id="ss" required class="form-control">
+                                        <option value="">Select an Option</option>
+                                        <option value="State  1">State 1</option>
+                                        <option value="State  2">State 2</option>
+                                        <option value="State  3">State 3</option>
+                                        <option value="State  4">State 4</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                   <!-- 
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <h5>Date  </h5>
+                                <div class="controls">
+                                    <div class="container22">
+
+                                        <ul>
+                                            <li>
+                                                <input type="radio" id="f-option" name="selector">
+                                                <label for="f-option">Show for current month</label>
+
+                                                <div class="check"></div>
+                                            </li>
+
+                                            <li>
+                                                <input type="radio" id="s-option" name="selector">
+                                                <label for="s-option">Show for upcoming 3 month</label>
+
+                                                <div class="check">
+                                                    <div class="inside"></div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <input type="radio" id="t-option" name="selector">
+                                                <label for="t-option">Show for upcoming 3 month</label>
+
+                                                <div class="check">
+                                                    <div class="inside"></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <h5>From Date  </h5>
+                                <div class="controls">
+                                    <input id="startDate_SPG" type="name" name="name" class="form-control" required placeholder="start date" data-validation-required-message="This field is required"> </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <h5>last Date  </h5>
+                                <div class="controls">
+                                    <input id="endDate_SPG" type="name" name="name" class="form-control" required placeholder="end date" data-validation-required-message="This field is required"> </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="text-xs-right">
+                                <button id="searchSchedule_SPG" type="button" class="btn btn-primary" data-text="Submit">Search</button>
+                                <button id="resetSchedule_SPG" type="button" class="btn btn-inverse" data-text="Reset">Reset</button>
+                                <br>
+                                <br>
+
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="row tpp-orgl ">
+
+            <div class="col-lg-12 tpp-orgl1">
+                <div class="table-responsive ">
+                    <form id="contact-form" action="#" method="POST" novalidate="novalidate">
+                        <table class="table table-striped ">
+
+                            <thead class="tb-bg-text">
+                                <tr>
+                                    <th width="28%">Date</th>
+                                    <th width="22%">Venue</th>
+                                    <th width="29%">Aachrya</th>
+                                    <th width="21%">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody id="programScheduleHolder">
+                                <tr>
+                                    <td>
+                                        <table width="100%" border="0">
+                                            <tr>
+                                                <td><strong>Dhyan Samadhi</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mumbai</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">15 april to 20 april</div>
+                                    </td>
+                                    <td>
+                                        <table width="100%" border="0">
+                                            <tr>
+                                                <td><strong>Conducted by</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Master Sadhguru</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table width="100%" border="0" cellpadding="2" cellspacing="2">
+                                            <tr>
+                                                <td align="right">
+                                                    <input type="submit" value="BOOK MY SEAT " class="btn btn-primary" data-loading-text="Loading...">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="56" align="right" valign="bottom">
+                                                    <a href="comingSoon.html" data-toggle="modal" data-target="#myModal">
+                                                        <input type="submit" value="VIEW DETAILS" class="btn btn-primary" data-loading-text="Loading...">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="100%" border="0">
+                                            <tr>
+                                                <td><strong>Dhyan Samadhi</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mumbai</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><span class="form-group"><div class="form-group">15 april to 20 april</div> </span></td>
+                                    <td>
+                                        <table width="100%" border="0">
+                                            <tr>
+                                                <td><strong>Conducted by</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Master Sadhguru</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table width="100%" border="0" cellpadding="2" cellspacing="2">
+                                            <tr>
+                                                <td align="right">
+                                                    <input type="submit" value="BOOK MY SEAT " class="btn btn-primary" data-loading-text="Loading...">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="56" align="right" valign="bottom">
+                                                    <a href="comingSoon.html" data-toggle="modal" data-target="#myModal">
+                                                        <input type="submit" value="VIEW DETAILS" class="btn btn-primary" data-loading-text="Loading...">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="100%" border="0">
+                                            <tr>
+                                                <td><strong>Dhyan Samadhi</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mumbai</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">15 april to 20 april</div>
+                                    </td>
+                                    <td>
+                                        <table width="100%" border="0">
+                                            <tr>
+                                                <td><strong>Conducted by</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Master Sadhguru</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table width="100%" border="0" cellpadding="2" cellspacing="2">
+                                            <tr>
+                                                <td align="right">
+                                                    <input type="submit" value="BOOK MY SEAT " class="btn btn-primary" data-loading-text="Loading...">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="56" align="right" valign="bottom">
+                                                    <a href="comingSoon.html" data-toggle="modal" data-target="#myModal">
+                                                        <input type="submit" value="VIEW DETAILS" class="btn btn-primary" data-loading-text="Loading...">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="100%" border="0">
+                                            <tr>
+                                                <td><strong>Dhyan Samadhi</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mumbai</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td><span class="form-group"><div class="form-group">15 april to 20 april</div> </span></td>
+                                    <td>
+                                        <table width="100%" border="0">
+                                            <tr>
+                                                <td><strong>Conducted by</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Master Sadhguru</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table width="100%" border="0" cellpadding="2" cellspacing="2">
+                                            <tr>
+                                                <td align="right">
+                                                    <input type="submit" value="BOOK MY SEAT " class="btn btn-primary" data-loading-text="Loading...">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="56" align="right" valign="bottom">
+                                                    <a href="comingSoon.html" data-toggle="modal" data-target="#myModal">
+                                                        <input type="submit" value="VIEW DETAILS" class="btn btn-primary" data-loading-text="Loading...">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="pagination-wrap">
+            <div class="row">
+                <div class="col-xs-7">
+                    <ul class="pagination">
+                        <li class="active"><a href="comingSoon.html">1 <span class="sr-only">(current)</span></a></li>
+                        <li><a href="comingSoon.html">2</a></li>
+                        <li><a href="comingSoon.html">3</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-5 text-right">
+                    <p>Showing 1–9 of 20 results</p>
+                </div>
+            </div>
+        </div>
+    <?php include_once 'public_html/includes/footerPage.php'; ?>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -471,14 +413,8 @@
             </div>
         </div>
     </div>
-
-    <!-- Begin Style Switcher -->
-
-    <!-- Begin Style Switcher -->
-
-    <!-- Vendor
-    <script src="vendor/jquery/jquery.js"></script>
-     -->
+    
+    <?php include_once 'public_html/includes/footerScript.php'; ?>
     <script src="assets/script/libs/jquery-1.12.4.js"></script>
     <script src="assets/script/libs/jquery-ui.js"></script>
     <script src="vendor/bootstrap/bootstrap.js"></script>
@@ -508,6 +444,6 @@
     </script>
     <script src="js/mask.init.js"></script>
     <script src="js/jquery.inputmask.bundle.min.js"></script>
-</body>
+    </body>
 
 </html>

@@ -3,47 +3,12 @@
 
 <head>
 
-    <!-- Basic -->
-    <meta charset="utf-8">
-    <title>Osho</title>
-    <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="Marvel - MultiShop Responsive HTML5 Template">
-    <meta name="author" content="pixelgeeklab.com">
-
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Web Fonts  -->
-
-    <!-- Vendor CSS -->
-    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css">
-    <link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.css" media="screen">
-    <link rel="stylesheet" href="vendor/owlcarousel/owl.theme.css" media="screen">
-    <link href="vendor/owl-carousel/owl.transitions.css" rel="stylesheet" media="screen">
-
-    <!-- Theme CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="css/theme-animate.css">
-
-    <!-- Style Switcher-->
-    <link rel="stylesheet" href="style-switcher/css/style-switcher.css">
-    <link href="css/colors/default/style.css" rel="stylesheet" id="layoutstyle">
+    <?php include_once 'public_html/includes/commonHeader.php'; ?>
     <link href='css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />
     <script defer src="js/solid.js"></script>
 
     <!-- Head libs -->
     <script src="vendor/modernizr/modernizr.js"></script>
-
-    <!--[if IE]>
-			<link rel="stylesheet" href="css/ie.css">
-		<![endif]-->
-
-    <!--[if lte IE 8]>
-			<script src="vendor/respond/respond.js"></script>
-			<script src="vendor/excanvas/excanvas.js"></script>
-		<![endif]-->
-
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <style type="text/css">
         body,
@@ -62,31 +27,7 @@
 
 <body class="front">
     <?php include_once 'public_html/includes/sideBarContent.php'; ?>
-    <div class="content container-fluid">
 
-        <div id="content">
-
-            <div class="top-contact-info1">
-                <div class="row">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-7">
-                        <div class="white-from-trs wow fadeInUp">
-                            <form action="" method="get">
-
-                                <select id="languageSelector" name="" class="top-search-form">
-                                    <option value="en">Language</option>
-                                    <option value="hi">Hindi</option>
-                                    <option value="en">English</option>
-                                </select>
-                                <input name="" type="text" placeholder="Programs and Centers"   onblur="if (this.value=='') this.value=this.defaultValue" onfocus="if (this.defaultValue==this.value) this.value=''" class="top-search-form1">
-                                <input name="" type="button" class="top-search-form-submit" value=".">
-                            </form>
-                            <div class="clearBoth"></div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
 
             <div class="row">
                 <div class="col-lg-12">
@@ -422,11 +363,8 @@
                 </div>
 
             </div>
-            
-        </div>
-
         <?php include_once 'public_html/includes/footerPage.php'; ?>
-    </div>
+        <?php include_once 'public_html/includes/footerScript.php'; ?>
 
     <script src="vendor/jquery/jquery.js"></script>
     <script src="vendor/bootstrap/bootstrap.js"></script>
