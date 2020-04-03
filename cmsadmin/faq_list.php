@@ -100,13 +100,13 @@ tr:nth-child(odd) {
     <div id="content-header">
         <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a
                 href="#" class="current"> Listing</a> </div>
-        <h1>FAQ Listing</h1>
+        <h1> Listing</h1>
     </div>
     <div class="container-fluid">
         <hr>
         <div class="row-fluid text-right"><button class="btn btn-primary"
                 onclick="document.location.href = 'faq_add_edit.php'"><a href="<?php echo 'faq_add_edit.php?action=add&v='.rand(1000000000,100000000000)?>"
-                    style="color:#fff">Add FAQ</a></button></div>
+                    style="color:#fff">Add Pages</a></button></div>
 
         <div class="row-fluid">
             <div class="span12">
@@ -135,7 +135,7 @@ tr:nth-child(odd) {
 
                             <tr class="gradeX">
                                 <td><?php echo $i ?></td>
-                                <td><strong><?php echo substr($row['shortdescription'],0,30).' ....'; ?></strong></td>
+                                <td><strong><?php echo $row['shortdescription']; ?></strong></td>
                                 <td><strong><?php echo $row['language']; ?></strong></td>
                                 <?php 
                                  $node_id = $row['faqid'];

@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!--breadcrumbs-->
     <div id="content-header">
         <div id="breadcrumb"> <a href="faq_list.php" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>
-                Listing</a><a href="#">Add FAQ</a></div>
+                Listing</a><a href="#">Add Pages</a></div>
     </div>
     <!--End-breadcrumbs-->
 
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="row-fluid">
             <div class="widget-box">
                 <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-                    <h4>Add FAQ</h4>
+                    <h4>Add Pages</h4>
                 </div>
                 <?php
                 if (isset($_GET['msg']) && $_GET['msg'] == '1') {
