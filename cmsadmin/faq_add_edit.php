@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label class="control-label"><strong>Short Description * :</strong></label>
                             <div class="controls">
                                 <input class="span11" style="height:35px" placeholder="Short Description" type="text"
-                                    name="shortdescription" id="shortdescription" required value="<?php echo $shortdescription?>">
+                                    name="shortdescription" id="shortdescription"  value="<?php echo $shortdescription?>">
                                 <!-- <span class="span10" style="color:#c1c1c1">Maximum 200 charecters allowed</span>-->
                             </div>
                         </div>
@@ -146,13 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <script>
 function validate() {
-    var description = $("#shortdesciption").val();
-
-    if (description.trim() == '') {
-        alert('Kindly enter Short description');
-        return false;
-    }
-
+  
     if (CKEDITOR.instances['details'].getData() == "") {
         alert('Kindly enter Long Description');
         return false;

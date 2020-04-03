@@ -1,3 +1,12 @@
+<?php include_once 'cmsadmin/config/config.php'; 
+ include_once 'cmsadmin/config/database.php'; 
+
+ $id = $_GET['programid'];
+ $sql = "Select * from tb_od_program where programid=$id";
+ $result = mysqli_query($link, $sql);
+ $output = mysqli_fetch_assoc($result);
+ 
+ ?>
 <!DOCTYPE html>
 <html>
 
@@ -20,6 +29,8 @@
         body {
             background-color: #ddcdbd;
         }
+        #more {display: none;}
+
     </style>
 </head>
 
@@ -33,7 +44,7 @@
                 <div class="header-bg" style="background-image:url(images/banner.jpg)">
                     <div id="programTitleHolder" class=" header-content">
                         <div class="main-title">
-                            <h1 class="bold mb-30 a-f ">Program</h1>
+                            <h1 class="bold mb-30 a-f "><?php echo $output['programname']  ?></h1>
                         </div>
                     </div>
                 </div>
@@ -43,14 +54,7 @@
 
         <div class="row">
             <div  class="inner-slide-com-cot">
-                <div id="programDetailHolder" class="col-lg-7">
-                    <p>
-                        Based on spiritual science unraveled by Osho and Sadguru, 28 levels of Enlightened Living Programs have been designed and are being conducted regularly. Each programis of six days� duration.It is essential to do lower level programs and essential Wisdom (Pragya) Programs before entry into higher level programs. Attending Wisdom programs is not mandatory for foreigners, senior citizens(above 65 years) and ladies.</p>
-                    <p>
-                        DHYAN SAMADHI (MEDITATIVE LIVING) It consists of two parts - AnandPragya or Blissful Living and Vipassana Samadhi or Divine Living.Each program is of three days’ duration. Foreign students are allowed to enter directly into Divine Living program
-                        <br>
-                        <br>
-
+            <?php echo $output['longdescription']  ?>
                         <a href="index.html" class="btn btn-primary"> Read More >></a></p>
                 </div>
 

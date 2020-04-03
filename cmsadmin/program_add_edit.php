@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label class="control-label"><strong>Short Description * :</strong></label>
                             <div class="controls">
                                 <input class="span11" style="height:35px" placeholder="Short Description" type="text"
-                                    name="description" id="description" required value="<?php echo $shortdescription?>">
+                                    name="description" id="description"  value="<?php echo $shortdescription?>">
                                 <!-- <span class="span10" style="color:#c1c1c1">Maximum 200 charecters allowed</span>-->
                             </div>
                         </div>
@@ -184,7 +184,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script>
 function validate() {
     var name = $("#name").val();
-    var description = $("#description").val();
+   // var description = $("#description").val();
     var categoryid = $("#categoryid").val();
 
 
@@ -192,10 +192,7 @@ function validate() {
         alert('Kindly enter Program Name');
         return false;
     }
-    if (description.trim() == '') {
-        alert('Kindly enter Short description');
-        return false;
-    }
+ 
 
     if (!categoryid || categoryid == null || categoryid == 'null') {
         alert('Kindly enter Program Category');
