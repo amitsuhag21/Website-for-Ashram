@@ -121,7 +121,7 @@ tr:nth-child(odd) {
 
                                 <tr>
                                     <th>S.no</th>
-                                    <th>Short Description</th>
+                                    <th>Page Name</th>
                                     <th>Language</th>
                                     <th>status</th>
                                     <th>Action</th>
@@ -135,7 +135,7 @@ tr:nth-child(odd) {
 
                             <tr class="gradeX">
                                 <td><?php echo $i ?></td>
-                                <td><strong><?php echo $row['shortdescription']; ?></strong></td>
+                                <td><strong><?php echo $row['pagename']; ?></strong></td>
                                 <td><strong><?php echo $row['language']; ?></strong></td>
                                 <?php 
                                  $node_id = $row['faqid'];

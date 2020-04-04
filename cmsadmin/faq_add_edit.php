@@ -11,23 +11,27 @@ if($_GET['action'] = 'edit' && isset($_GET['id'])){
     $result = mysqli_query($link, $sql);
     $output = mysqli_fetch_assoc($result);
 }
+$pagename = (isset($output['pagename'])&& !empty($output['pagename']))?$output['pagename']:'';
+$title = (isset($output['title'])&& !empty($output['title']))?$output['title']:'';
+$remarks = (isset($output['remarks'])&& !empty($output['remarks']))?$output['remarks']:'';
 $shortdescription = (isset($output['shortdescription'])&& !empty($output['shortdescription']))?$output['shortdescription']:'';
 $longdescription  = (isset($output['longdescription'])&& !empty($output['longdescription']))?$output['longdescription']:'';
 $language  = (isset($output['language'])&& !empty($output['language']))?$output['language']:'';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    $pagename = trim($_POST['pagename']);
+    $title = trim($_POST['title']);
+    $remarks = trim($_POST['remarks']);
     $short_description = trim($_POST['shortdescription']);
     $long_description = trim($_POST['details']);
-    $categoryid = implode(',',$_POST['categoryid']);
      $language = $_POST['language'];
     if (!empty($short_description)) {
         if($_POST['action'] == 'add'){
-            $sql = "INSERT INTO tb_od_faq(shortdescription,longdescription,status,language)
-            VALUES ('" . $short_description . "', '" . $long_description . "',1,'" . $language . "')";
+            $sql = "INSERT INTO tb_od_faq(pagename,title,remarks,shortdescription,longdescription,status,language)
+            VALUES ('" . $pagename . "','" . $title . "','" . $remarks . "','" . $short_description . "', '" . $long_description . "',1,'" . $language . "')";
         }else{
             $id = $_GET['id'];
-          $sql= "UPDATE tb_od_faq SET shortdescription='$short_description' ,language= '$language',longdescription='$long_description' WHERE faqid=$id";
+          $sql= "UPDATE tb_od_faq SET pagename='$pagename' ,title='$title' ,remarks='$remarks' ,shortdescription='$short_description' ,language= '$language',longdescription='$long_description' WHERE faqid=$id";
         }
        mysqli_query($link, $sql);
        if(mysqli_error($link)){
@@ -80,11 +84,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         enctype='multipart/form-data' name="form" id="form">
                         <input type="hidden" name="action" id="action" value="<?php echo $action ?>" />
 
-                     
+                        <div class="control-group">
+                            <label class="control-label"><strong>Page Name * :</strong></label>
+                            <div class="controls">
+                                <input class="span11" style="height:35px" placeholder="Page Name" type="text"
+                                    name="pagename" id="pagename" required value="<?php echo $pagename?>">
+                                <!-- <span class="span10" style="color:#c1c1c1">Maximum 200 charecters allowed</span>-->
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label"><strong>Title * :</strong></label>
+                            <div class="controls">
+                                <input class="span11" style="height:35px" placeholder="Title" type="text"
+                                    name="title" id="title"  value="<?php echo $title?>">
+                                <!-- <span class="span10" style="color:#c1c1c1">Maximum 200 charecters allowed</span>-->
+                            </div>
+                        </div>
                         <div class="control-group">
                             <label class="control-label"><strong>Short Description * :</strong></label>
                             <div class="controls">
-                                <input class="span11" style="height:35px" placeholder="Short Description" type="text"
+                                <input class="span11" style="height:50px" placeholder="Short Description" type="text"
                                     name="shortdescription" id="shortdescription"  value="<?php echo $shortdescription?>">
                                 <!-- <span class="span10" style="color:#c1c1c1">Maximum 200 charecters allowed</span>-->
                             </div>
@@ -130,6 +150,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     });
                                     </script>
                             </div>
+                            <div class="control-group">
+                            <label class="control-label"><strong>Remarks * :</strong></label>
+                            <div class="controls">
+                                <input class="span11" style="height:40px" placeholder="remarks" type="text"
+                                    name="remarks" id="remarks"  value="<?php echo $remarks?>">
+                                <!-- <span class="span10" style="color:#c1c1c1">Maximum 200 charecters allowed</span>-->
+                            </div>
+                        </div>
                             <div class="form-actions">
                                 <button onclick="return validate()" type="submit" class="btn btn-primary" name="save"
                                     value="1">Publish</button>
@@ -146,7 +174,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <script>
 function validate() {
-  
+    var pagename = $("#pagename").val();
+    if (pagename.trim() == '') {
+        alert('Kindly enter Page name');
+        return false;
+    }
     if (CKEDITOR.instances['details'].getData() == "") {
         alert('Kindly enter Long Description');
         return false;
