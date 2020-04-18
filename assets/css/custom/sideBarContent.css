@@ -1,149 +1,140 @@
-.sliderHolder{
-  position: fixed;
-  background-color: white;
-  right: 0px;
-  box-shadow: 0px 0px 10px 0px gainsboro;
-  border-left: 1px solid #f3f3f3;
-  height: 100%;
+.myButton {
+  background-color: #41bd62;
+  border-radius: 14px;
+  border: 1px solid #10821d;
+  display:inline-block;
+  cursor:pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size:17px;
+  padding: 5px 15px;
+  text-decoration:none;
+  text-shadow: 1px 1px 0px #2F6626;
 }
-.packageNameMainCls{
-  margin-top: 5px;
-  margin-bottom: 10px;
-  overflow: hidden;
+.myButton:hover {
+  background-color:#5cbf2a;
 }
-.featureAddOnsCls{
-  margin-top: 20px;
-  overflow: hidden;
-}
-.studentCountAlignment{
-  padding: 0px 5px;
-}
-.studentInputHolder{
-  width: 95px;
-}
-.studentInput{
-    width: 100%;
-    border: 1px solid #c7c7c7cc;
-    border-radius: 9px;
-    resize: none;
-    height: 27px;
-    text-align: center;
-    vertical-align: middle;
-}
-.featureFragment{
-  margin-top: 20px;
-}
-.addOnImgs{
-  width: 100%;
-  height: 100%;
-}
-.addOnImgsHolder{
-    width: 75px;
-    height: 75px;
-    margin-right: 5px;
-    box-shadow: 1px 1px 5px 2px #e0caf1;
-    margin-left: 5px;
-    vertical-align: middle;
-}
-.addOnLi{
-  width: 100%;
-  padding: 5px 0px;
-}
-.addOnNameWidth{
-  width: calc(100% - 145px);
-  vertical-align: middle;
-}
-.studentCounterIcon{
-    margin-top: 4px;
-    font-size: 15px;
-    border-radius: 50%;
-    border: 1px solid #9c9c9c;
-    width: 25px;
-    height: 25px;
-    display: inline-block;
-    margin: 0px 3px;
-}
-.studentCounterIcon .fa-plus{
-  width: 15px;
-  height: 15px;
-  color: #797979;
-  /* right: inherit; */
-  position: relative;
-  right: 5px;
-  top: 1px;
-}
-.studentCounterIcon .fa-minus{
-  width: 15px;
-  height: 15px;
-  color: #797979;
+.myButton:active {
+  position:relative;
+  top:1px;
 }
 
-.radioBtnPayment {
-  /* display: inline-block; */
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  width: 130px;
-  font-size: 15px;
-  font-weight: 500;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.radioBtnPayment input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-.checkMarkPayment {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #e5f3fb;
-  border-radius: 50%;
-}
-.studentInput::-webkit-scrollbar{
-  -moz-appearance: none;
-  width: 0px;
-}
-.studentInput::-moz-scrollbar{
-  -moz-appearance: none;
-  width: 0px;
-}
-.radioBtnPayment:hover input ~ .checkMarkPayment {
-  background-color: #c8dce6;
-}
-.radioBtnPayment input:checked ~ .checkMarkPayment {
-  background-color: #31a9f4;
-}
-.checkMarkPayment:after {
-  content: "";
-  position: absolute;
+.displayNone{
   display: none;
 }
-.radioBtnPayment input:checked ~ .checkMarkPayment:after {
-  display: block;
-}
-.radioBtnPayment .checkMarkPayment:after {
-  top: 5px;
-  left: 5px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #ffffff;
+
+.serachDialog{
+    border: 1px solid #d9ebd0;
+    border-bottom: 1px solid #e2caca;
+    position: absolute;
+    top: 60px;
+    padding: 10px 15px 20px 15px;
+    left: 0px;
+    z-index: 200;
+    box-shadow: 1px 4px 4px #a79999;
+    color: #4d5a1a;
+    background: white;
+    border-radius: 0px 0px 20px 20px;
 }
 
-input[type="number"] {
-  -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
+.searchHeading {
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none;
+
+.searchLabel {
+  background-color: #ffffff;
+  padding: 5px 2px 2px 0px;
+  margin-bottom: 6px;
+  margin-left: 20px;
+  color: #86843d;
+  border-bottom: 2px solid #faa133;
+  display: inline-block;
+}
+
+.programName{
+  color: #4c3232;
+  font-weight: 600;
+  display : inline-block;
+  text-decoration: inherit;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.programDescCls{
+
+}
+
+
+.searchItemCls{
+  border: 1px solid #d9ebd0;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 2px;
+  height: 80px;
+  display: inline-block;
+  box-shadow: 0px 1px 7px #98c182;
+  width: calc(50% - 10px);
+}
+
+select#languageSelector {
+    padding: 8px 2px;
+}
+
+
+.pgl-panel .collapse.in .panel-body {
+    border-top: none;
+      padding: 15px;
+};
+
+.form-mgr.clearfix.searchHolder {
+    background-color: white !important;
+}
+
+.inner-slide-com-cot.clearfix {
+    background: white;
+    margin: 15px;
+}
+
+.topSearchSpan{
+    width: calc(100% - 110px);
+    display: inline-block;
+}
+
+
+.titleContent {
+    vertical-align: middle;
+    padding: 34px 25px;
+    heigh: 80px;
+}
+
+.col-md-9.programTitleDiv {
+    /* height: 80px; */
+    vertical-align: middle;
+    display: inline-block;
+}
+
+
+div#masterAccordionHolder {
+    margin: 15px;
+    background-color: white;
+}
+
+.panel.panel-default.pgl-panel {
+    position: relative;
+}
+
+
+.thumb-item {
+    background: white;
+}
+
+.contentWhiteBG{
+    background-color: white;
+    margin: 15px;
 }

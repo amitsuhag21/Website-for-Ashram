@@ -4,33 +4,7 @@
 <head>
 
     <?php include_once 'public_html/includes/commonHeader.php'; ?>
-  
-    <script defer src="js/solid.js"></script>
-    <script src="vendor/modernizr/modernizr.js"></script>
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <style type="text/css">
-        body,
-        td,
-        th {
-            font-family: Dosis, sans-serif;
-            font-size: 14px;
-            color: #333;
-        }            color: #333;
-        }
-        .content {
-
-            top: -26px;
-        }
-
-        
-        body {
-            background-color: #ddcdbd;
-        }
-    </style>            color: #333;
-        }
-        
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">       
 </head>
 
 <body class="front">
@@ -45,7 +19,7 @@
                     <div class=" header-content">
                         <div class="main-title">
                             <!-- Main-title -->
-                            <h1 class="bold mb-30 a-f ">Ashrams</h1>
+                            <h1 class="bold mb-30 a-f ">Ashram</h1>
                         </div>
                     </div>
                 </div>
@@ -54,9 +28,9 @@
         </div>
 
         <div class="row">
-            <div class="inner-slide-com-cot">
+            <div class="inner-slide-com-cot clearfix">
                 <div class="col-lg-6">
-                    <h1>Oshodhara Nanak Dham, Murthal</h1>
+                    <h2>Oshodhara Nanak Dham, Murthal</h2>
                     <p>Surrounded by legendry Yamuna River towards east, GT road towards west, Kurukshetra, the land of Gita, towards north and Delhi the capital of India, towards south, this Ashram with a gorgeous Buddha Hall, is Headquarter of Oshodhara and Osho Nanak Dhyan Mandir Trusts.</p>
                     <br>
 
@@ -95,7 +69,7 @@
         </div>
         <div class="row">
             <div class="tpp-orgl21"></div>
-            <div class="inner-slide-com-cot">
+            <div class="inner-slide-com-cot clearfix">
                 <div class="col-lg-6">
 
                     <div style="width: 100%">
@@ -105,7 +79,7 @@
 
                 </div>
                 <div class="col-lg-6">
-                    <h1>Oshodhara Anand Dham, Madhopur</h1>
+                    <h2>Oshodhara Anand Dham, Madhopur</h2>
                     <p>It is the Headquarter of International Institute of Self Realization (IISR) registered under Trust Act of India. Lying at an elevation of 450 meters, it provides gateway to the hills of Himachal Pradesh, Jammu and Kashmir. It gives a thrill to watch Ravi River emerging against background of ice capped peaks of Kashmir Himalayas.</p>
                     <br>
 
@@ -132,9 +106,9 @@
         </div>
         <div class="row">
             <div class="tpp-orgl21"></div>
-            <div class="inner-slide-com-cot">
+            <div class="inner-slide-com-cot clearfix">
                 <div class="col-lg-6">
-                    <h1>Oshodhara Sahajanand Dham, Karma</h1>
+                    <h2>Oshodhara Sahajanand Dham, Karma</h2>
                     <p>Being Birth Place of Osho Siddharthaji, this Dham is principally being developed as a regional center to meet the requiement of seekers from Bihar, Jharkhand , Eastern UP, MP, Chhattisgarh, West Bengal and Orissa.</p>
                     <br>
 
@@ -162,7 +136,7 @@
                 <div class="col-lg-6">
 
                     <div style="width: 100%">
-                        <iframe width="100%" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3488.3986240793547!2d77.07594195018369!3d29.034788672425634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390db10b532f1803%3A0xad83167e8566106!2sOshodhara%20Nanak%20Dham!5e0!3m2!1sen!2sin!4v1584690837532!5m2!1sen!2sin" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"> </iframe>
+                        <iframe width="100%" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57727.4362511711!2d84.2524088888868!3d25.271770679470503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8930392f91d7a01c!2sOsho%20Dham%20Karma!5e0!3m2!1sen!2sin!4v1585733759733!5m2!1sen!2sin" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"> </iframe>
                     </div>
                     <br />
 
@@ -172,12 +146,7 @@
         </div>
             
         <?php include_once 'public_html/includes/footerPage.php'; ?>
-        <?php include_once 'public_html/includes/footerScript.php'; ?>
-        <script type="text/javascript" src="style-switcher/js/switcher.js"></script>
-        <script src='js/SidebarNav.min.js' type='text/javascript'></script>
-        <script>
-            $('.sidebar-menu').SidebarNav()
-        </script>
-        <script type="text/javascript">
+        <?php include_once 'public_html/includes/footerScript.php';?>
+        <script src="assets/script/js/ashrams.js"></script>
     </body>
 </html>

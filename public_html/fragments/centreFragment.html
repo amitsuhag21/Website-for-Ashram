@@ -1,0 +1,47 @@
+<div id="centreAcordionContent">   
+    <div id="accordionMainPanel_{{stateid}}" class="panel panel-default pgl-panel">
+        <div class="panel-heading">
+            {{#state_name}}
+                <h4 class="panel-title"> <a class="collapsed" href="#collapse_{{stateid}}" data-parent="#accordionHolder" data-toggle="collapse">{{state_name}}</a> </h4>
+            {{/state_name}}
+            {{^state_name}}
+                <h4 class="panel-title"> <a class="collapsed" href="#collapse_{{stateid}}" data-parent="#accordionHolder" data-toggle="collapse">{{stateid}}</a> </h4>
+            {{/state_name}}
+        </div>
+        <div class="panel-collapse collapse" id="collapse_{{stateid}}">
+            <div class="panel-body">
+
+                <table cellpadding="2" cellspacing="2" class="table table-striped table-bordered ">
+
+                    <thead class="tb-bg-text">
+
+                    </thead>
+                    <tbody id="centreDetailHolder_{{stateid}}">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="centreDetailTableContent"  class="col-lg-7">
+    <table cellpadding="2" cellspacing="2" class="table table-striped table-bordered ">
+
+        <thead class="tb-bg-text">
+
+        </thead>
+        <tbody id="centreDetailContent">
+            <tr>
+                <td colspan="5"><strong>{{dhyankendraname}}</strong></td>
+            </tr>
+            <tr>
+                <td width="16%">{{Address3}}</td>
+                <td width="31%"><span class="form-group">{{Address1}}</span></td>
+                <td width="15%">{{Address2}} </td>
+                <td width="13%">{{Phone1}}, {{Phone2}} </td>
+                <td width="25%">{{emailid}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
