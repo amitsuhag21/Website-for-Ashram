@@ -1,37 +1,10 @@
-<?php include_once 'cmsadmin/config/config.php'; 
- include_once 'cmsadmin/config/database.php'; 
-
- $id = $_GET['programid'];
- $sql = "Select * from tb_od_program where programid=$id";
- $result = mysqli_query($link, $sql);
- $output = mysqli_fetch_assoc($result);
- 
- ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <?php include_once 'public_html/includes/commonHeader.php'; ?>
-    <link href='css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />
-    <script defer src="js/solid.js"></script>
-
-    <script src="vendor/modernizr/modernizr.js"></script>
+    <link href='assets/css/custom/program.css' media='all' rel='stylesheet' type='text/css' />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <style type="text/css">
-        body,
-        td,
-        th {
-            font-family: Dosis, sans-serif;
-            font-size: 14px;
-            color: #333;
-        }
-        
-        body {
-            background-color: #ddcdbd;
-        }
-        #more {display: none;}
-
-    </style>
 </head>
 
 <body class="front">
@@ -44,20 +17,45 @@
                 <div class="header-bg" style="background-image:url(images/banner.jpg)">
                     <div id="programTitleHolder" class=" header-content">
                         <div class="main-title">
-                            <h1 class="bold mb-30 a-f "><?php echo $output['programname']  ?></h1>
+                            <h1 class="bold mb-30 a-f "></h1>
                         </div>
                     </div>
                 </div>
+<!--                 <div class="navRelativeCls">
+                    <div class="demo">
 
+                        <a href="" class="arrow left">
+                            <i></i>
+                            <svg>
+                                <use xlink:href="#circle">
+                            </svg>
+                        </a>
+
+                        <a href="" class="arrow">
+                            <i></i>
+                            <svg>
+                                <use xlink:href="#circle">
+                            </svg>
+                        </a>
+
+                    </div>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" style="">
+                        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44px" height="44px" id="circle" fill="none" stroke="currentColor">
+                            <circle r="20" cy="22" cx="22" id="test">
+                        </symbol>
+                    </svg>
+                </div>
+ -->
             </div>
         </div>
 
         <div class="row">
-            <div  class="inner-slide-com-cot">
-            <?php echo $output['longdescription']  ?>
-                        <a href="index.html" class="btn btn-primary"> Read More >></a></p>
+            <div  class="inner-slide-com-cot clearfix">
+                <div id="programDetailHolder" class="col-lg-12">
+                    
                 </div>
-
+<!-- 
                 <div class="col-lg-5">
                     <div class="owl-carousel main-slides first-slides" data-plugin-options='{"items": 1, "autoPlay": true, "navigation": true}'>
                         <div class="slide-item">
@@ -91,7 +89,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -101,7 +99,7 @@
             <div class="call-action2 tpp-orgl1">
 
                 <div class="col-md-9">
-                    <div class="content">
+                    <div class="programHeading">
                         <h1>Future <span class="text-colortwo">Intake </span> </h1>
                     </div>
 
@@ -110,82 +108,38 @@
             <div class="col-lg-12">
                 <div class="table-responsive">
                     <form id="contact-form" action="#" method="POST" novalidate="novalidate">
-                        <table class="table">
+                        <table class="table table-striped">
 
-                            <thead>
+                            <thead class="programTableHead">
                                 <tr>
-                                    <th>Date</th>
-                                    <th>Venue</th>
-                                    <th>Conducting Aachrya</th>
-                                    <th>&nbsp;</th>
+                                    <th class="programTableHeader">Venue</th>
+                                    <th class="programTableHeader">Date</th>
+                                    <th class="programTableHeader">level</th>
+                                    <th class="programTableHeader">Conducting Aachrya</th>
+                                    <th class="programTableHeader">
+                                        <span id="viewButton"  class="pull-left">View</span>
+                                        <span id="bookButton" class="pull-right">Book</span>
+                                    </th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="form-group">
+                            <tbody id="programIntakeHolder">
 
-                                            Monday, 2 March 2020
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-
-                                            Murthal
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-
-                                            Bade Baba
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="submit" value="Book Your Seat" class="btn btn-primary" data-loading-text="Loading...">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><span class="form-group">Monday, 8 March 2020</span></td>
-                                    <td><span class="form-group">Murthal</span></td>
-                                    <td><span class="form-group">Bade Baba</span></td>
-                                    <td><span class="form-group"><input type="submit" value="Book Your Seat" class="btn btn-primary" data-loading-text="Loading..."></span></td>
-                                </tr>
                             </tbody>
                         </table>
                     </form>
+                </div>
+                <div id="programModal">
+                    
+                </div>
+                <div id="bookNowModal">
+                    
                 </div>
             </div>
         </div>
         <?php include_once 'public_html/includes/footerPage.php'; ?>
         <?php include_once 'public_html/includes/footerScript.php'; ?>
 
-    <script src="vendor/jquery/jquery.js"></script>
-    <script src="vendor/bootstrap/bootstrap.js"></script>
-    <script src="vendor/jquery.validation/jquery.validation.js"></script>
-    <script src="vendor/owlcarousel/owl.carousel.js"></script>
-    <script src="vendor/flexslider/jquery.flexslider-min.js"></script>
-    <script src="vendor/countdown/countdown.min.js"></script>
-    <script src="vendor/chosen/chosen.jquery.min.js"></script>
-    <script src="vendor/pricefilter/jquery.pricefilter.js"></script>
-    <script src="vendor/masonry/imagesloaded.pkgd.min.js"></script>
-    <script src="vendor/masonry/masonry.pkgd.min.js"></script>
-    <script src="vendor/uikit/uikit.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
-    <script src="assets/script/libs/mustache.min.js"></script>
-    <script src="assets/script/js/headerProgramCategory.js"></script>
-    <script src="assets/script/js/program.js"></script>
-
-    <!-- Theme Base, Components and Settings -->
-    <script src="js/theme.js"></script>
-
-    <!-- Style Switcher -->
-    <script type="text/javascript" src="style-switcher/js/switcher.js"></script>
-    <script src='js/SidebarNav.min.js' type='text/javascript'></script>
-    <script>
-        $('.sidebar-menu').SidebarNav()
-    </script>
-    <script type="text/javascript"></script>
+        <script src="assets/script/js/program.js"></script>
+        <script type="text/javascript"></script>
     </body>
 </html>

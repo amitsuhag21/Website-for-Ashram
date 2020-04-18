@@ -1,19 +1,13 @@
 var planData = {};
 
 $(document).ready(function() {
-	debugger;
+	$('#aboutUsHeaderView').addClass('active');
 	loadCategory()
 	if(!window.localStorage.languageCode){
 		window.localStorage.languageCode = 'en';
 	}else{
 		$('#languageSelector').val(window.localStorage.languageCode);
-	}
-    $('#sidebarCollapse').on('click', function() {
-        $('#sidebar, #content').toggleClass('active');
-        $('.collapse.in').toggleClass('in');
-        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-    });
-	
+	}	
 	eventListener();
 });
 

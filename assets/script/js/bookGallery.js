@@ -1,6 +1,6 @@
 var planData = {};
 $(document).ready(function(){
-debugger;	
+	$('#galleryHeaderView').addClass('active');
 	//callFaqData(); 
 });
 

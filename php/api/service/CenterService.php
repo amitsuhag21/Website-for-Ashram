@@ -9,7 +9,7 @@ class CenterService {
 
     function findAll()
     {
-        $query="SELECT * FROM tb_od_dhyankendra";
+        $query="SELECT * FROM tb_od_dhyankendra where status = 1";
         $response=array();
         $result=mysqli_query( $this->connection, $query);
         if($result){ 
@@ -18,8 +18,6 @@ class CenterService {
                 $response[]=$row;
             }
         }
-/*        header('Content-Type: application/json');
-        echo json_encode($response);*/
         return $response;
     }
 
@@ -29,7 +27,7 @@ class CenterService {
         $query="SELECT * FROM tb_od_dhyankendra";
         if($id != 0)
         {
-            $query.=" WHERE dhyankendraid=".$id." LIMIT 1";
+            $query.=" WHERE status =1 and dhyankendraid=".$id." LIMIT 1";
         }
         $response=array();
         $result=mysqli_query($this->connection, $query);
@@ -39,8 +37,6 @@ class CenterService {
                 $response[]=$row;
             }
         }
-/*        header('Content-Type: application/json');
-        echo json_encode($response);*/
         return $response;
     }
     

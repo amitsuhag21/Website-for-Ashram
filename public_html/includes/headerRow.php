@@ -1,26 +1,26 @@
 <div class="content container-fluid">
     <div id="content">
-
-
         <div class="top-contact-info1">
             <div class="row">
                 <div class="col-md-6">
                     <div class="white-from-trs wow fadeInUp">
                         <form action="" method="get">
 
-                            <select id="languageSelector" name="" class="top-search-form">
+                            <select id="languageSelector" name="" class="top-search-form" disabled="true">
                                 <option value="en">Language</option>
                                 <option value="hi">Hindi</option>
                                 <option value="en">English</option>
                             </select>
-                            <input name="" type="text" placeholder="Programs and Centers" onblur="if (this.value=='') this.value=this.defaultValue" onfocus="if (this.defaultValue==this.value) this.value=''" class="top-search-form1">
-                            <input name="" type="button" class="top-search-form-submit" value=".">
+                            <span class="topSearchSpan pull-righ">                                
+                                <input id="mainSearchInput" name="mainSearchInput" type="text" placeholder="Programs and Centers" class=" top-search-form1">
+                                <input id="mainSearchBtn" name="" type="button" class="top-search-form-submit" value="">
+                            </span>
                         </form>
                         <div class="clearBoth"></div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div id="top-bar">
+                    <div id="top-bar" class="pull-right">
                         <div class="col_half hidden-xs fright col_last nobottommargin">
                             <div id="top-social">
                                 <ul>
@@ -35,5 +35,20 @@
                         </div>
                     </div>
                 </div>
+                <div id="searchMainDialog" class="col-xs-12  col-md-12 serachDialog" style="display:none">
+                    <div id="progSearchListDiv" class="row customSearchSepCls displayNone">
+                        <div class="searchHeading"><span class="searchLabel">Program List</span></div>
+                        <div id="programListData" class="col-xs-12 col-md-12">
+                            
+                        </div>
+                    </div>
+                    <div id="centerSearchListDiv" class="row customSearchSepCls displayNone">
+                        <div class="searchHeading"><span  class="searchLabel">Dhyana Kendra</span></div>
+                        <div id="locationListData" class="col-xs-12 col-md-12">
+                       
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>

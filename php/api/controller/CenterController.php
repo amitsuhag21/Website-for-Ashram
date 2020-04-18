@@ -35,18 +35,13 @@ class CenterController {
         case 'GET':
                 if (!empty($_GET["centerid"])) {
                     $response = $this->getCenter(($_GET["centerid"]));
-                }else if(!empty($data["centerid"])){
-                    $response = $this->getCenter(($data["centerid"]));
                 }else {
                     $response = $this->getAllCenter();
                 };
                 break;
             case 'POST':
-                //$data = json_decode($_POST["data"]);
                 if (!empty($_POST["centerid"])) {
                     $response = $this->getCenter(($_POST["centerid"]));
-                }else if(!empty($data["centerid"])){
-                    $response = $this->getCenter(($data["centerid"]));
                 } else {
                     $response = $this->getAllCenter();
                 };
@@ -58,13 +53,15 @@ class CenterController {
         
         if ($response['body']) {
             echo json_encode($response['body']);
-            //echo $response['body'];
         }
     }
 
     private function getAllCenter()
     {
         $result = $this->centerService->findAll();
+        if (! $result) {
+            return $this->notFoundResponse();
+        }
         $response['status_code_header'] = 'HTTP/1.1 200 OK';
         $response['body'] = $result;
         return $response;

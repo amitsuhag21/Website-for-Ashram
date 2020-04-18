@@ -2,6 +2,8 @@
 
 include_once "../config/database.php"; 
 include_once "../service/ProgramService.php";
+include_once "../service/ScheduleService.php";
+
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -21,12 +23,15 @@ class ProgramController {
     private $requestMethod;
 
     private $programService;
+    private $scheduleService;
 
     public function __construct($db, $requestMethod)
     {
         $this->db = $db;
         $this->requestMethod = $requestMethod;
         $this->programService = new ProgramService($this->db);
+        $this->scheduleService = new ScheduleService($this->db);
+        
     }   
 
     public function processRequest()
@@ -42,8 +47,8 @@ class ProgramController {
                 };
                 break;
             case 'POST':
-                if (!empty($_POST["programid"])) {
-                    $response = $this->getPackage(($_POST["programid"]));
+                if (!empty($_POST["programList"])) {
+                    $response = $this->getProgramWithSchedule(($_POST["programid"]));
                 }else if(!empty($data["programid"])){
                     $response = $this->getPackage(($data["programid"]));
                 } else {
@@ -77,11 +82,15 @@ class ProgramController {
         return $response;
     }
 
-    private function createPackageFromRequest()
+    private function getProgramWithSchedule($id)
     {
-        $input = json_decode(file_get_contents('php://input'), TRUE);
-        $this->PackageService->insert($input);
-        $response['body'] = null;
+        $result['programData'] = $this->programService->find($id);
+        if (!$result && !$result['programData']) {
+            return $this->notFoundResponse();
+        }else{
+            $result['programList'] = $this->scheduleService->findbyId($id);
+        }
+        $response['body'] = $result;
         return $response;
     }
 

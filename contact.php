@@ -4,24 +4,8 @@
 <head>
 
     <?php include_once 'public_html/includes/commonHeader.php'; ?>
-    <link href='css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />
-    <script defer src="js/solid.js"></script>
-
-    <script src="vendor/modernizr/modernizr.js"></script>
+    <link href='assets/css/custom/contactus.css' media='all' rel='stylesheet' type='text/css' />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <style type="text/css">
-        body,
-        td,
-        th {
-            font-family: Dosis, sans-serif;
-            font-size: 14px;
-            color: #333;
-        }
-        
-        body {
-            background-color: #ddcdbd;
-        }
-    </style>
 </head>
 
 <body class="front">
@@ -46,12 +30,12 @@
         </div>
 
         <div class="row">
-            <div class="inner-slide-com-cot">
+            <div class="inner-slides-com-cot clearfix">
 
                 <div class="col-lg-12">
 
                     <div style="width: 100%">
-                        <iframe width="100%" height="400" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"> </iframe>
+                        <iframe width="100%" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3488.3986240793547!2d77.07594195018369!3d29.034788672425634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390db10b532f1803%3A0xad83167e8566106!2sOshodhara%20Nanak%20Dham!5e0!3m2!1sen!2sin!4v1584690837532!5m2!1sen!2sin" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"> </iframe>
                     </div>
                     <br />
 
@@ -62,7 +46,7 @@
 
         <div class="row">
             <div class="tpp-orgl21"></div>
-            <div class="inner-slide-com-cot">
+            <div class="inner-slides-com-cot clearfix">
                 <div class="col-sm-6">
                     <h2 class=" ct-fw-600">Get in Touch.</h2>
 
@@ -129,14 +113,7 @@
             </div>
         </div>
         <?php include_once 'public_html/includes/footerPage.php'; ?>
-        <?php include_once 'public_html/includes/footerScript.php'; ?>
-
-        <script src="js/theme.js"></script>
-        <script type="text/javascript" src="style-switcher/js/switcher.js"></script>
-        <script src='js/SidebarNav.min.js' type='text/javascript'></script>
-        <script>
-            $('.sidebar-menu').SidebarNav()
-        </script>
-        <script type="text/javascript"></script>
+        <?php include_once 'public_html/includes/footerScript.php';?>
+        <script src="assets/script/js/contactus.js"></script>
     </body>
 </html>

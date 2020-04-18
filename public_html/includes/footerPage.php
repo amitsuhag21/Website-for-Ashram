@@ -22,14 +22,11 @@
 
                 <h2>Useful links</h2>
                 <ul class="list-links">
-                    <li><a href="(http://www.iiym.org/)">IIYM</a></li>
-                    <li><a href="http://synergichomeopathy.in/)">Synergic Homeopathy</a></li>
-                    <li><a href="http://www.naturehealing.in/)">Nature Healing</a></li>
-
+                    <li><a href="http://www.iiym.org">IIYM</a></li>
+                    <li><a href="http://synergichomeopathy.in">Synergic Homeopathy</a></li>
+                    <li><a href="http://www.naturehealing.in">Nature Healing</a></li>
                     <li><a href="http://www.oshodhara.es/">Oshodhara Spain</a></li>
-
                 </ul>
-
             </div>
 
             <div class="col-md-4 newsletter">
@@ -45,13 +42,14 @@
                             <a href="https://www.facebook.com/oshodharaOSHO" target="_blank"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a></div>
 
                         <div class="col-sm-6">
-                            <a href="https://www.facebook.com/oshodharaOSHO" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+                            <a href="https://twitter.com/OSHO_Oshodhara" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
                                 <i class="icon-twitter"></i>
 
                             </a>
-                            <a href="https://www.facebook.com/oshodharaOSHO" target="_blank"><small style="display: block; margin-top: 3px;"><strong>Tweet us</strong><br>on Twittee</small></a></div>
+                            <a href="https://twitter.com/OSHO_Oshodhara" target="_blank"><small style="display: block; margin-top: 3px;"><strong>Tweet us </strong><br>on Twitter</small></a></div>
 
                     </li>
+
                     <div class="col-sm-6">
                         <li class="scl-log">
                             <a href="https://www.youtube.com/user/OshodharaVideos?sub_confirmation=1" target="_blank" class="social-icon si-dark si-colored si-youtube nobottommargin" style="margin-right: 10px;">
@@ -64,11 +62,11 @@
 
                     <div class="col-sm-6">
                         <li class="scl-log">
-                            <a href="https://www.youtube.com/user/OshodharaVideos?sub_confirmation=1" target="_blank" class="social-icon si-dark si-colored si-youtube nobottommargin" style="margin-right: 10px;">
+                            <a href="https://www.instagram.com/osho.dhara" target="_blank" class="social-icon si-dark si-colored si-youtube nobottommargin" style="margin-right: 10px;">
                                 <i class="icon-instagram"></i>
 
                             </a>
-                            <a href="https://www.youtube.com/user/OshodharaVideos?sub_confirmation=1" target="_blank"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>Instagram</small></a>
+                            <a href="https://www.instagram.com/osho.dhara" target="_blank"><small style="display: block; margin-top: 3px;"><strong>Follow us</strong><br>Instagram</small></a>
                         </li>
                     </div>
 
@@ -85,9 +83,3 @@
     </div>
     </div>
 </footer>
-
-<div class="col-sm-12">
-    <footer>
-        <p class="footer_od"> </p>
-    </footer>
-</div>

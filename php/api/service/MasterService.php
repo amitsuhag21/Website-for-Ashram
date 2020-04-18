@@ -9,7 +9,7 @@ class MasterService {
 
     function findAll()
     {
-        $query="SELECT * FROM tb_od_gurus";
+        $query="SELECT * FROM tb_od_gurus where status =1";
         $response=array();
         $result=mysqli_query( $this->connection, $query);
         if($result){ 

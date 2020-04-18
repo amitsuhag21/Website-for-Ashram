@@ -3,27 +3,7 @@
 
 <head>
     <?php include_once 'public_html/includes/commonHeader.php'; ?>
-    <link href='css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />
-    <script defer src="js/solid.js"></script>
-
-    <!-- Head libs -->
-    <script src="vendor/modernizr/modernizr.js"></script>
-
-
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <style type="text/css">
-        body,
-        td,
-        th {
-            font-family: Dosis, sans-serif;
-            font-size: 14px;
-            color: #333;
-        }
-        
-        body {
-            background-color: #ddcdbd;
-        }
-    </style>
 </head>
 
 <body class="front">
@@ -50,14 +30,17 @@
             </div>
 
             <div class="row">
-                <div class="inner-slide-com-cot">
+                <div class="inner-slide-com-cot clearfix">
 
                     <div class="col-md-12  ">
 
                         <div id="accordion" class="panel-group">
                             <div class="panel panel-default pgl-panel">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"> <a href="#collapseOne" data-parent="#accordion" data-toggle="collapse">What is the main teaching of Oshodhara?</a> </h4>
+                                    <h4 class="panel-title"> <a href="#collapseOne" data-parent="#accordion" data-toggle="collapse"><p>
+                                        
+                                    
+                                    What is the main teaching of Oshodhara?</p></a> </h4>
                                 </div>
                                 <div class="panel-collapse collapse in" id="collapseOne">
                                     <div class="panel-body">
@@ -69,7 +52,7 @@
                             </div>
                             <div class="panel panel-default pgl-panel">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"> <a class="collapsed" href="#collapseTwo" data-parent="#accordion" data-toggle="collapse">What is Dhyan Samadhi (Oshodhara's 1st Level Program)?</a> </h4>
+                                    <h4 class="panel-title"> <a class="collapsed" href="#collapseTwo" data-parent="#accordion" data-toggle="collapse"><p>What is Dhyan Samadhi (Oshodhara's 1st Level Program)?</p></a> </h4>
                                 </div>
                                 <div class="panel-collapse collapse" id="collapseTwo">
                                     <div class="panel-body">
@@ -80,7 +63,7 @@
                             </div>
                             <div class="panel panel-default pgl-panel">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"> <a class="collapsed" href="#collapseThree" data-parent="#accordion" data-toggle="collapse">How long should I meditate?</a> </h4>
+                                    <h4 class="panel-title"> <a class="collapsed" href="#collapseThree" data-parent="#accordion" data-toggle="collapse"><p>How long should I meditate?</p></a> </h4>
                                 </div>
                                 <div class="panel-collapse collapse" id="collapseThree">
                                     <div class="panel-body">
@@ -91,7 +74,7 @@
                             </div>
                             <div class="panel panel-default pgl-panel">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"> <a class="collapsed" href="#collapse4" data-parent="#accordion" data-toggle="collapse">Can I join Oshodhara if I have already had a Guru?</a> </h4>
+                                    <h4 class="panel-title"> <a class="collapsed" href="#collapse4" data-parent="#accordion" data-toggle="collapse"><p>Can I join Oshodhara if I have already had a Guru?</p></a> </h4>
                                 </div>
                                 <div class="panel-collapse collapse" id="collapse4">
                                     <div class="panel-body">
@@ -108,34 +91,7 @@
             </div>
 
         <?php include_once 'public_html/includes/footerPage.php'; ?>
-        <?php include_once 'public_html/includes/footerScript.php'; ?>
-
-    <script src="vendor/jquery/jquery.js"></script>
-    <script src="vendor/bootstrap/bootstrap.js"></script>
-    <script src="vendor/jquery.validation/jquery.validation.js"></script>
-    <script src="vendor/owlcarousel/owl.carousel.js"></script>
-    <script src="vendor/flexslider/jquery.flexslider-min.js"></script>
-    <script src="vendor/countdown/countdown.min.js"></script>
-    <script src="vendor/chosen/chosen.jquery.min.js"></script>
-    <script src="vendor/pricefilter/jquery.pricefilter.js"></script>
-    <script src="vendor/masonry/imagesloaded.pkgd.min.js"></script>
-    <script src="vendor/masonry/masonry.pkgd.min.js"></script>
-    <script src="vendor/uikit/uikit.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
-    <script src="assets/script/libs/mustache.min.js"></script>
-    <script src="assets/script/js/headerProgramCategory.js"></script>
-    <script src="assets/script/js/faq.js"></script>
-
-    <!-- Theme Base, Components and Settings -->
-    <script src="js/theme.js"></script>
-
-    <!-- Style Switcher -->
-    <script type="text/javascript" src="style-switcher/js/switcher.js"></script>
-    <script src='js/SidebarNav.min.js' type='text/javascript'></script>
-    <script>
-        $('.sidebar-menu').SidebarNav()
-    </script>
-    <script type="text/javascript">
-        < /body>
-
-        < /html>
+        <?php include_once 'public_html/includes/footerScript.php';?>
+        <script src="assets/script/js/faq.js"></script>
+    </body>
+</html>

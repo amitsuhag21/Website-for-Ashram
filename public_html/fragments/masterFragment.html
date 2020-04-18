@@ -4,11 +4,11 @@
 
 
 <div id="masterDetailContent"  class="col-lg-7">
-    <p>
+    <p id="shortdescription_{{guruid}}">
         {{shortdescription}}
                             <br>
     </p>
-    <p>
+    <p id="masterLongDesc_{{guruid}}">
         {{longdescription}}
         <br>
         <br>
@@ -16,3 +16,16 @@
         <a href="index.html" class="btn btn-primary"> Read More >></a></p>
         
 </div>
+
+<div id="masterAccordionContent">
+    <div class="panel panel-default pgl-panel">
+        <div class="panel-heading">
+            <h4 class="panel-title"> <a id="masterTopic_{{label}}" href="#collapse_{{label}}" data-parent="#masterAccordionHolder" data-toggle="collapse"  class="collapsed">{{masterTopicHeader}}</a> </h4>
+        </div>
+        <div class="panel-collapse collapse" id="collapse_{{label}}">
+            <div id="masterDetails_{{label}}" class="panel-body">{{masterDetails}}
+            </div>
+        </div>
+    </div>
+</div>
+

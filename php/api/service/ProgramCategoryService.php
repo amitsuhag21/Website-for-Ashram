@@ -9,15 +9,13 @@ class ProgramCategoryService {
 
     function findAll()
     {
-        $query="SELECT * FROM tb_od_programcategory";
+        $query="SELECT * FROM tb_od_programcategory where status = 1";
         $response=array();
         $result=mysqli_query( $this->connection, $query);
         while($row=mysqli_fetch_array($result))
         {
             $response[]=$row;
         }
-/*        header('Content-Type: application/json');
-        echo json_encode($response);*/
         return $response;
     }
 
@@ -37,8 +35,6 @@ class ProgramCategoryService {
                 $response[]=$row;
             }
         }
-/*        header('Content-Type: application/json');
-        echo json_encode($response);*/
         return $response;
     }
 }

@@ -28,7 +28,7 @@ class ProgramService {
         {
             $query.=" WHERE programid=".$id." LIMIT 1";
         }
-        $response=array();
+        $response;
         $result=mysqli_query($this->connection, $query);
         if($result){            
             while($row=mysqli_fetch_array($result))
@@ -36,8 +36,9 @@ class ProgramService {
                 $response[]=$row;
             }
         }
-        header('Content-Type: application/json');
-        echo json_encode($response);
+/*        header('Content-Type: application/json');
+        echo json_encode($response);*/
+        return $response;
     }
 
     function insert(Array $data)

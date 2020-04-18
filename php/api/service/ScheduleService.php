@@ -46,7 +46,7 @@ class ScheduleService {
         {
             $queryparam.=" and start_date >='".$reqData['startDate']."'";
         }else{
-            $queryparam.=" ";
+            $queryparam.=" and start_date >='".date('Y-m-d H:i:s')."'";
         }
         if(array_key_exists('endDate', $reqData))
         {
@@ -54,6 +54,33 @@ class ScheduleService {
         }else{
             $queryparam.=" ";
         }
+        $queryparam.=" ORDER BY start_date ASC";
+
+        $query.=$queryparam;
+        $result=mysqli_query($this->connection, $query);
+        if($result){            
+            while($row=mysqli_fetch_array($result))
+            {
+                $response[]=$row;
+            }
+        }else{
+            
+            $response =[];
+        }
+        return $response;
+    }
+
+       function findbyId($programid)
+    {
+        $query="SELECT * FROM tb_od_programschedule  WHERE  ";
+        $queryparam = "";
+        $response=array();
+        if($programid )
+        {
+            $queryparam.=" programid=".$programid;
+        }
+
+        $queryparam.=" and start_date >='".date('Y-m-d H:i:s')."'";
         $queryparam.=" ORDER BY start_date ASC";
 
         $query.=$queryparam;

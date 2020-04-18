@@ -1,7 +1,8 @@
 var planData = {};
 var faqtemplate = "";
 $(document).ready(function(){
-debugger;	
+  $('#faqHeaderView').addClass('active');
+  loadCategory();
 	callFaqData(); 
 });
 

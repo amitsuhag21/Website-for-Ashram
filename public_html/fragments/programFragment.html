@@ -8,10 +8,229 @@
 <div id="programDetailContent"  class="col-lg-7">
     <p>
         {{shortdescription}}</p>
-    <p>
+    <p id="programLongDiscription_{{programid}}">
         {{longdescription}}
         <br>
         <br>
 
         <a href="index.html" class="btn btn-primary"> Read More >></a></p>
+</div>
+
+<div id="programLisContent">   
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Venue</th>
+                <th>Conducting Aachrya</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+
+        <tbody id="programListContent">
+            <tr class="programTableRow">
+                <td class="programTableDateCls">
+                     <div class="schProgramNameCls">{{locationData.dhyankendraname}}</div>
+                </td>
+                <td class="programTableDateCls">
+                    <div class="schProgramNameCls"><div class="">{{start_date}} - {{end_date}}</div></div>
+                </td>
+                <td class="programTableDateCls">
+                     <div class="schProgramNameCls">{{programLevel}}</div>
+                </td>
+                <td class="programTableDateCls">
+                    <div class="schProgramNameCls">
+
+                        {{guidelines}}, {{comments}}
+                    </div>
+                </td>
+                <td class="programTableDateCls">
+                    <div class="schProgramNameCls">
+                        <span id="viewProgButton_{{programid}}_{{scheduleid}}"  data-toggle="modal" data-target="#programModal_{{programid}}_{{scheduleid}}" class="myButton pull-left">View</span>
+                        <span id="bookProgButton_{{programid}}_{{scheduleid}}"  data-toggle="modal" data-target="#bookProgModel_{{programid}}_{{scheduleid}}"   class="myButton pull-right">Book</span>
+                    
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+<div id="programListModalContent">
+    
+    <div class="modal fade customModal" id="programModal_{{programid}}_{{scheduleid}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog customDialog">
+            <div class="modal-content customModalContent">
+                <div class="modal-header customModalHeader">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel_{{scheduleid}}">{{programData.programname}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 ">
+                            <table class="table table-striped">
+                                <tr>
+                                    <td><strong>Program Level</strong>y</td>
+                                </tr>
+                                <tr>
+                                    <td>{{programid}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Program Aacharya</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>{{programData.guidelines}}, {{programData.comments}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Venue</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>{{locationData.dhyankendraname}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>State</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>{{locationData.dhyankendraname}}, {{locationData.Address2}} </strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Date</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>{{programData.start_date}} </td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+<div id="proBookNowModalContent">
+    
+    <div class="modal fade customModal" id="bookProgModel_{{programid}}_{{scheduleid}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog customDialog">
+            <div class="modal-content customModalContent">
+                <div class="modal-header customModalHeader">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title modalTitle" id="myModalLabel_{{scheduleid}}">{{programData.programname}}</h4>
+                </div>
+                <div class="modal-body customModalBody">
+                    <div class="row">
+                        <form role="form" action="esendmail1.php" method="post" class="m-t-40 customForm" novalidate>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Program</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_programName_{{programid}}_{{scheduleid}}" name="programName" required class="form-control customInput" value="{{programData.programname}}" disabled="true">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Program Location</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_programLocation_{{programid}}_{{scheduleid}}" name="programName" required class="form-control customInput" value="{{locationData.dhyankendraname}}" disabled="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Start Date</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_StartDate_{{programid}}_{{scheduleid}}" placeholder="Program Category"  name="programName" required class="form-control customInput" value="{{bookingStart_date}}" disabled="true">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">End Date</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_EndDate_{{programid}}_{{scheduleid}}" placeholder="Program Category"  name="programName" required class="form-control customInput" value="{{end_date}}" disabled="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Name</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_userName_{{programid}}_{{scheduleid}}" placeholder="Official Name"  name="userName" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Dairy Number</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_dairyNumber_{{programid}}_{{scheduleid}}" placeholder="Dairy Number" type="number" name="dairyNumber" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Phone Number</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_phoneNumber_{{programid}}_{{scheduleid}}" type="number" placeholder="Phone Number"  name="phoneNumber" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">EmailID</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_emailId_{{programid}}_{{scheduleid}}" placeholder="EmailID" type="email" name="emailId" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">State</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_userState_{{programid}}_{{scheduleid}}" type="text" placeholder="State"  name="State" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">City</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_city_{{programid}}_{{scheduleid}}" placeholder="City" type="city" name="city" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Graduate Program</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_GraduationLevel_{{programid}}_{{scheduleid}}" type="text" placeholder="Graguated Program"  name="graduationLevel" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Payment Receipt</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_paymentRecipt_{{programid}}_{{scheduleid}}" placeholder="Payment receipt" type="file" name="paymentReceipt" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="text-xs-right">
+                                    <button id="bookNow_{{programid}}_{{scheduleid}}" type="button" class="btn myButton" data-text="Submit">Submit</button>
+                                    <button id="cancelBookNow_{{programid}}_{{scheduleid}}" type="button" class="btn myButton" data-dismiss="modal" data-text="Reset">Cancel</button>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
 </div>
