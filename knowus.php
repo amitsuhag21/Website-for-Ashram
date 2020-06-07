@@ -182,7 +182,6 @@
         <?php include_once 'public_html/includes/footerPage.php'; ?>
             <?php include_once 'public_html/includes/footerScript.php'; ?>
                 <script src="assets/script/js/knowus.js"></script>
-                <script type="text/javascript" src="style-switcher/js/switcher.js"></script>
 </body>
 
 </html>

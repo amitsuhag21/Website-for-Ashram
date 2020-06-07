@@ -15,6 +15,7 @@ $shortdescription = (isset($output['shortdescription'])&& !empty($output['shortd
 $longdescription  = (isset($output['longdescription'])&& !empty($output['longdescription']))?$output['longdescription']:'';
 $language  = (isset($output['language'])&& !empty($output['language']))?$output['language']:'';
 $category  = (isset($output['categoryid'])&& !empty($output['categoryid']))?explode(',',$output['categoryid']):'';
+$mandatoryprogrom  = (isset($output['mandatoryProgrom'])&& !empty($output['mandatoryProgrom']))?explode(',',$output['mandatoryProgrom']):'';
 $sort  = (isset($output['sort'])&& !empty($output['sort']))?$output['sort']:'';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -23,16 +24,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $short_description = trim($_POST['description']);
     $long_description = trim($_POST['details']);
     $categoryid = implode(',',$_POST['categoryid']);
+    $mandatoryprogromid =  implode(',',$_POST['mandatoryprogromid']);
      $language = $_POST['language'];
      $sort = $_POST['sort'];
     if (!empty($name)) {
  
         if($_POST['action'] == 'add'){
-              $sql = "INSERT INTO tb_od_program(programname ,sort, shortdescription,longdescription,categoryid,status,language)
-            VALUES ('" . $name . "','" . $sort . "','" . $short_description . "', '" . $long_description . "', '" . $categoryid . "',1,'" . $language . "')";
+              $sql = "INSERT INTO tb_od_program(programname ,sort, shortdescription,longdescription,categoryid,status,language, mandatoryProgrom)
+            VALUES ('" . $name . "','" . $sort . "','" . $short_description . "', '" . $long_description . "', '" . $categoryid . "',1,'" . $language . "', '" . $mandatoryprogromid . "')";
         }else{
             $id = $_GET['id'];
-            $sql= "UPDATE tb_od_program SET sort='$sort',shortdescription='$short_description',categoryid='$categoryid', programname= '$name' ,language= '$language',longdescription='$long_description' WHERE programid=$id";
+            $sql= "UPDATE tb_od_program SET sort='$sort',shortdescription='$short_description',categoryid='$categoryid', programname= '$name' ,mandatoryProgrom= '$mandatoryprogromid',language= '$language',longdescription='$long_description' WHERE programid=$id";
         }
      
        mysqli_query($link, $sql);
@@ -92,11 +94,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label"><strong>Short Description * :</strong></label>
+                            <label class="control-label"><strong>Short Details *:</strong></label>
                             <div class="controls">
                                 <input class="span11" style="height:35px" placeholder="Short Description" type="text"
                                     name="description" id="description"  value="<?php echo $shortdescription?>">
-                                <!-- <span class="span10" style="color:#c1c1c1">Maximum 200 charecters allowed</span>-->
                             </div>
                         </div>
                         <div class="control-group">
@@ -126,10 +127,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <select id="categoryid" name="categoryid[]" multiple>
                                     <?php 
                                     if (mysqli_num_rows($resultcat) > 0) {
-                         while ($value = mysqli_fetch_assoc($resultcat)) {?>
-                                    <option value="<?php echo $value['categoryid'];?>"
-                                        <?php echo (!empty($category) && in_array($value['categoryid'],$category)) ? "selected" : "" ?>>
-                                        <?php echo $value['categoryname'];?></option>
+                                        while ($value = mysqli_fetch_assoc($resultcat)) {?>
+                                            <option value="<?php echo $value['categoryid'];?>"
+                                                <?php echo (!empty($category) && in_array($value['categoryid'],$category)) ? "selected" : "" ?>>
+                                                <?php echo $value['categoryname'];?></option>
+                                        <?php }
+                                    }?>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <?php 
+                        $sqlmandPro = "Select * from   tb_od_program where status=1 order by programid desc";
+                        $resultmandPro = mysqli_query($link, $sqlmandPro);
+                        ?>
+
+                        <div class="control-group">
+                            <label class="control-label"><strong>Mandatory Program *:</strong></label>
+                            <div class="controls">
+                                <select id="mandatoryprogromid" name="mandatoryprogromid[]" multiple>
+                                    <?php 
+                                    if (mysqli_num_rows($resultmandPro) > 0) {
+                         while ($valuePro = mysqli_fetch_assoc($resultmandPro)) {?>
+                                    <option value="<?php echo $valuePro['programid'];?>"
+                                        <?php echo (!empty($mandatoryprogrom) && in_array($valuePro['programid'],$mandatoryprogrom)) ? "selected" : "" ?>>
+                                        <?php echo $valuePro['programname'];?></option>
                                     <?php }
                         }?>
                                 </select>

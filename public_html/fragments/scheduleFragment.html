@@ -17,7 +17,7 @@
         <tr class="scheduleTableRow">
             <td class="schTableDateCls">
                 <span class="schProgramNameCls">
-                    <a href="programe.php?programid={{programid}}">
+                    <a href="programe.php?programIndex={{programid}}">
                         <strong>{{programData.programname}}</strong>       
                     </a>                    
                 </span>
@@ -35,13 +35,15 @@
             </td>
             <td class="schTableDateCls">
                 <div width="100%" border="0" cellpadding="2" cellspacing="2">
-                        <span id="viewButton_{{programid}}_{{scheduleid}}"  data-toggle="modal" data-target="#myModal_{{programid}}_{{scheduleid}}" class="myButton pull-left">View</span>
+                        <span id="viewButton_{{programid}}_{{scheduleid}}"  data-toggle="modal" data-target="#myModal_{{programid}}_{{scheduleid}}" class="myButton pull-left">Details</span>
                         <span id="bookButton_{{programid}}_{{scheduleid}}"  data-toggle="modal" data-target="#bookNowModal_{{programid}}_{{scheduleid}}" class="myButton pull-right">Book</span>
                 </div>
             </td>
         </tr>
     </tbody>
 </table>
+
+
 
 
 
@@ -52,9 +54,132 @@
             <div class="modal-content customModalContent">
                 <div class="modal-header customModalHeader">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title modalTitle" id="myModalLabel_{{scheduleid}}">{{programData.programname}}</h4>
+                    <h4 class="modal-title modalTitle" id="myModalLabel_{{scheduleid}}">{{programname}}</h4>
                 </div>
                 <div class="modal-body customModalBody">
+                    <div class="row">
+                        <form role="form" action="esendmail1.php" method="post" class="m-t-40 customForm" novalidate>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Program</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_programName_{{programid}}_{{scheduleid}}" name="programName" required class="form-control customInput" value="{{programname}}" disabled="true">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Program Location</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_programLocation_{{programid}}_{{scheduleid}}" name="programName" required class="form-control customInput" value="{{dhyankendraname}}" disabled="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Start Date</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_StartDate_{{programid}}_{{scheduleid}}" placeholder="Program Category"  name="programName" required class="form-control customInput" value="{{bookingStart_date}}" disabled="true">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">End Date</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_EndDate_{{programid}}_{{scheduleid}}" placeholder="Program Category"  name="programName" required class="form-control customInput" value="{{end_date}}" disabled="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Participant Name</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_userName_{{programid}}_{{scheduleid}}" placeholder="Participant Name"  name="userName" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Dairy Number</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_dairyNumber_{{programid}}_{{scheduleid}}" placeholder="Dairy Number" type="number" name="dairyNumber" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Phone Number</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_phoneNumber_{{programid}}_{{scheduleid}}" type="number" placeholder="Phone Number"  name="phoneNumber" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">EmailID</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_emailId_{{programid}}_{{scheduleid}}" placeholder="EmailID" type="email" name="emailId" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">State</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_userState_{{programid}}_{{scheduleid}}" type="text" placeholder="State"  name="State" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">City</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_city_{{programid}}_{{scheduleid}}" placeholder="City" type="city" name="city" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Graduate Program</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_GraduationLevel_{{programid}}_{{scheduleid}}" type="text" placeholder="Graguated Program"  name="graduationLevel" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Payment Receipt</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_paymentRecipt_{{programid}}_{{scheduleid}}" placeholder="Payment receipt" type="file" name="paymentReceipt" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="text-xs-right">
+                                    <button id="bookNow_{{programid}}_{{scheduleid}}" type="button" class="btn myButton" data-text="Submit">Submit</button>
+                                    <button id="cancelBookNow_{{programid}}_{{scheduleid}}" type="button" class="btn myButton" data-dismiss="modal" data-text="Reset">Cancel</button>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+<div id="programScheduleModalContent">
+    
+    <div class="modal fade" id="myModal_{{programid}}_{{scheduleid}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">{{programData.programname}}</h4>
+                </div>
+                <div class="modal-body">
                     <div class="row">
                         <form role="form" action="esendmail1.php" method="post" class="m-t-40 customForm" novalidate>
                             <div class="form-group clearfix scheduleFormGroup">
@@ -154,7 +279,270 @@
                             <div class="col-md-12">
                                 <div class="text-xs-right">
                                     <button id="bookNow_{{programid}}_{{scheduleid}}" type="button" class="btn myButton" data-text="Submit">Submit</button>
-                                    <button id="cancelBookNow_{{programid}}_{{scheduleid}}" type="button" class="btn myButton" data-dismiss="modal" data-text="Reset">Cancel</button>
+                                    <button id="cancelButton_{{programid}}_{{scheduleid}}" type="button" class="btn myButton" data-dismiss="modal" data-text="Reset">Cancel</button>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+<div id="progOnlineSchModalContent">
+    
+    <div class="modal fade" id="myOnlineModal_{{programid}}_{{scheduleid}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">{{programName}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="form-group clearfix scheduleFormGroup">
+                            <div class="col-md-6">
+                                <span class="titleLabel">Start Date</span>
+                                <div class="controls customInputDiv">
+                                    <div class="form-control customInput">{{bookingStart_date}}</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="titleLabel">End Date</span>
+                                <div class="controls customInputDiv">
+                                    <div class="form-control customInput">{{end_date}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group clearfix scheduleFormGroup">
+                            <div class="col-md-6">
+                                <span class="titleLabel">Session 1</span>
+                                <div class="controls customInputDiv">
+                                    <div class="form-control customInput">{{session1}}</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="titleLabel">Session 2</span>
+                                <div class="controls customInputDiv">
+                                    <div class="form-control customInput">{{session2}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group clearfix scheduleFormGroup">
+                            <div class="col-md-6 required-field">
+                                <span class="titleLabel">Program Type</span>
+                                <div class="controls customInputDiv">
+                                    <div required class="form-control customInput">Online</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <span class="titleLabel">Contribution Amount</span>
+                                <div class="controls customInputDiv">
+                                    <div class="form-control customInput">{{ContributionAmount}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group clearfix scheduleFormGroup">
+                            <div class="col-md-6">
+                                <span class="titleLabel">Lead Achraya</span>
+                                <div class="controls customInputDiv">
+                                    <div class="form-control customInput">{{leadAcharya}}</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="titleLabel">Other Achraya</span>
+                                <div class="controls customInputDiv">
+                                    <div class="form-control customInput">{{otherAchraya}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+
+
+
+
+
+
+
+<table class="table table-striped ">
+    <thead class="tb-bg-text">
+        <tr>
+            <th class="scheduleTableHeader" width="20%">Program</th>
+            <th class="scheduleTableHeader" width="18%">Location</th>
+            <th class="scheduleTableHeader" width="20%">Date</th>
+            <th class="scheduleTableHeader" width="22%">Aachrya</th>
+            <th class="scheduleTableHeader" width="20%">
+                <div class="row">
+                    <span id="viewButton"  class="pull-left viewLabel">Detail</span>
+                    <span id="bookButton" class="pull-right boookLevel">Book</span>                    
+                </div>
+            </th>
+        </tr>
+    </thead>
+    <tbody id="programScheduleOnlineContented">
+        <tr class="scheduleTableRow">
+            <td class="schTableDateCls">
+                <span class="schProgramNameCls">
+                    <a href="programe.php?programIndex={{programid}}">
+                        <strong>{{programname}} , Online</strong>       
+                    </a>                    
+                </span>
+            </td>
+            <td class="schTableDateCls">
+               <div class="schProgramNAmeCls"><div class="schDateCls">1 : {{duration}}</div></div>
+               <div class="schProgramNAmeCls"><div class="schDateCls">2 : {{language}}</div></div>
+            </td>
+            <td class="schTableDateCls">
+                <div class="schProgramNAmeCls"><div class="schDateCls">{{start_date}} - {{end_date}}</div></div>
+            </td>
+            <td class="schTableDateCls">
+                <div class="masterNameCls">
+                    {{leadAcharya}}, {{otherAchraya}}
+                </div>
+            </td>
+            <td class="schTableDateCls">
+                <div width="100%" border="0" cellpadding="2" cellspacing="2">
+                    <span id="viewButton_{{programid}}_{{scheduleid}}"  data-toggle="modal" data-target="#myOnlineModal_{{programid}}_{{scheduleid}}" class="myButton pull-left">Details</span>
+                    <span id="bookOnlineStart_{{programid}}_{{scheduleid}}"  data-toggle="modal" data-target="#openBookOnlineModal_{{programid}}_{{scheduleid}}" class="myButton pull-right">Book</span>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div id="bookOnlineModalContent">
+    
+    <div class="modal fade customModal" id="openBookOnlineModal_{{programid}}_{{scheduleid}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog customDialog">
+            <div class="modal-content customModalContent">
+                <div class="modal-header customModalHeader">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title modalTitle" id="myModalLabel_{{scheduleid}}">{{programname}} , Online</h4>
+                </div>
+                <div class="modal-body customModalBody">
+                    <div class="row">
+                        <form role="form" action="esendmail1.php" method="post" class="m-t-40 customForm" novalidate>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Program</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_programName_{{programid}}_{{scheduleid}}" name="programName" required class="form-control customInput" value="{{eligibility}} , Online" disabled="true">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Session Location</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_programLocation_{{programid}}_{{scheduleid}}" name="programName" required class="form-control customInput" value="Session 1 : {{duration}}, Session 2 : {{language}}" disabled="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Start Date</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_StartDate_{{programid}}_{{scheduleid}}" placeholder="Program Category"  name="programName" required class="form-control customInput" value="{{bookingStart_date}}" disabled="true">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">End Date</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_EndDate_{{programid}}_{{scheduleid}}" placeholder="Program Category"  name="programName" required class="form-control customInput" value="{{end_date}}" disabled="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Participant Name</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_userName_{{programid}}_{{scheduleid}}" placeholder="Participant Name"  name="userName" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Dairy Number</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_dairyNumber_{{programid}}_{{scheduleid}}" placeholder="Dairy Number" type="number" name="dairyNumber" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Phone Number</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_phoneNumber_{{programid}}_{{scheduleid}}" type="number" placeholder="Phone Number"  name="phoneNumber" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">EmailID</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_emailId_{{programid}}_{{scheduleid}}" placeholder="EmailID" type="email" name="emailId" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">State</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_userState_{{programid}}_{{scheduleid}}" type="text" placeholder="State"  name="State" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">City</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_city_{{programid}}_{{scheduleid}}" placeholder="City" type="city" name="city" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Graduate Program</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_GraduationLevel_{{programid}}_{{scheduleid}}" type="text" placeholder="Graguated Program"  name="graduationLevel" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Payment Receipt</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_paymentRecipt_{{programid}}_{{scheduleid}}" placeholder="Payment receipt" type="file" name="paymentReceipt" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-12">
+                                    <span class="titleLabel">Comments</span>
+                                    <div class="controls customInputDiv">
+                                        <textarea id="bookNow_Comments_{{programid}}_{{scheduleid}}" type="text" placeholder="Comments"  name="comments" required class="form-control customInput"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="text-xs-right">
+                                    <button id="bookOnlineButton_{{programid}}_{{scheduleid}}" type="button" class="btn myButton" data-text="Submit">Submit</button>
+                                    <button id="cancelOnlineButton_{{programid}}_{{scheduleid}}" type="button" class="btn myButton" data-dismiss="modal" data-text="Reset">Cancel</button>
                                     <br>
                                     <br>
                                 </div>

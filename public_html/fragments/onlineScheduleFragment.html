@@ -1,0 +1,455 @@
+
+<div id="progOnlineSchModalContent">
+    
+    <div class="modal fade" id="onlineSchModal_{{programid}}_{{scheduleid}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="onlineSchModelLabel">{{programname}}, {{eligibility}}</h4>
+                </div>
+                <div class="modal-body">
+                    {{#isSamadhi}}                        
+                        <div class="row">
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Start Date</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{start_date}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="titleLabel">End Date</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{end_date}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Session 1</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{session1}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Lead Achraya</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{leadAcharya}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Session 2</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{session2}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Other Achraya</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{otherAchraya}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Next Start Date</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{start_date2}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Next End Date</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{end_date2}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Session 3</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{session3}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Morning Achraya</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{acharyaThird}}</div>
+                                    </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Session 4</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{session4}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Evening Achraya</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{acharyaFourth}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Program Type</span>
+                                    <div class="controls customInputDiv">
+                                        <div required class="form-control customInput">Online</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Contribution Amount</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{ContributionAmount}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    {{/isSamadhi}}
+                    {{^isSamadhi}}                       
+                        <div class="row">
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Start Date</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{start_date}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="titleLabel">End Date</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{end_date}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Session 1</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{session1}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Lead Achraya</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{leadAcharya}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Session 2</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{session2}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Other Achraya</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{otherAchraya}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Program Type</span>
+                                    <div class="controls customInputDiv">
+                                        <div required class="form-control customInput">Online</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Contribution Amount</span>
+                                    <div class="controls customInputDiv">
+                                        <div class="form-control customInput">{{ContributionAmount}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/isSamadhi}}
+                    <div class="row">
+                        <div class="form-group clearfix scheduleFormGroup">
+                            <div class="col-md-12">
+                                <span class="titleLabel">Payment Detail Information</span>
+                                <div class="controls customInputDiv">
+                                    <textarea class="form-control"  disabled="true">Osho Nanak Dhyan Mandir,  A/C no. - 32751853106,  IFSC Code - SBIN0014374 , State Bank of India,  Murthal, Sonepat, Haryana, India </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+<div id="programScheduleOnlineContent">
+        <div class="scheduleTableRow row">
+            <div class="schTableDateCls onlineScheduleNameCls col-md-2  col-xs-12 paddingNone">
+                <span class="schProgramNameCls">
+                    <a href="programe.php?programIndex={{programid}}">
+                        <strong>{{programname}}, {{eligibility}}</strong>       
+                    </a>                    
+                </span>
+            </div>
+            <div class="schRowCls col-md-9 col-xs-12 paddingNone">                    
+
+                {{#isSamadhi}}
+                    <div class="schInnerRowCls  col-md-3  col-xs-12 paddingNone">
+                        <div class="schTableDateCls onlineSchSessionCls col-md-12  col-xs-12 paddingNone">
+                            <div class="schProgramNAmeCls"><div class="schDateCls">{{bookingStart_date}} - {{end_date}}</div></div>
+                        </div>
+                    </div>
+                    <div class="schInnerRowCls  col-md-9  col-xs-12 paddingNone">
+                        <div class="schTableDateCls onlineSchAcharyaCls col-md-3 col-xs-6 paddingNone">
+                           <div class="schProgramNAmeCls"><div class="schDateCls">{{session1}}</div></div>
+                        </div>
+                        <div class="schTableDateCls onlineSchAcharyaCls col-md-3 col-xs-6 paddingNone">
+                            <div class="masterNameCls">
+                                {{leadAcharya}}
+                            </div>
+                        </div>
+                        <div class="schTableDateCls onlineSchAcharyaCls col-md-3 col-xs-6 paddingNone">
+                           <div class="schProgramNAmeCls"><div class="schDateCls">{{session2}}</div></div>
+                        </div>
+                        <div class="schTableDateCls onlineSchAcharyaCls col-md-3 col-xs-6 paddingNone">
+                            <div class="masterNameCls">
+                                {{otherAchraya}}
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="schInnerRowCls  col-md-3  col-xs-12 paddingNone">
+                        <div class="schTableDateCls onlineSchSessionCls col-md-12  col-xs-12 paddingNone">
+                            <div class="schProgramNAmeCls"><div class="schDateCls">{{bookingStart_date2}} - {{end_date2}}</div></div>
+                        </div>
+                    </div>
+                    <div class="schInnerRowCls  col-md-9  col-xs-12 paddingNone">
+                        <div class="schTableDateCls onlineSchAcharyaCls col-md-3  col-xs-6 paddingNone">
+                           <div class="schProgramNAmeCls"><div class="schDateCls">{{session3}}</div></div>
+                        </div>
+                        <div class="schTableDateCls onlineSchAcharyaCls col-md-3 col-xs-6 paddingNone">
+                            <div class="masterNameCls">
+                                {{acharyaThird}}
+                            </div>
+                        </div>
+                        <div class="schTableDateCls onlineSchAcharyaCls col-md-3 col-xs-6 paddingNone">
+                           <div class="schProgramNAmeCls"><div class="schDateCls">{{session4}}</div></div>
+                        </div>
+                        <div class="schTableDateCls onlineSchAcharyaCls col-md-3 col-xs-6 paddingNone">
+                            <div class="masterNameCls">
+                                {{acharyaFourth}}
+                            </div>
+                        </div>
+
+
+                    </div>
+                {{/isSamadhi}}
+                {{^isSamadhi}}
+
+                    <div class="schInnerRowCls  col-md-3  col-xs-12 paddingNone">
+                        <div class="schTableDateCls onlineSchSessionCls col-md-12 col-xs-12 paddingNone">
+                            <div class="schProgramNAmeCls"><div class="schDateCls">{{bookingStart_date}} - {{end_date}}</div></div>
+                        </div>
+                    </div>
+                    <div class="schInnerRowCls  col-md-9  col-xs-12 paddingNone">
+                        <div class="schTableDateCls onlineSchAcharyaCls col-md-3 col-xs-6 paddingNone">
+                           <div class="schProgramNAmeCls"><div class="schDateCls">{{session1}}</div></div>
+                        </div>
+                        <div class="schTableDateCls onlineSchAcharyaCls col-md-3 col-xs-6 paddingNone">
+                            <div class="masterNameCls">
+                                {{leadAcharya}}
+                            </div>
+                        </div>
+                        <div class="schTableDateCls onlineSchAcharyaCls col-md-3 col-xs-6 paddingNone">
+                           <div class="schProgramNAmeCls"><div class="schDateCls">{{session2}}</div></div>
+                        </div>
+                        <div class="schTableDateCls onlineSchAcharyaCls col-md-3 col-xs-6 paddingNone">
+                            <div class="masterNameCls">
+                                {{otherAchraya}}
+                            </div>
+                        </div>
+                    </div>
+                {{/isSamadhi}}
+
+            </div>
+            <div class="schTableDateCls onlineSchButtonCls col-md-1 col-xs-12 paddingNone">
+                <div width="100%" border="0" cellpadding="2" cellspacing="2">
+                    <a href="booking.php?programid={{programid}}&scheduleid={{scheduleid}}"><span id="bookOnlinePage_{{programid}}_{{scheduleid}}"  data-toggle="modal" data-target="#openBookOnlineModal_{{programid}}_{{scheduleid}}" class="myButton">Book</span></a>
+                    <span id="viewOnlineSchButton_{{programid}}_{{scheduleid}}"  data-toggle="modal" data-target="#onlineSchModal_{{programid}}_{{scheduleid}}" class="myButton">Details</span>
+                </div>
+            </div>
+        </div>    
+</div>
+
+
+<div id="bookOnlineModalContent">
+    
+    <div class="modal fade customModal" id="openBookOnlineModal_{{programid}}_{{scheduleid}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog customDialog">
+            <div class="modal-content customModalContent">
+                <div class="modal-header customModalHeader">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title modalTitle" id="myModalLabel_{{scheduleid}}">{{programname}}, {{eligibility}}</h4>
+                </div>
+                <div class="modal-body customModalBody">
+                    <div class="row">
+                        <form role="form" action="esendmail1.php" method="post" class="m-t-40 customForm" novalidate>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Program</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_programName_{{programid}}_{{scheduleid}}" name="programName" required class="form-control customInput" value="{{programname}} {{eligibility}}" disabled="true">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Location</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_programLocation_{{programid}}_{{scheduleid}}" name="programName" required class="form-control customInput" value="Online" disabled="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Start Date</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_StartDate_{{programid}}_{{scheduleid}}" placeholder="Program Category"  name="start date" required class="form-control customInput" value="{{start_date}}" disabled="true">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">End Date</span>
+                                    <div class="controls customInputDiv">
+                                       {{#isSamadhi}}     
+                                        <input id="bookNow_EndDate_{{programid}}_{{scheduleid}}" placeholder="Program Category"  name="programName" required class="form-control customInput" value="{{end_date2}}" disabled="true">
+                                       {{/isSamadhi}}     
+                                       {{^isSamadhi}}
+                                        <input id="bookNow_EndDate_{{programid}}_{{scheduleid}}" placeholder="Program Category"  name="programName" required class="form-control customInput" value="{{end_date}}" disabled="true">
+                                       {{/isSamadhi}}     
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Participant Name</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_userName_{{programid}}_{{scheduleid}}" placeholder="Participant Name"  name="userName" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Dairy Number</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_dairyNumber_{{programid}}_{{scheduleid}}" placeholder="Dairy Number" type="number" name="dairyNumber" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">Phone Number</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_phoneNumber_{{programid}}_{{scheduleid}}" type="number" placeholder="Phone Number"  name="phoneNumber" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 required-field">
+                                    <span class="titleLabel">EmailID</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_emailId_{{programid}}_{{scheduleid}}" placeholder="EmailID" type="email" name="emailId" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">State</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_userState_{{programid}}_{{scheduleid}}" type="text" placeholder="State"  name="State" required class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">City</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_city_{{programid}}_{{scheduleid}}" placeholder="City" type="city" name="city" required class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Graduate Program</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_GraduationLevel_{{programid}}_{{scheduleid}}" type="text" placeholder="Graduated Program"  name="graduationLevel"  class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Payment Receipt</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_paymentRecipt_{{programid}}_{{scheduleid}}" placeholder="Payment receipt" type="file" name="paymentReceipt"  class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Bank Name</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_BankName_{{programid}}_{{scheduleid}}" type="text" placeholder="Bank Name"  name="bankName" class="form-control customInput">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Transfer Type</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_TransferType_{{programid}}_{{scheduleid}}" type="text" placeholder="Transfer Type"  name="transferType" class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Transaction Id</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_TransactionId_{{programid}}_{{scheduleid}}" type="text" placeholder="Transaction Id"  name="transactionId" class="form-control customInput">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="titleLabel">Comments</span>
+                                    <div class="controls customInputDiv">
+                                        <input id="bookNow_Comments_{{programid}}_{{scheduleid}}" type="text" placeholder="Comments"  name="comments" class="form-control customInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix scheduleFormGroup">
+                                <div class="col-md-12">
+                                    <span class="titleLabel">Payment Detail Information</span>
+                                    <div class="controls customInputDiv">
+                                        <textarea class="form-control"  disabled="true">Osho Nanak Dhyan Mandir,  A/C no. - 32751853106,  IFSC Code - SBIN0014374 , State Bank of India,  Murthal, Sonepat, Haryana, India </textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="text-xs-right">
+                                    <button id="bookOnlineButton_{{programid}}_{{scheduleid}}" type="button" class="btn myButton" data-text="Submit">Submit</button>
+                                    <button id="cancelOnlineButton_{{programid}}_{{scheduleid}}" type="button" class="btn myButton" data-dismiss="modal" data-text="Reset">Cancel</button>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

@@ -1,31 +1,18 @@
-<div id="faqcontente">	
-	<section class="toggle active">
-	    <label>{{question}}?</label>
-	    <p>{{answer}}</p>
-	</section>
-</div>
-
-
-<div id="faqcontent">	
-	<div>
-		<p>{{question}}</p>
-		<p>{{answer}}</p>	
-	</div>
-</div>
 
 <div id="faqAccordianContent">
-	<div class="panel panel-default pgl-panel">
-		<div class="panel-heading">
-			<h4 class="panel-title"> <a href="#collapseOne" data-parent="#accordion" data-toggle="collapse"><p>
-				{{sectionFilter}}
-			</p></a> </h4>
-		</div>
-		<div class="panel-collapse collapse in" id="collapseOne">
-			<div id="faqContentHolder_{{sectionFilter}}" class="panel-body">
-				 
-				
-			</div>
-		</div>
-	</div>
+    <div class="panel panel-default pgl-panel">
+        <div class="panel-heading">
+            <h4 class="panel-title"> <a href="#collapseOne" data-parent="#accordion" data-toggle="collapse"><p>
+                
+            
+            {{question}}</p></a> </h4>
+        </div>
+        <div class="panel-collapse collapse in" id="collapseOne">
+            <div class="panel-body">
+
+                <p>{{answer}}</p>
+            </div>
+        </div>
+    </div>
 </div>
 

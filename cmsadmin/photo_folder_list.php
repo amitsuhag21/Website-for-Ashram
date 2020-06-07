@@ -15,7 +15,7 @@ else {
   $pn=1;  
 };   
 
-if(isset($_GET['action']) && ($_GET['action'] == 'delete') && !empty($_GET['id'])){
+if(isset($_GET['action']) && ($_GET['action'] == 'deletes') && !empty($_GET['id'])){
     $delid =$_GET['id'];
     $sqlcat = "Select * from   tb_od_folder where id=$delid ";
     $resFold = mysqli_query($link, $sqlcat);
@@ -124,23 +124,6 @@ tr:nth-child(odd) {
 
         <div class="row-fluid">
             <div class="span12">
-            <!--    <div class="control-group">
-
-                    <fieldset class="scheduler-border span12"
-                        style="border: 2px solid #f0f0f0;padding:0 18px 0 0;margin: 5px 0">
-                        <div class="span2 m-wrap">
-                            <label><strong>Name :</strong></label>
-                            <input class="span11 m-wrap" type="text" placeholder="Program Category Name"
-                                name="filter_name" id="filter_name" value="" style="height:35px;width:100%">
-                        </div>
-
-                        <div class="span1 m-wrap" style="margin: 3px;">
-                            <label>&nbsp;</label>
-                            <button class="btn btn-primary" id="filter_speaker" data-url="./">Search</button>
-                        </div>
-
-                    </fieldset>
-                </div>-->
                 <div class="widget-box">
                     <div class="widget-title"> <span class="icon" id="filtericon"><i class="fa fa-th"></i></span>
                         <h5>Listing</h5>

@@ -16,6 +16,8 @@ $uri_segments = explode('/', $uri_path);
          <li class="<?php echo (isset($uri_segments[2]) && ($uri_segments[2] == 'faq_list.php'|| $uri_segments[2] == 'faq_add_edit.php')) ? 'active' : '' ?>"><a href=<?php echo ROOT . "faq_list.php"; ?>><i class=""></i> <span>Common Pages</span></a> </li> 
          <li class="<?php echo (isset($uri_segments[2]) && ($uri_segments[2] == 'photo_folder_list.php'|| $uri_segments[2] == 'photo_folder_add.php')) ? 'active' : '' ?>"><a href=<?php echo ROOT . "photo_folder_list.php"; ?>><i class=""></i> <span>Create Folder</span></a> </li> 
          <li class="<?php echo (isset($uri_segments[2]) && ($uri_segments[2] == 'photo_list.php'|| $uri_segments[2] == 'photo_add.php')) ? 'active' : '' ?>"><a href=<?php echo ROOT . "photo_list.php"; ?>><i class=""></i> <span>Photos</span></a> </li> 
+        <li class="<?php echo (isset($uri_segments[2]) && ($uri_segments[2] == 'OnlineProgromDesc.php'|| $uri_segments[2] == 'OnlineProgromDesc.php')) ? 'active' : '' ?>"><a href=<?php echo ROOT . "OnlineProgromDesc.php"; ?>><i class=""></i> <span>Photos</span></a> </li> 
 
+        <li class="<?php echo (isset($uri_segments[2]) && ($uri_segments[2] == 'onlineProgromList.php'|| $uri_segments[2] == 'onlineProgromList.php')) ? 'active' : '' ?>"><a href=<?php echo ROOT . "onlineProgromList.php"; ?>><i class=""></i> <span>Online Program Desc</span></a> </li> 
     </ul>
 </div><!--main-container-part-->

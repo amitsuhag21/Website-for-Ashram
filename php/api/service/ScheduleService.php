@@ -9,7 +9,8 @@ class ScheduleService {
 
     function findAll()
     {
-        $query="SELECT * FROM tb_od_programschedule ORDER BY start_date ASC";
+
+        $query="SELECT * FROM tb_od_programschedule where  `start_date` > now()  and status = 1  ORDER BY start_date ASC";
         $response=array();
         $result=mysqli_query( $this->connection, $query);
         if($result){ 
@@ -25,7 +26,7 @@ class ScheduleService {
 
     function find($reqData)
     {
-        $query="SELECT * FROM tb_od_programschedule  WHERE  ";
+        $query="SELECT * FROM tb_od_programschedule  WHERE `start_date` > now() and ";
         $queryparam = "";
         $response=array();
         if(array_key_exists('programid', $reqData) )
@@ -70,7 +71,29 @@ class ScheduleService {
         return $response;
     }
 
-       function findbyId($programid)
+
+    function findOnline($reqData)
+    {
+        $query="SELECT * FROM tb_od_programschedule  WHERE `start_date` > now() and programMode = 'Online' ";
+        $queryparam = "";
+        $response=array();
+        $queryparam.=" ORDER BY start_date ASC";
+
+        $query.=$queryparam;
+        $result=mysqli_query($this->connection, $query);
+        if($result){            
+            while($row=mysqli_fetch_array($result))
+            {
+                $response[]=$row;
+            }
+        }else{
+            
+            $response =[];
+        }
+        return $response;
+    }
+
+    function findbyId($programid)
     {
         $query="SELECT * FROM tb_od_programschedule  WHERE  ";
         $queryparam = "";

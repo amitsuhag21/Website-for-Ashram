@@ -12,15 +12,18 @@
 }
 
 span.titleLabel {
-    font-size: 14px;
-    margin-top: 10px;
+    font-size: 13px;
+    margin-top: 2px;
     color: #694206;
     padding: 5px 0px;
     display: inline-block;
+    line-height: 14px;
 }
 
 .customInput{
-    font-size: 17px;
+    font-size: 14px;
+    height: 35px;
+    padding: 5px 10px;
     line-height: 30px;
     color: #1f1c1c;
     background-color: #fff;
@@ -102,4 +105,22 @@ div.required-field span::after {
     display: block;
     width: 100%;
     height: 100%;
+}
+
+.controlarrow {
+    position: relative;
+}
+.controlarrow::before {
+    position: absolute;
+    content: " \25bc";
+    vertical-align: middle;
+    font-size:10px;
+    right: -6px;
+    top: 12px;
+    height: 20px;
+    width: 20px;
+}
+
+.scheduleFormGroup .col-md-6 {
+    padding: 2px 10px;
 }

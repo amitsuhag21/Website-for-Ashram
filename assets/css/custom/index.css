@@ -19,14 +19,7 @@
     max-height:120px
 }
 
-.row.clearfix.video-item {
-    display: block;
-    width: 100%;
-    overflow: hidden;
-    padding: 20px 10px;
-    margin: auto;
-    background-color: white;
-}
+
 .videoHolder{
 	width: auto;
     height: auto;
@@ -58,16 +51,17 @@
     max-height: 180px;
     z-index: 10;
     padding: 10px 0px;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .row.clearfix.video-item {
     display: block;
-    width: 100%;
+    /* width: 100%; */
     max-height: 430px;
     overflow: hidden;
     padding: 20px 0px;
     margin: auto;
+    background: white;
 }
 .videoHolder{
 	width: calc(100% + 110px);
@@ -213,7 +207,7 @@
 }
 
 img.iamgeHolder {
-    margin-top: 5px;
+    margin-top: 0px;
 }
 
 span.customKnowusButton {
@@ -228,3 +222,12 @@ span.customKnowusButton {
 .col-lg-12.newsletter.ft-bg-bl.text-center {
     padding: 10px;
 }
+
+#indexExploreMore .large-button {
+    margin: auto;
+    margin: 22px 30px;
+    vertical-align: middle;
+}
+
+
+div#indexExploreMore {margin-top: 10px;margin-bottom: 30px;}

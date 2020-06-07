@@ -33,20 +33,19 @@
                      <div class="schProgramNameCls">{{locationData.dhyankendraname}}</div>
                 </td>
                 <td class="programTableDateCls">
-                    <div class="schProgramNameCls"><div class="">{{start_date}} - {{end_date}}</div></div>
+                    <div class="schProgramNameCls"><div class="">{{bookingStart_date}} - {{end_date}}</div></div>
                 </td>
                 <td class="programTableDateCls">
                      <div class="schProgramNameCls">{{programLevel}}</div>
                 </td>
                 <td class="programTableDateCls">
                     <div class="schProgramNameCls">
-
-                        {{guidelines}}, {{comments}}
+                        {{leadAcharya}}, {{otherAchraya}}
                     </div>
                 </td>
                 <td class="programTableDateCls">
                     <div class="schProgramNameCls">
-                        <span id="viewProgButton_{{programid}}_{{scheduleid}}"  data-toggle="modal" data-target="#programModal_{{programid}}_{{scheduleid}}" class="myButton pull-left">View</span>
+                        <span id="viewProgButton_{{programid}}_{{scheduleid}}"  data-toggle="modal" data-target="#programModal_{{programid}}_{{scheduleid}}" class="myButton pull-left">Details</span>
                         <span id="bookProgButton_{{programid}}_{{scheduleid}}"  data-toggle="modal" data-target="#bookProgModel_{{programid}}_{{scheduleid}}"   class="myButton pull-right">Book</span>
                     
                     </div>
@@ -73,7 +72,7 @@
                         <div class="col-sm-12 ">
                             <table class="table table-striped">
                                 <tr>
-                                    <td><strong>Program Level</strong>y</td>
+                                    <td><strong>Program Level</strong></td>
                                 </tr>
                                 <tr>
                                     <td>{{programid}}</td>
@@ -82,7 +81,7 @@
                                     <td><strong>Program Aacharya</strong></td>
                                 </tr>
                                 <tr>
-                                    <td>{{programData.guidelines}}, {{programData.comments}}</td>
+                                    <td>{{leadAcharya}}, {{otherAchraya}}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Venue</strong></td>
@@ -159,9 +158,9 @@
                             <div class="form-group clearfix scheduleFormGroup">
 
                                 <div class="col-md-6 required-field">
-                                    <span class="titleLabel">Name</span>
+                                    <span class="titleLabel">Participant Name</span>
                                     <div class="controls customInputDiv">
-                                        <input id="bookNow_userName_{{programid}}_{{scheduleid}}" placeholder="Official Name"  name="userName" required class="form-control customInput">
+                                        <input id="bookNow_userName_{{programid}}_{{scheduleid}}" placeholder="Participant Name"  name="userName" required class="form-control customInput">
                                     </div>
                                 </div>
 

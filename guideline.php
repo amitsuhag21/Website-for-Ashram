@@ -89,7 +89,7 @@
 
         <?php include_once 'public_html/includes/footerPage.php'; ?>
         <?php include_once 'public_html/includes/footerScript.php';?>
-        <script src="assets/script/js/faq.js"></script>
+        <script src="assets/script/js/guideline.js"></script>
     </body>
 
 </html>

@@ -1,0 +1,122 @@
+.pointerCls{
+    cursor: pointer;
+}
+
+.pointerCls a:hover {
+    color: #575a3b;
+}
+
+.modal-body.customModalBody {
+    padding: 10px 30px 15px 30px;
+    line-height: initial;
+}
+
+span.titleLabel {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #694206;
+    padding: 5px 0px;
+    display: inline-block;
+    line-height: 14px;
+}
+
+.customInput{
+    font-size: 17px;
+    line-height: 30px;
+    color: #1f1c1c;
+    background-color: #fff;
+    border: 1px solid #ad9f9f;
+    border-radius: 5px;
+}
+
+.scheduleTableHeader {
+    padding: 20px !important;
+}
+
+.schTableDateCls {
+    vertical-align:middle !important;
+}
+
+.scheduleTableRow {
+    height: 80px;
+}
+
+
+.modal-backdrop.in {
+    opacity: 0.7;
+    background-color: #fdfffd6e;
+}
+
+a:hover {
+  color: #88365f  !important;
+}
+
+.modal-header .close {
+    margin-top: -8px;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.modal-header.customModalHeader {
+    padding: 10px;
+    background-color: #0d0e27e3;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+input[type=file]::-webkit-file-upload-button {
+  border: 1px solid grey;
+  background: #FFFAAA;
+}
+
+.scheduleFormGroup {
+    margin-bottom: auto;
+}
+
+.form-mgr.clearfix.searchHolder {background-color: white;padding: 15px 15px 20px 15px;margin-top: 10px;margin-bottom: 20px;}
+
+div.required-field span::after { 
+    content: "*";
+    color: red;
+    padding: 5px;
+}
+
+.select2-container .select2-choice div b {
+    background: url(../img/select2.png) no-repeat 0 1px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.controlarrow {
+    position: relative;
+}
+.controlarrow::before {
+    position: absolute;
+    content: " \25bc";
+    vertical-align: middle;
+    font-size:10px;
+    right: -6px;
+    top: 12px;
+    height: 20px;
+    width: 20px;
+}
+
+.form-mgr.clearfix.searchHolder p {text-align: justify;}

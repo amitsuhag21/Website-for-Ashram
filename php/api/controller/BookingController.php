@@ -3,6 +3,9 @@
 include_once "../config/database.php"; 
 include_once "../service/MailService.php";
 include_once "../service/BookingService.php";
+include_once "../service/SMSSenderService.php";
+include_once "../service/PaymentGatewayService.php";
+
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -23,6 +26,8 @@ class BookingController {
 
     private $mailService;
     private $bokingService;
+    private $smsSenderService;
+    private $paymentGatewayService;
 
     public function __construct($db, $requestMethod)
     {
@@ -30,6 +35,8 @@ class BookingController {
         $this->requestMethod = $requestMethod;
         $this->mailService = new MailService($this->db);
         $this->bookingService = new BookingService($this->db);
+        $this->smsSenderService = new SMSSenderService($this->db);
+        $this->paymentGatewayService = new PaymentGatewayService($this->db);
     }   
 
     public function processRequest()
@@ -44,8 +51,11 @@ class BookingController {
                 break;
             case 'POST':
                 if (!empty($_POST["bookService"])) {
-                    $response = $this->bookServiceMail();
-                } else {
+                    $response = $this->bookServiceMail($_POST);
+                } else if (!empty($_POST["createOrder"])) {
+                    $response = $this->bookCreateOrder($_POST);
+                } 
+                else {
                     $response = $this->notFoundResponse();
                 };
                 break;
@@ -60,15 +70,56 @@ class BookingController {
     }
 
 
-    private function bookServiceMail()
+    private function bookServiceMail($reqData)
     {
-        $result = $this->bookingService->insertBookingDetail($_POST);
-        $result['OfficeMail'] = $this->mailService->sendToReceptionMessage($_POST, $result['bookingId']);
-        $result['userMail'] = $this->mailService->sendToUserMessage($_POST,  $result['bookingId']);
+
+        $finalrespose  = array();
+        $result = $this->bookingService->insertBookingDetail($reqData);
+        $finalrespose['bookingDetail'] = $result['bookingId'];
+
+        if(array_key_exists('phoneNumber', $reqData)){
+           $finalrespose['phoneNumber']= $reqData['phoneNumber'];
+           $finalrespose['userName'] = array_key_exists('userName', $reqData)? $reqData['userName']:"";
+            $finalrespose['smsresult'] = $this->smsSenderService->sendSMS($finalrespose);
+        }
+/*        $result['OfficeMail'] = $this->mailService->sendToReceptionMessage($reqData, $result['bookingId']);
+        $result['userMail'] = $this->mailService->sendToUserMessage($reqData,  $result['bookingId']);*/
         $response['status_code_header'] = 'HTTP/1.1 200 OK';
-        $response['body'] = $result;
+        $response['body'] = $finalrespose;
         return $response;
     }
+
+
+    private function bookCreateOrder($reqData)
+    {
+        $finalrespose  = array();
+        $result = $this->bookingService->insertCreateOrderDetail($reqData);
+        
+        $finalrespose['bookingDetail'] = $result['bookingId'];
+        $finalrespose['orderIdDetail'] = $this->getPaymentOrderId($reqData, $result['bookingId']);
+        if(array_key_exists('phoneNumber', $reqData)){
+           $finalrespose['phoneNumber']= $reqData['phoneNumber'];
+           $finalrespose['userName'] = array_key_exists('userName', $reqData)? $reqData['userName']:"";
+            $finalrespose['smsresult'] = $this->smsSenderService->sendSMS($finalrespose);
+        }
+/*        $result['OfficeMail'] = $this->mailService->sendToReceptionMessage($reqData, $result['bookingId']);
+        $result['userMail'] = $this->mailService->sendToUserMessage($reqData,  $result['bookingId']);*/
+        $response['status_code_header'] = 'HTTP/1.1 200 OK';
+        $response['body'] = $finalrespose;
+        return $response;
+    }
+
+    private function getPaymentOrderId($reqData, $id)
+    {
+        $result = $this->paymentGatewayService->processOrderInit($reqData,$id);
+        if (! $result) {
+            return $this->notFoundResponse();
+        }
+        $response = $result;
+        return $response;
+    }
+
+    
 
     private function bookServiceTestMail()
     {

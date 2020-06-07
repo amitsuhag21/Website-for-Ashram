@@ -32,9 +32,11 @@ class ScheduleController {
     public function processRequest()
     {
         switch ($this->requestMethod) {
-        case 'GET':
+            case 'GET':
                 $data = json_decode(file_get_contents('php://input'), TRUE);
-                if (!empty($_GET["search"])) {
+                if (!empty($_GET["search"]=="online")) {
+                    $response = $this->getScheduleOnlineSearch(($_GET));
+                }else if (!empty($_GET["search"])) {
                     $response = $this->getScheduleSearch(($_GET));
                 }else if(!empty($data["search"])){
                     $response = $this->getScheduleSearch(($data));
@@ -44,7 +46,9 @@ class ScheduleController {
                 break;
             case 'POST':
                 $data = json_decode(file_get_contents('php://input'), TRUE);
-                if (!empty($_POST["search"])) {
+                if (!empty($_POST["search"]) && $_POST["search"] =="online") {
+                    $response = $this->getScheduleOnlineSearch(($_POST));
+                }else if (!empty($_POST["search"])) {
                     $response = $this->getScheduleSearch(($_POST));
                 }else if(!empty($data["search"])){
                     $response = $this->getScheduleSearch($data);
@@ -73,6 +77,16 @@ class ScheduleController {
     private function getScheduleSearch($reqData)
     {
         $result = $this->scheduleService->find($reqData);
+        if (! $result) {
+            return $this->notFoundResponse();
+        }
+        $response['body'] = $result;
+        return $response;
+    }
+
+    private function getScheduleOnlineSearch($reqData)
+    {
+        $result = $this->scheduleService->findOnline($reqData);
         if (! $result) {
             return $this->notFoundResponse();
         }

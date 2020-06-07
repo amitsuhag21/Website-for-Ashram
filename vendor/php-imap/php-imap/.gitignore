@@ -1,3 +1,11 @@
+# All of the vendor directory should be installed by running 'composer install'
+vendor/
+composer.lock
+*.phar
+.php_cs.cache
+coverage/
+psalm/cache/
+
 #################
 ## Eclipse
 #################
@@ -153,6 +161,7 @@ pip-log.txt
 # Unit test / coverage reports
 .coverage
 .tox
+clover.xml
 
 #Translations
 *.mo
@@ -162,3 +171,9 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+
+# NetBeans IDE
+nbproject/
+
+# Visual Studio Code
+.vscode/

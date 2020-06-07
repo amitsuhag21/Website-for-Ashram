@@ -5,7 +5,7 @@
 
     <?php include_once 'public_html/includes/commonHeader.php'; ?>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href='assets/css/custom/schedule.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='assets/css/custom/schedule.css?v=3' media='all' rel='stylesheet' type='text/css' />
 </head>
 
 <body class="front">
@@ -31,20 +31,20 @@
 
                             <div class="col-md-4">
                                 <span class="titleLabel">Program Category </span>
-                                <div class="controls">
+                                <div class="controls  controlarrow">
                                     <input name="programCate_SPG" id="programCate_SPG" placeholder="Program Category" required class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <span class="titleLabel">Program  </span>
-                                <div class="controls customInputDiv">
+                                <div class="controls customInputDiv controlarrow">
                                    <input name="programNameAuto_SPG" id="programNameAuto_SPG" placeholder="Program Name" required class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <span class="titleLabel">Venue  </span>
-                                <div class="controls customInputDiv">
+                                <div class="controls customInputDiv controlarrow">
                                     <input name="venueNameAuto_SPG" id="venueNameAuto_SPG" placeholder="Venue Name" required class="form-control">
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                                         <option value="TR">Tripura</option>
                                         <option value="UK">Uttarakhand</option>
                                         <option value="UP">Uttar Pradesh</option>
-                                        <option value 3WB">West Bengal</option>
+                                        <option value="WB">West Bengal</option>
 
                                     </select>
                                 </div>
@@ -92,14 +92,14 @@
                             <div class="col-md-4">
                                 <span class="titleLabel">Start Date  </span>
                                 <div class="controls customInputDiv">
-                                    <input id="startDate_SPG" type="name" name="name" class="form-control" required placeholder="Start date" data-validation-required-message="This field is required"> 
+                                    <input id="startDate_SPG" type="name" name="name" class="form-control" required placeholder="Start date" data-validation-required-message="This field is required"  autocomplete="off"> 
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <span class="titleLabel">End Date  </span>
                                 <div class="controls customInputDiv">
-                                    <input id="endDate_SPG" type="name" name="name" class="form-control" required placeholder="End date" data-validation-required-message="This field is required"> 
+                                    <input id="endDate_SPG" type="name" name="name" class="form-control" required placeholder="End date" data-validation-required-message="This field is required"  autocomplete="off"> 
                                 </div>
                             </div>
                         </div>
@@ -127,9 +127,9 @@
                                     <th class="scheduleTableHeader" width="20%">Program</th>
                                     <th class="scheduleTableHeader" width="18%">Location</th>
                                     <th class="scheduleTableHeader" width="20%">Date</th>
-                                    <th class="scheduleTableHeader" width="24%">Acharya</th>
-                                    <th class="scheduleTableHeader" width="18%">
-                                        <span id="viewButton"  class="pull-left">View</span>
+                                    <th class="scheduleTableHeader" width="22%">Acharya</th>
+                                    <th class="scheduleTableHeader" width="20%">
+                                        <span id="viewButton"  class="pull-left">Details</span>
                                         <span id="bookButton" class="pull-right">Book</span>
                                     </th>
                                 </tr>
@@ -142,20 +142,6 @@
                 </div>
             </div>
         </div>
-<!--         <div class="pagination-wrap">
-            <div class="row">
-                <div class="col-xs-7">
-                    <ul class="pagination">
-                        <li class="active"><a href="comingSoon.html">1 <span class="sr-only">(current)</span></a></li>
-                        <li><a href="comingSoon.html">2</a></li>
-                        <li><a href="comingSoon.html">3</a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-5 text-right">
-                    <p>Showing 1–9 of 20 results</p>
-                </div>
-            </div>
-        </div> -->
     <?php include_once 'public_html/includes/footerPage.php'; ?>
     <div id="myModal">
         
@@ -164,10 +150,9 @@
         
     </div>
     
-    <?php include_once 'public_html/includes/footerScript.php'; ?>
     <?php include_once 'public_html/includes/footerScript.php';?>
     <script src="assets/script/libs/jquery-ui.min.js"></script>
-    <script src="assets/script/js/schedule.js"></script>
+    <script src="assets/script/js/schedule.js?v=3"></script>
     </body>
 
 </html>

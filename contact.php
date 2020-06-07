@@ -14,14 +14,9 @@
             <div class="col-lg-12">
 
                 <div class="header-bg" style="background-image:url(images/banner.jpg)">
-                    <!-- Gradient overlay -->
                     <div class=" header-content">
                         <div class="main-title">
-                            <!-- Main-title -->
                             <h1 class="bold mb-30 a-f ">Contact Us</h1>
-                            <!-- breadcrumbs -->
-
-                            <!-- breadcrumbs end -->
                         </div>
                     </div>
                 </div>
@@ -47,66 +42,55 @@
         <div class="row">
             <div class="tpp-orgl21"></div>
             <div class="inner-slides-com-cot clearfix">
-                <div class="col-sm-6">
+                <div class="col-sm-12 col-md-12 col-lg-12">
                     <h2 class=" ct-fw-600">Get in Touch.</h2>
+                    <div class="row">
+                        <div class="ct-iconBox ct-iconBox--behind col-sm-12 col-md-4 col-lg-4">
+                            <div class="ct-iconBox-icon">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
 
-                    </p>
-                    <br>
+                            </div>
+                            <div class="ct-iconBox-content">
+                                <h2 class="ct-iconBox-title  ct-fw-600">Office</h2>
 
-                    <div class="ct-iconBox ct-iconBox--behind">
-                        <div class="ct-iconBox-icon">
-                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-
+                                <p class="ct-fw-600 tt22">
+                                    Oshodhara Nanak Dham, Murthal N.H.1, 50th Milestone, GT Road, Murthal Sonepat,
+                                </p>
+                            </div>
                         </div>
-                        <div class="ct-iconBox-content">
-                            <h2 class="ct-iconBox-title  ct-fw-600">
-                          Office
-                    </h2>
-
-                            <p class="text-uppercase ct-fw-600 tt22">
-                                Oshodhara Nanak Dham, Murthal N.H.1, 50th Milestone, GT Road, Murthal Sonepat,
-                            </p>
+                        <div class="ct-iconBox ct-iconBox--behind col-sm-12 col-md-4 col-lg-4">
+                            <div class="ct-iconBox-icon">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                            </div>
+                            <div class="ct-iconBox-content">
+                                <h2 class="ct-iconBox-title  ct-fw-600"> Call Us</h2>
+                                <p class=" ct-fw-600 tt22">
+                                    <span class="ct-u-colorMotive">+91 </span> 0130-2483911/12
+                                </p>
+                                <p class=" ct-fw-600 tt22">
+                                    <span class="ct-u-colorMotive">+91 </span> 09671400196/3
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <br>
 
-                    <div class="ct-iconBox ct-iconBox--behind">
-                        <div class="ct-iconBox-icon">
-                            <i class="fa fa-phone" aria-hidden="true"></i>
-                        </div>
-                        <div class="ct-iconBox-content">
-                            <h2 class="ct-iconBox-title  ct-fw-600">
-                        Call Us
-                    </h2>
-                            <p class=" ct-fw-600 tt22">
-                                <span class="ct-u-colorMotive">+91 </span> 0130-2483911/12
-                            </p>
-                            <p class=" ct-fw-600 tt22">
-                                <span class="ct-u-colorMotive">+91 </span> 09671400196/3
-                            </p>
-                        </div>
-                    </div>
-                    <br>
+                        <div class="ct-iconBox ct-iconBox--behind col-sm-12 col-md-4 col-lg-4">
+                            <div class="ct-iconBox-icon">
+                                <i class="fa fa-envelope-square" aria-hidden="true"></i>
 
-                    <div class="ct-iconBox ct-iconBox--behind">
-                        <div class="ct-iconBox-icon">
-                            <i class="fa fa-envelope-square" aria-hidden="true"></i>
+                            </div>
+                            <div class="ct-iconBox-content">
+                                <h2 class="ct-iconBox-title  ct-fw-600">   Email Us </h2>
 
-                        </div>
-                        <div class="ct-iconBox-content">
-                            <h2 class="ct-iconBox-title  ct-fw-600">
-                        Email Us
-                    </h2>
+                                <p class=" ct-fw-600">
+                                    <a href="#" class=" ct-u-underline ct-fw-600 tt22">info@oshodhara.org.in</a>
+                                    <br>
+                                    <br>
 
-                            <p class=" ct-fw-600">
-                                <a href="#" class=" ct-u-underline ct-fw-600 tt22">info@oshodhara.org.in</a>
-                                <br>
-                                <br>
-
-                            </p>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <br>
+
 
                 </div>
 

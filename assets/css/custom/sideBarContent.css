@@ -1,13 +1,14 @@
 .myButton {
   background-color: #41bd62;
-  border-radius: 14px;
+  border-radius: 50px;
   border: 1px solid #10821d;
   display:inline-block;
   cursor:pointer;
   color: #ffffff;
   font-family: Arial;
-  font-size:17px;
-  padding: 5px 15px;
+  font-size: 14px;
+  padding: 5px 12px;
+  margin: 5px;
   text-decoration:none;
   text-shadow: 1px 1px 0px #2F6626;
 }
@@ -109,7 +110,8 @@ select#languageSelector {
 
 .titleContent {
     vertical-align: middle;
-    padding: 34px 25px;
+    padding: 30px 25px;
+    display: inline-block;
     heigh: 80px;
 }
 
@@ -137,4 +139,42 @@ div#masterAccordionHolder {
 .contentWhiteBG{
     background-color: white;
     margin: 15px;
+}
+
+.thumb-item-img.gallery {
+    height: 186px;
+}
+
+.contentWhiteBG .img-responsive {
+    /* display: block; */
+    /* max-width: 100%; */
+    /* max-width: 100%; */
+    object-fit: cover;
+    width: 230px;
+    height: 230px;
+}
+
+.owl-item .col-md-12 {
+    padding: 0px 10px;
+}
+
+
+.multi-slides .img-responsive {
+    /* display: block; */
+    /* max-width: 100%; */
+    /* max-width: 100%; */
+    object-fit: cover;
+    width: 230px;
+    height: 230px;
+}
+
+.owl-item .col-md-12 {
+    padding: 0px 10px;
+}
+
+
+.call-action2 {background-color: white;margin: 15px 0px;}
+
+.titleContent h1 {
+    margin: auto;
 }

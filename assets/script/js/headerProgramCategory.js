@@ -98,18 +98,22 @@ function renderProgramData_HPC(programListCateData) {
     var languageCode = window.localStorage.languageCode ? window.localStorage.languageCode : "en";
 
     for (var pgkey in programListCateData) {
-        var list = programListCateData[pgkey].categoryid;
+        var renderObj = JSON.parse(JSON.stringify(programListCateData[pgkey]));
+        var list = renderObj.categoryid;
         list = list.split(",");
         for (var d in list) {
+            renderObj.categoryid = list[d];
             if (list[d] === '2' || list[d] === '3') {
-                programListCateData[pgkey].customlabel = "label"
-                if (programListCateData[pgkey].programid < 10) {
-                    programListCateData[pgkey].customCounter = '0' + programListCateData[pgkey].programid;
+                renderObj.customlabel = "label"
+                if (renderObj.programid < 10) {
+                    renderObj.customCounter = '0' + renderObj.programid;
                 } else {
-                    programListCateData[pgkey].customCounter = programListCateData[pgkey].programid;
+                    renderObj.customCounter = renderObj.programid;
                 }
+            }else{
+                delete renderObj.customlabel;
             }
-            $('#programListHolder_' + list[d]).append(Mustache.render(progfragment, programListCateData[pgkey]));
+            $('#programListHolder_' + list[d]).append(Mustache.render(progfragment, renderObj));
         }
     }
 }

@@ -1,0 +1,320 @@
+.pointerCls{
+    cursor: pointer;
+}
+
+.pointerCls a:hover {
+    color: #575a3b;
+}
+
+.modal-body.customModalBody {
+    padding: 10px 30px 15px 30px;
+    line-height: initial;
+}
+
+span.titleLabel {
+    font-size: 13px;
+    margin-top: 2px;
+    color: #694206;
+    padding: 5px 0px;
+    display: inline-block;
+    line-height: 14px;
+}
+
+.customInput{
+    font-size: 14px;
+    height: 35px;
+    padding: 5px 10px;
+    line-height: 30px;
+    color: #1f1c1c;
+    background-color: #fff;
+    border: 1px solid #ad9f9f;
+    border-radius: 5px;
+}
+
+.scheduleTableHeader {
+    padding: 20px 9px !important;
+    vertical-align: middle !important;
+}
+
+.schTableDateCls {
+    vertical-align:middle !important;
+    padding: 5px 2px;
+}
+
+.onlineScheduleNameCls{
+    /* width: 16%; */
+    display: inline-block;
+    /* border-right: 1px solid #8080804f; */
+}
+
+.onlineSchSessionCls{
+    /* width: 25%; */
+    display: inline-block;
+    border-right: 1px solid #d4aeae;
+}
+
+.onlineSchStartDateCls{
+    width: 20%;
+    display: inline-block;
+}
+
+.onlineSchAcharyaCls{
+    /* width: 18%; */
+    display: inline-block;
+}
+
+
+.onlineSchButtonCls{
+    /* width: 10%; */
+    display: inline-block;
+    vertical-align: middle;
+}
+.scheduleTableRow {
+    min-height: 80px;
+    display: inherit;
+    /* padding: 10px; */
+}
+
+
+.modal-backdrop.in {
+    opacity: 0.7;
+    background-color: #fdfffd6e;
+}
+
+a:hover {
+  color: #88365f  !important;
+}
+
+.modal-header .close {
+    margin-top: -8px;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.modal-header.customModalHeader {
+    padding: 10px;
+    background-color: #0d0e27e3;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+input[type=file]::-webkit-file-upload-button {
+  border: 1px solid grey;
+  background: #FFFAAA;
+}
+
+.scheduleFormGroup {
+    margin-bottom: auto;
+}
+
+.form-mgr.clearfix.searchHolder {background-color: white;}
+
+div.required-field span::after { 
+    content: "*";
+    color: red;
+    padding: 5px;
+}
+
+.select2-container .select2-choice div b {
+    background: url(../img/select2.png) no-repeat 0 1px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.controlarrow {
+    position: relative;
+}
+.controlarrow::before {
+    position: absolute;
+    content: " \25bc";
+    vertical-align: middle;
+    font-size:10px;
+    right: -6px;
+    top: 12px;
+    height: 20px;
+    width: 20px;
+}
+
+.scheduleFormGroup .col-md-6 {
+    padding: 2px 10px;
+}
+
+.secheduleStrippedRowDiv {
+    margin: 0px 15px;
+}
+
+.secheduleStrippedRowDiv .scheduleTableRow:nth-of-type(odd){
+    background-color: #f9f9f9;
+}
+.secheduleStrippedRowDiv  .scheduleTableRow:nth-of-type(even){
+    background-color: #cdedcb;
+    /* background: #FFFFFF; */
+}
+
+span.schProgramNameCls {
+    padding: 10px 5px;
+    word-break: break-word;
+    text-align: left;
+    display: inline-block;
+}
+
+
+.btn-floating {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0;
+    margin: 10px;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    width: 47px;
+    height: 47px
+}
+
+.btn-floating i {
+    font-size: 1.25rem;
+    line-height: 47px
+}
+
+.btn-floating i {
+    display: inline-block;
+    width: inherit;
+    color: #fff;
+    text-align: center
+}
+
+.btn-floating:hover {
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
+}
+
+.btn-floating:before {
+    border-radius: 0
+}
+
+.btn-floating.btn-sm {
+    width: 36.15385px;
+    height: 36.15385px
+}
+
+.btn-floating.btn-sm i {
+    font-size: .96154rem;
+    line-height: 36.15385px
+}
+
+.btn-floating.btn-lg {
+    width: 61.1px;
+    height: 61.1px
+}
+
+.btn-floating.btn-lg i {
+    font-size: 1.625rem;
+    line-height: 61.1px
+}
+
+.btn-floating.btn-flat {
+    padding: 0;
+    color: #fff;
+    background: #4285f4
+}
+
+.btn-floating.btn-flat:hover {
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.btn-floating.btn-flat:hover,.btn-floating.btn-flat:focus {
+    background-color: #5a95f5
+}
+
+.btn-floating.btn-flat.active {
+    background-color: #0b51c5;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15)
+}
+
+
+.carousel-multi-item .controls-top .btn-floating {
+    background: #4285f4
+}
+
+.fixed-action-btn ul a.btn-floating {
+    opacity: 0;
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+    -webkit-transform: scale(0.4) translate(0);
+    transform: scale(0.4) translate(0)
+}
+
+.fixed-action-btn ul a.btn-floating.shown {
+    opacity: 1;
+    -webkit-transform: scale(1) translate(0);
+    transform: scale(1) translate(0)
+}
+
+
+.card.card-cascade .view.view-cascade.gradient-card-header .btn-floating {
+    background-color: rgba(255,255,255,0.2)
+}
+
+.contact-section .form .btn-floating {
+    position: relative;
+    bottom: 3rem;
+    float: right;
+    margin-right: 0
+}
+
+.schRowCls {
+    /* width: 73%; */
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px 5px;
+    border-right: 1px solid #d4aeae;
+    border-left: 1px solid #d4aeae;
+}
+
+.schInnerRowCls:nth-of-type(even) {/* border-top: 1px solid #d4aeae; */}
+
+.schTableDateCls.onlineSchAcharyaCls:nth-child(2) {
+    border-right: 1px solid #d4aeae;
+    margin-right: -1px;
+}
+
+.schTableDateCls.onlineSchButtonCls .myButton {
+    width: 60px;
+    text-align: center;
+    padding: inherit;
+}
+
+.paddingNone{
+    padding: 5px 3px;
+}
+.schInnerRowCls:nth-child(3), .schInnerRowCls:nth-child(4) {
+    border-top: 1px solid #d4aeae;
+}
+
+

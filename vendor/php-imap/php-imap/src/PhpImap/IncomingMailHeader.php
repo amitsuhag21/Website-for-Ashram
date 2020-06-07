@@ -1,26 +1,99 @@
-<?php namespace PhpImap;
+<?php
+
+namespace PhpImap;
 
 /**
  * @see https://github.com/barbushin/php-imap
+ *
  * @author Barbushin Sergey http://linkedin.com/in/barbushin
  */
-class IncomingMailHeader {
+class IncomingMailHeader
+{
+    /** @var int|null $id The IMAP message ID - not the "Message-ID:"-header of the email */
+    public $id;
 
-	/** @var int|string $id The IMAP message ID - not the "Message-ID:"-header of the email */
-	public $id;
-	public $date;
-	public $headersRaw;
-	public $headers;
-	public $subject;
+    /** @var bool */
+    public $isDraft = false;
 
-	public $fromName;
-	public $fromAddress;
+    /** @var string|null */
+    public $date;
 
-	public $to = array();
-	public $toString;
-	public $cc = array();
-	public $bcc = array();
-	public $replyTo = array();
+    /** @var string|null */
+    public $headersRaw;
 
-	public $messageId;
+    /** @var object|null */
+    public $headers;
+
+    /** @var string|null */
+    public $priority;
+
+    /** @var string|null */
+    public $importance;
+
+    /** @var string|null */
+    public $sensitivity;
+
+    /** @var string|null */
+    public $autoSubmitted;
+
+    /** @var string|null */
+    public $precedence;
+
+    /** @var string|null */
+    public $failedRecipients;
+
+    /** @var string|null */
+    public $subject;
+
+    /** @var string|null */
+    public $fromHost;
+
+    /** @var string|null */
+    public $fromName;
+
+    /** @var string|null */
+    public $fromAddress;
+
+    /** @var string|null */
+    public $senderHost;
+
+    /** @var string|null */
+    public $senderName;
+
+    /** @var string|null */
+    public $senderAddress;
+
+    /**
+     * @var (string|null)[]
+     *
+     * @psalm-var array<string, string|null>
+     */
+    public $to = [];
+
+    /** @var string|null */
+    public $toString;
+
+    /**
+     * @var (string|null)[]
+     *
+     * @psalm-var array<string, string|null>
+     */
+    public $cc = [];
+
+    /**
+     * @var (string|null)[]
+     *
+     * @psalm-var array<string, string|null>
+     */
+    public $bcc = [];
+
+    /**
+     * @var (string|null)[]
+     *
+     * @psalm-var array<string, string|null>
+     */
+    public $replyTo = [];
+
+    /** @var string|null */
+    public $messageId;
 }

@@ -144,7 +144,9 @@
 }
 
 .sp11 {
-  margin-top: -22px;
+  position: relative;
+  margin-bottom: -15px;
+  top: -31px;
   display: block;
   background-color: #FFF;
   padding: 12px;
@@ -364,7 +366,7 @@
   background-color: #000000;
 }
 
-.navbar-brand {
+.navbar-brands {
   float: left;
   padding: 5px 15px;
   font-size: 18px;
@@ -819,21 +821,19 @@ by the way it is so weird when you look at your code a couple of years after you
 
   .ct-iconBox.ct-iconBox--behind .ct-iconBox-icon {
     position: absolute;
-    -moz-opacity: .05;
-    -khtml-opacity: .05;
-    -webkit-opacity: .05;
-    opacity: .08;
+    opacity: .5;
     -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=10);
     filter: alpha(opacity=10);
     font-size: 100px;
   }
 
   .ct-iconBox.ct-iconBox--behind .ct-iconBox-content {
-    position: relative;
+    /* position: relative; */
+    text-transform: capitalize;
     z-index: 1;
-    padding-top: 20px;
-    padding-left: 70px;
-    font-size: 14px;
+    padding-top: 25px;
+    padding-left: 45px;
+    font-size: 12px;
   }
 
   .ct-iconBox.ct-iconBox--behind .ct-iconBox-content .ct-iconBox-title {

@@ -14,7 +14,8 @@ $pagename = $_POST['pagename'];
 $comments = $_POST['comments'];
 $explode = explode('++',$_POST['parent']);
 $parentid = (int)$explode[0];
-$target_dir = $explode[1].'/';
+$folderid = $explode[1];
+$target_dir = $explode[2].'/';
 $explodeImage = explode('.',$_FILES["fileToUpload"]["name"]);
 $imagename = $explodeImage[0].'_'.time().'.'.$explodeImage[1];
  $target_file = strtolower($target_dir . basename($imagename));
@@ -56,8 +57,8 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
-        $sql = "INSERT INTO td_od_photos(name,imagename ,path,parentid,pagename,comments)
-        VALUES ('" . $name . "','" . $imagename . "','" . $target_file . "','" . $parentid . "','" . $pagename . "','" . $comments . "')";
+        $sql = "INSERT INTO td_od_photos(name, imagename , path, parentid, parentFolderId, pagename, comments)
+        VALUES ('" . $name . "','" . $imagename . "','" . $target_file . "','" . $parentid. "','" . $folderid . "','" . $pagename . "','" . $comments . "')";
         mysqli_query($link, $sql);
         if(mysqli_error($link)){
             echo("Error description 1: " . mysqli_error($link));die;
@@ -110,7 +111,7 @@ if ($uploadOk == 0) {
                 ?>
                 <div class="widget-content nopadding">
                     <?php 
-                        $sqlcat = "Select * from   tb_od_folder where parent=0 order by foldername ASC";
+                        $sqlcat = "Select * from   tb_od_folder where parent=19 order by foldername ASC";
                         $resultcat = mysqli_query($link, $sqlcat);
                         ?>
                     <form action="#" method="post" class="form-horizontal form-group-lg" accept-charset="utf-8"
@@ -119,11 +120,11 @@ if ($uploadOk == 0) {
                             <label class="control-label"><strong>Select Folder *:</strong></label>
                             <div class="controls">
                                 <select id="parent" name="parent">
-                                    <option value="0">None</option>
+                                   <!--  <option value="0">None</option> -->
                                     <?php 
                                     if (mysqli_num_rows($resultcat) > 0) {
                          while ($value = mysqli_fetch_assoc($resultcat)) {?>
-                                    <option value="<?php echo $value['id'].'++'.$value['path'];?>"
+                                    <option value="<?php echo $value['id'].'++'.$value['folderId'].'++'.$value['path'];?>"
                                         <?php echo (!empty($getAcharya) && in_array($value['id'],$getAcharya)) ? "selected" : "" ?>>
                                         <?php echo $value['foldername'];?></option>
                                     <?php 
@@ -134,7 +135,7 @@ if ($uploadOk == 0) {
                                         while ($value1 = mysqli_fetch_assoc($resultChild)) {
                                             $nbsp = $value['foldername']." >>> ";
                                             ?>
-                                    <option value="<?php echo $value1['id'].'++'.$value1['path'];?>">
+                                    <option value="<?php echo $value1['id'].'++'. $value1['folderId'].'++'.$value1['path'];?>">
                                         <?php echo $nbsp.$value1['foldername'];?></option>
                                     <?php  }
                                 }

@@ -1,12 +1,11 @@
-<!--close-top-Header-menu-->
-<!--start-top-serch-->
+
 <?php include_once 'templates/header.php'; ?>
 <?php include_once 'templates/sidebar.php'; ?>
 <?php include_once 'config/database.php'; ?>
 <?php include_once 'templates/sidebar.php';  ?>
 <?php
 
-$limit = 10;  // Number of entries to show in a page. 
+$limit = 20;  // Number of entries to show in a page. 
 // Look for a GET variable page if not found default is 1.      
 if (isset($_GET["page"])) {  
   $pn  = $_GET["page"];  
@@ -146,7 +145,7 @@ tr:nth-child(odd) {
                                     <?php 
                                     if (mysqli_num_rows($resultcat) > 0) {
                          while ($value = mysqli_fetch_assoc($resultcat)) {
-                            $programid = (isset($value['programid'])&& !empty($value['programid']))?$value['programid']:'';
+                            $programid = (isset($value) && isset($value['programid'])&& !empty($value['programid']))?$value['programid']:'';
                              ?>
                                     <option value="<?php echo $value['programid'];?>"
                                         <?php echo (isset($_GET['programid']) && $programid == $_GET['programid']) ? "selected" : "" ?>>
@@ -304,7 +303,7 @@ tr:nth-child(odd) {
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
 
 // Number of results to show on each page.
-$num_results_on_page = 10;
+$num_results_on_page = 20;
       ?>
                         <?php if (ceil($total_pages / $num_results_on_page) > 0): ?>
                         <ul class="pagination">

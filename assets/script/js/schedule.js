@@ -3,6 +3,8 @@ var scheduleTemplates = "";
 
 $(document).ready(function() {
     $('#scheduleHeaderView').addClass('active');
+    $('#scheduleListView').addClass('active');
+    
     loadCategory()
     if (!window.localStorage.languageCode) {
         window.localStorage.languageCode = 'en';
@@ -18,12 +20,18 @@ $(document).ready(function() {
 });
 
 function eventListener() {
+    $('.controlarrow input').on('focus', handlerInitAutoComplete)
     $('#languageSelector').on('change', setLangaugeCode);
     $('#searchSchedule_SPG').on('click', handlerSearchSchedule);
     $('#resetSchedule_SPG').on('click', resetSearchField);
+    $("#startDate_SPG").datepicker();
+    $("#endDate_SPG").datepicker();
     if (!window.localStorage.venueAutoResponse) {
         loadVenueData_SPG();
     }
+}
+function handlerInitAutoComplete(){
+
 }
 
 function programCategoryAutoComplete() {
@@ -41,18 +49,18 @@ function programCategoryAutoComplete() {
                         labelObj.value = sourceCate[labelkey].categoryid;
                         proCatResponse.push(labelObj);
                     }
-                    response(proCatResponse);
+                    response($.ui.autocomplete.filter(proCatResponse, request.term));
                 }
             },
+            minLength:0,
             select: function(event, ui) {
                 $("#programCate_SPG").val(ui.item.label); //ui.item is your object from the array
                 $("#programCate_SPG").attr("categoryid", ui.item.value); //ui.item is your object from the array
                 return false;
             }
 
-        });
-        $("#startDate_SPG").datepicker();
-        $("#endDate_SPG").datepicker();
+        }).bind('focus', function(){ $(this).autocomplete("search"); } );
+
     });
 }
 
@@ -75,16 +83,18 @@ function programAutoComplete() {
                         }
                         planProgramData[programAC[proAutokey].programid] = programAC[proAutokey];
                     }
-                    response(proAutoResponse);
+                    response($.ui.autocomplete.filter(proAutoResponse, request.term));
+                    //response(proAutoResponse);
                 }
             },
+            minLength:0,
             select: function(event, ui) {
                 $("#programNameAuto_SPG").val(ui.item.label); //ui.item is your object from the array
                 $("#programNameAuto_SPG").attr("programid", ui.item.value); //ui.item is your object from the array
                 return false;
             }
 
-        });
+        }).bind('focus', function(){ $(this).autocomplete("search"); } );
     });
 }
 
@@ -104,16 +114,18 @@ function venueAutoComplete() {
                         labelObj.value = venueAC[venueAutokey].dhyankendraid;
                         venueAutoResponse.push(labelObj);
                     }
-                    response(venueAutoResponse);
+                    response($.ui.autocomplete.filter(venueAutoResponse, request.term));
+                    //response(venueAutoResponse);
                 }
             },
+            minLength:0,
             select: function(event, ui) {
                 $("#venueNameAuto_SPG").val(ui.item.label); //ui.item is your object from the array
                 $("#venueNameAuto_SPG").attr("venueId", ui.item.value); //ui.item is your object from the array
                 return false;
             }
 
-        });
+        }).bind('focus', function(){ $(this).autocomplete("search"); } );
     });
 }
 
@@ -217,7 +229,7 @@ function loadScheduleListData(searchdata) {
 function renderScheduleData(renderData) {
     var schedulefragment = $(scheduleTemplates).find('#programScheduleContent').html();
     var bookNowModalfragment = $(scheduleTemplates).filter('#bookNowModalContent').html();
-    var scheduleModalfragment = $(headerTemplates).filter('#programScheduleModalContent').html();
+    var scheduleModalfragment = $(scheduleTemplates).filter('#programScheduleModalContent').html();
 
     var languageCode = window.localStorage.languageCode ? window.localStorage.languageCode : "en";
     $('#programScheduleHolder').empty();
@@ -298,8 +310,10 @@ function handlerBookProgram(id) {
             }
         });
     } else {
-        id
-        alert('Please upload payment receipt');
+        data.paymentRecipt ="No Files uploadedFileURLResponse";
+        $('#bookNowModal_' + id).modal('hide');
+        $('.modal-backdrop').remove();
+        callProgramBooking(data);
     }
 }
 

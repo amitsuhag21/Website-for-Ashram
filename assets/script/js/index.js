@@ -93,15 +93,15 @@ function renderProgramPlans(renderData){
 }
 
 var exploredetails = { "en":{
-			"exploreTitle":"Welcome to ",
-			"exploreName":" Our Programs",
-			"masterLink":"schedule.php",
-			"fottertext":"Explore More"
+			"exploreTitle":"Now All Pragya Samadhi & Sumiran Programs Conducted ",
+			"exploreName":" Online",
+			"masterLink":"onlineSchedule.php",
+			"fottertext":"Explore & Book Online"
 		},
 		"hi":{
 			"exploreTitle":"आपका स्वागत है ",
 			"exploreName":" हमारे कार्यक्रमों",
-			"masterLink":"schedule.php",
+			"masterLink":"onlineSchedule.php",
 			"fottertext":"और ज्यादा खोजें"
 		}	
 } 

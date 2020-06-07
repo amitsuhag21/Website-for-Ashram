@@ -12,20 +12,13 @@
 
             <div class="row">
                 <div class="col-lg-12">
-
                     <div class="header-bg" style="background-image:url(images/banner.jpg)">
-                        <!-- Gradient overlay -->
                         <div class=" header-content">
                             <div class="main-title">
-                                <!-- Main-title -->
                                 <h1 class="bold mb-30 a-f ">Stay Connected</h1>
-                                <!-- breadcrumbs -->
-
-                                <!-- breadcrumbs end -->
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class="row">
@@ -43,7 +36,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td height="47" align="center"><a href="https://www.facebook.com/oshodharaOSHO" target="_blank"><strong>FACEBOOK</strong></a></td>
+                                <td height="47" align="center"><a href="https://www.facebook.com/oshodharaOSHO" target="_blank"><strong>Facebook</strong></a></td>
                             </tr>
                             <tr>
                                 <td align="center"><a href="https://www.facebook.com/oshodharaOSHO" target="_blank">Oshodhara Facebook.</a></td>
@@ -69,7 +62,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td height="47" align="center"><a href="https://twitter.com/OSHO_Oshodhara" target="_blank"><strong>TWITTER</strong></a></td>
+                                <td height="47" align="center"><a href="https://twitter.com/OSHO_Oshodhara" target="_blank"><strong>Twitter</strong></a></td>
                             </tr>
                             <tr>
                                 <td align="center"><a href="https://twitter.com/OSHO_Oshodhara" target="_blank">OshoDhara</a></td>
@@ -92,7 +85,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td height="47" align="center"><a href="https://twitter.com/SiddharthAulia" target="_blank"><strong>TWITTER</strong></a></td>
+                                <td height="47" align="center"><a href="https://twitter.com/SiddharthAulia" target="_blank"><strong>Twitter</strong></a></td>
                             </tr>
                             <tr>
                                 <td align="center"><a href="https://twitter.com/SiddharthAulia" target="_blank">Osho Siddharth Aulia</a></td>
@@ -115,7 +108,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td height="47" align="center"><a href="https://www.instagram.com/osho.dhara" target="_blank"><strong>INSTAGRAM</strong></a></td>
+                                <td height="47" align="center"><a href="https://www.instagram.com/osho.dhara" target="_blank"><strong>Instagram</strong></a></td>
                             </tr>
                             <tr>
                                 <td align="center"><a href="https://www.instagram.com/osho.dhara" target="_blank">Oshodhara Instagram</a></td>
@@ -138,7 +131,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td height="47" align="center"><a href="https://www.youtube.com/user/OshodharaVideos?sub_confirmation=1" target="_blank"><strong>YOUTUBE</strong></a></td>
+                                <td height="47" align="center"><a href="https://www.youtube.com/user/OshodharaVideos?sub_confirmation=1" target="_blank"><strong>Youtube</strong></a></td>
                             </tr>
                             <tr>
                                 <td align="center"><a href="https://www.youtube.com/user/OshodharaVideos?sub_confirmation=1" target="_blank">Osho Dhara</a></td>

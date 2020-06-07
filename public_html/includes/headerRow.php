@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="white-from-trs wow fadeInUp">
-                        <form action="" method="get">
+                        <form>
 
                             <select id="languageSelector" name="" class="top-search-form" disabled="true">
                                 <option value="en">Language</option>
@@ -12,7 +12,7 @@
                                 <option value="en">English</option>
                             </select>
                             <span class="topSearchSpan pull-righ">                                
-                                <input id="mainSearchInput" name="mainSearchInput" type="text" placeholder="Programs and Centers" class=" top-search-form1">
+                                <input id="mainSearchInput" name="mainSearchInput" type="text" placeholder="Programs and Centers" class=" top-search-form1"  autocomplete="off">
                                 <input id="mainSearchBtn" name="" type="button" class="top-search-form-submit" value="">
                             </span>
                         </form>

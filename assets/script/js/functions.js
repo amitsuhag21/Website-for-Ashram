@@ -2419,6 +2419,6 @@ var requesting = !1
       , ee = e(".text-rotater")
       , te = e("#cookie-notification");
     e(document).ready(SEMICOLON.documentOnReady.init),
-    t.load(SEMICOLON.documentOnLoad.init),
+        t.on("load", SEMICOLON.documentOnLoad.init),
     t.on("resize", SEMICOLON.documentOnResize.init)
 }(jQuery);

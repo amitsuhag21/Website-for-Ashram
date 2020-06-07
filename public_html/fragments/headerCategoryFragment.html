@@ -1,5 +1,5 @@
 <div id="categoryContent">	
-    <li>
+    <li id="programCateView_{{categoryid}}">
         <a href="programe.php">{{categoryname}}<i class="fa fa-angle-right pull-left"></i></a>
         <ul id="programListHolder_{{categoryid}}" class="treeview-menu">            
 
@@ -8,71 +8,17 @@
 </div>
 
 <div id="programListContent">
-    <li><a href="programe.php?programid={{programid}}"><i class="fa fa-angle-right"></i>
+    <li id=programNameView_{{programid}}_{{categoryid}}><a href="programe.php?programIndex={{programid}}&categoryIndex={{categoryid}}"><i class="fa fa-angle-right"></i>
         {{#customlabel}}
         {{customCounter}}. 
         {{/customlabel}} 
      {{programname}}</a></li>
 </div>
 
-<div id="programScheduleModalContent">
-    
-    <div class="modal fade" id="myModal_{{programid}}_{{scheduleid}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">{{programData.programname}}</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-sm-12 ">
-                            <table class="table table-striped">
-                                <tr>
-                                    <td><strong>Program Categor</strong>y</td>
-                                </tr>
-                                <tr>
-                                    <td>Sadhna</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Program</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>{{locationData.dhyankendraname}}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Venue</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>{{locationData.dhyankendraname}}</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>State</strong></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>{{locationData.dhyankendraname}}, {{locationData.Address2}} </strong></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Date</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>{{start_date}} </td>
-                                </tr>
-                            </table>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> 
-</div>
-
 <div  id="searchItemContent">
     <div class="col-xs-12 col-sm-12 col-md-6 searchItemCls">
         {{#programid}}
-        <a href="programe.php?programid={{programid}}">            
+        <a href="programe.php?programIndex={{programid}}">            
             <div>
                 <span class="programName">{{programname}} </span>                                    
             </div>

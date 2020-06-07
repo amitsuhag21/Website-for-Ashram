@@ -7,3 +7,37 @@
     text-align: justify;
     margin: 15px;
 }
+
+.ct-iconBox-icon {
+    height: 30px;
+    width: 30px;
+    position: relative;
+}
+
+.ct-iconBox-icon i.fa {
+    width: 30px;
+    height: 30px;
+    width: 30px;
+	font-size: 28px;
+	position: absolute;
+	top: 30;
+}
+
+.fa-map-marker:before {
+	content: "\f041";
+	height: 30px;
+
+	color: black;
+}
+
+.ct-iconBox.ct-iconBox--behind.col-sm-12.col-md-4.col-lg-4 {
+    position: relative;
+}
+
+.ct-iconBox-icon {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    opacity: 0.5;
+    /* font-weight: 900; */
+}

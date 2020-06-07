@@ -31,25 +31,19 @@
             <div class="inner-slide-com-cot clearfix">
                 <div class="col-lg-6">
                     <h2>Oshodhara Nanak Dham, Murthal</h2>
-                    <p>Surrounded by legendry Yamuna River towards east, GT road towards west, Kurukshetra, the land of Gita, towards north and Delhi the capital of India, towards south, this Ashram with a gorgeous Buddha Hall, is Headquarter of Oshodhara and Osho Nanak Dhyan Mandir Trusts.</p>
-                    <br>
-
-                    <strong>Location:</strong> 50th km stone from Delhi. GT Road, Murthal Sonepat, Haryana (India)
-                    <br>
-                    <br>
-                    <p>
-                        <strong>Direction:</strong> It is about 5 km away from Sonipat Railway Station. From Delhi Airport it is only 60 km away. All buses going from ISBT (Inter State Bus Terminus) towards Ambala stop at Murthal Chowk from where Nanak Dham is hardly 1 km away.
-                        <br>
-                        <br>
+					<h3>"गर फ़िरदौस बर रूये ज़मी अस्त ,<br>
+                        हमी अस्तो हमी अस्तो हमी अस्त" 
+					</h3>
+                    <p>“If there is a paradise on earth, it is this, it is this, it is this”.</p>
+                    
+					<p>Above lines perfectly echo the sentiments of Oshodhara seekers for what this ashram means to them. A perfect place to seek guidance and spiritual wisdom, it is the home of the Master where one can connect directly with him. A place where the mind, heart, body and soul are in perfect harmony.
                     </p>
-                    <strong>Contact:</strong> 0130-2483911 / 2
-                    <br>
+                    <p><b>Situated about 50kms from Delhi and 5 kms from Sonipat Railway station,</b> Oshodhara Nanak Dham is an oasis of serenity and calmness, where one learns to go back to the basics and become independent of regular habits, patterns and indulgences. </p>
+					<p>Oshodhara Nanak Dham, a beautiful Ashram surrounded with lush greenery, having  all modern facilities, is the perfect place for spiritual seekers where they can spend time concentrating solely on the spiritual aspect of their lives. </p>
+					<p>All 28 Samadhi Programs and 21 Pragya Programs are conducted at this Ashram in the divine presence of Sadguru.</p>
+					</br></br>
 
-                    <strong>Email:</strong> info@oshodhara.org.in
-                    <br>
-                    <br>
-
-                    <a href="#" class="large-button">
+                    <a  href="gallery.php?folderid=1587894961" class="large-button">
 
                         <span>View Gallery</span>
 
@@ -80,22 +74,12 @@
                 </div>
                 <div class="col-lg-6">
                     <h2>Oshodhara Anand Dham, Madhopur</h2>
-                    <p>It is the Headquarter of International Institute of Self Realization (IISR) registered under Trust Act of India. Lying at an elevation of 450 meters, it provides gateway to the hills of Himachal Pradesh, Jammu and Kashmir. It gives a thrill to watch Ravi River emerging against background of ice capped peaks of Kashmir Himalayas.</p>
-                    <br>
-
-                    <strong>Location:</strong> Shahpurkandi Road, Madhopur (Pathankot)
-                    <br>
-                    <br>
-                    <p>
-                        <strong>Direction:</strong> It is 18 km away from Pathankot and Chakki Bank Railway station.
-                        <br>
-                        <br>
-
-                        <strong>Contact:</strong> Swami Anand Nirav - 09814355475, 01870257482</p>
-                    <br>
-                    <br>
-
-                    <a href="#" class="large-button">
+                    <p><b>Situated 18 Km from Pathankot and Chakki Bank Railway station and 4 Km from Pathankot Jammu highway</b>  on the banks of River Ravi, Oshodhara Arogya Dham is a perfect place for solace,  rejuvenation and spiritual growth of  oneself.</p>
+                    <p>The Ashram with scenic beauty of snow covered Himalayas has a vast extension of space element over river Ravi. It has a lush green surrounding with absolute silence and no noise pollution. One can also enjoy the view of crystal clear sky at night.</p>
+                    <p>Regular One Day Meditation Camps are conducted at the Madhopur Ashram along with Samadhis from Level 1( Dhyan Samadhi) to Level 9(Gyan Samadhi) by Senior Acharyas.</p>
+                    <p>Sadguru himself enjoys being at this Ashram and hence travels regularly to this place for conducting Samadhi Programs. </p>
+					</br></br>
+                    <a  href="gallery.php?folderid=1587916779" class="large-button">
 
                         <span>View Gallery</span>
 
@@ -109,22 +93,15 @@
             <div class="inner-slide-com-cot clearfix">
                 <div class="col-lg-6">
                     <h2>Oshodhara Sahajanand Dham, Karma</h2>
-                    <p>Being Birth Place of Osho Siddharthaji, this Dham is principally being developed as a regional center to meet the requiement of seekers from Bihar, Jharkhand , Eastern UP, MP, Chhattisgarh, West Bengal and Orissa.</p>
-                    <br>
-
-                    <strong>Location: </strong>It is lying between two great rivers- Hanges and Sone- this Dham is locatd at village Karma, District Rohtas, Bihar.
-                    <br>
-                    <br>
-                    <p>
-                        <strong>Direction:</strong> It is approachable by rod from Arah (50 Km), Patna (125 Km) and Banaras (150 Km). It is about 7 Km north of Bikram Ganj, the nearest railway station. The Samadhi of Daria Das, the famous 18th century sage, at Dharkanda, is 15 Km Away, whereas Durgadi, the birth place of Dhyanyogi Baba, another famous sage of Gujrat, is only2 Km away.
-                        <br>
-                        <br>
-
-                        <strong>Contact:</strong> Osho Hariom - 09334725125,9334252385
-                        <br>
-                        <br>
-
-                        <a href="#" class="large-button">
+                        <p>Oshodhara Sahajanand Dham Ashram has a special importance as it is the birth place of  Sadguru Osho Siddharthji.
+                        This Dham is principally being developed as a regional center to meet the requirement of seekers from Bihar, Jharkhand , Eastern UP, MP, Chhattisgarh, West Bengal and Orissa.
+                    </p>
+                    <p>It is approachable by road from Arah (50 Km), Patna (125 Km) and Banaras (150 Km). It is about 7 Km North of Bikram Ganj, the nearest railway station.</p>
+					<p>Samadhis from Level 1( Dhyan Samadhi) to Level 9(Gyan Samadhi) are conducted by Senior Acharyas at the Ashram.</p>
+					<p>Sadguru travels frequently to this Ashram too to conduct Samadhi programs. During this time, it's time for Celebration every evening as Sadguru conducts satsang for all and addresses the questions of the seekers and the nearby villagers who come over there.</p>
+					<p>Oshodhara’s first  Trivir Public School  is established close to the Karma Dham.</p>
+					</br></br>
+                        <a  href="gallery.php?folderid=1587917258" class="large-button">
 
                             <span>View Gallery</span>
 

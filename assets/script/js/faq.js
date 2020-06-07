@@ -2,6 +2,7 @@ var planData = {};
 var faqtemplate = "";
 $(document).ready(function(){
   $('#faqHeaderView').addClass('active');
+  $('#genGuideListView').addClass('active');
   loadCategory();
 	callFaqData(); 
 });

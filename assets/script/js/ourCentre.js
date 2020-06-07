@@ -4,6 +4,7 @@ var centreTemplates = "";
 
 $(document).ready(function() {
 	$('#centerHeaderView').addClass('active');
+	$('#dhyanCenterListView').addClass('active');
 	loadCategory()
 	if(!window.localStorage.languageCode){
 		window.localStorage.languageCode = 'en';
